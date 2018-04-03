@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p>Left panel content goes here</p>
+        </div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" class="link icon-only open-panel"><img src="/img/menu.png"></a>
+                    </div>
+                    <div class="center sliding"><img class="img_toolbar" src="/img/img_toolbar_bell.svg"><img class="img_toolbar2" src="/img/img_toolbar_bike.svg"></div>
+                    <div class="right">
+                        <a href="index.html"><img class="img_logo_big" src="/img/img_logo_big.png"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+                            <div class="row">
+                                <div class="col-md-3 profile-box">
+                                    <p class="profile-box-name">Иван Иванов</p>
+                                    <p class="profile-box-text">Россия, Москва</p>
+                                </div>
+                                <div class="col-md-3"><img src="/img/profile.png"></div>
+                            </div>
+                            <!-- Link to another page -->
+                            <table class="menu-box">
+                                <tr>
+                                    <td><div class="menu-box-in"><img src="/img/btn_traing_plan.svg"><p class="menu-box-in-text">Training plan</p></div></td>
+                                    <td><div class="menu-box-in"><img src="/img/btn_analytics.svg"><p class="menu-box-in-text">Statistics/analytics</p></div></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="settings.html"><div class="menu-box-in"><img src="/img/btn_settings.svg"><p class="menu-box-in-text">Settings</p></div></a></td>
+                                    <td><div class="menu-box-in"><img src="/img/btn_extras.svg"><p class="menu-box-in-text">Extras</p></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="menu-box-in"><img src="/img/btn_camps_and_races.svg"><p class="menu-box-in-text">Camps and races</p></div></td>
+                                    <td><div class="menu-box-in"><img src="/img/btn_1_on_1.svg"><p class="menu-box-in-text">1 on 1</p></div></td>
+                                </tr>
+                                </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <!--<div class="toolbar">-->
+                <!--<div class="toolbar-inner">-->
+                    <!--&lt;!&ndash; Toolbar links &ndash;&gt;-->
+                    <!--<a href="#" class="link">Link 1</a>-->
+                    <!--<a href="#" class="link">Link 2</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>
