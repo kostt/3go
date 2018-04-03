@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -21,11 +11,7 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Your app title -->
-    <title>My App</title>
-
-    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
-        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
-     -->
+    <title>3go</title>
 
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
@@ -84,11 +70,11 @@
                                 </tr>
                                 <tr>
                                     <td><a href="settings.html"><div class="menu-box-in"><img src="./img/btn_settings.svg"><p class="menu-box-in-text">Settings</p></div></a></td>
-                                    <td><div class="menu-box-in"><img src="./img/btn_extras.svg"><p class="menu-box-in-text">Extras</p></div></td>
+                                    <td><a href="extras.html"><div class="menu-box-in"><img src="./img/btn_extras.svg"><p class="menu-box-in-text">Extras</p></div></a></td>
                                 </tr>
                                 <tr>
                                     <td><div class="menu-box-in"><img src="./img/btn_camps_and_races.svg"><p class="menu-box-in-text">Camps and races</p></div></td>
-                                    <td><div class="menu-box-in"><img src="./img/btn_1_on_1.svg"><p class="menu-box-in-text">1 on 1</p></div></td>
+                                    <td><a href="1on1.html"><div class="menu-box-in"><img src="./img/btn_1_on_1.svg"><p class="menu-box-in-text">1 on 1</p></div></a></td>
                                 </tr>
                                 </table>
 
@@ -96,14 +82,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Bottom Toolbar-->
-            <!--<div class="toolbar">-->
-                <!--<div class="toolbar-inner">-->
-                    <!--&lt;!&ndash; Toolbar links &ndash;&gt;-->
-                    <!--<a href="#" class="link">Link 1</a>-->
-                    <!--<a href="#" class="link">Link 2</a>-->
-                <!--</div>-->
-            <!--</div>-->
         </div>
     </div>
 
