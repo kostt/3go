@@ -8,8 +8,10 @@
         Ariol
     </author>
     <content src="index.html" />
-    <access origin="http://youtube.com" subdomains="true" />
-    <access origin="http://ytimg.com" subdomains="true"/>
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <allow-navigation href="*youtube*" />
+    <allow-navigation href="*ytimg*" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
