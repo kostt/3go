@@ -1,5 +1,6 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
-
+<!-- Allows XHRs only over HTTPS on the same domain. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: ws: ssl.gstatic.com 'unsafe-inline';">
 <!-- Top Navbar-->
 <div class="navbar">
     <div class="navbar-inner">
@@ -13,7 +14,7 @@
     </div>
 </div>
 <div class="pages">
-    <div data-page="contacts" class="page">
+    <div data-page="extras" class="page">
         <div class="page-content">
             <div class="content-block">
                 <h1>Extras</h1>

@@ -190,6 +190,18 @@ h1{
     font-family: MuseoSansCyrl500;
     font-weight: bold;
     color: white;
+    font-size: 50px;
+    position: relative;
+    top: 17px;
+}
+
+.chart_scale_hour_text{
+    font-family: MuseoSansCyrl500;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    left: 7px;
 }
 
 .setting-check-in{
