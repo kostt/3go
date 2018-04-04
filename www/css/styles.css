@@ -34,6 +34,15 @@ a {
     color: white;
 }
 
+.report-box{
+    margin-top:25px;
+    margin-bottom: 25px;
+}
+
+.report-img{
+    margin-top: 8px;
+}
+
 .page-content{
     background: url("../img/back.png") no-repeat fixed bottom;
     background-size: 100%;
@@ -76,8 +85,6 @@ a {
 .camp-date{
     color: grey;
 }
-
-
 
 .menu-box{
     margin-top:25px;
@@ -133,6 +140,12 @@ h2{
 
 .left-menu-href{
     margin-bottom: 20px;
+}
+
+.report-left{
+    position: relative;
+    left: 10px;
+    bottom:  8px;
 }
 
 .statistics_oval{
@@ -319,11 +332,39 @@ h2{
 .img_oval{
     position: relative;
     left: 15px;
+}
 
+.slider.slider-horizontal {
+    width: 100%;
+    background: linear-gradient(to right, green, yellow, orange, red);
+    border-radius: 15px;
+    height:12px;
+}
+
+.slider-handle {
+    background-color: white;
+    background-image: none;
+    width: 28px;
+    height: 28px;
+    top: -8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.slider.slider-horizontal .slider-track {
+    width: 0;
+    top: 0;
+}
+
+.report-box-in{
+    margin-bottom: 25px;
+}
+
+.report-box-text{
+    margin-bottom: 10px;
 }
 
 @media (max-width: 320px){
-    .content-block {
-        padding: 0 15px;
-    }
+.content-block {
+    padding: 0 15px;
+}
 }

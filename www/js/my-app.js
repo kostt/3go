@@ -1,6 +1,7 @@
 // Initialize app
-var myApp = new Framework7();
-
+var myApp = new Framework7({
+    domCache: true
+});
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
@@ -17,31 +18,31 @@ $$(document).on('deviceready', function() {
 });
 
 
-// Now we need to run the code that will be executed only for About page.
-
-// Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-myApp.onPageInit('about', function (page) {
-    // Do something here for "about" page
+myApp.onPageInit('plan', function (page) {
+    $$("#create_report").click(function(){
+        mainView.router.loadPage('report.html')
+    });
 
 });
 
-// Option 2. Using one 'pageInit' event handler for all pages:
-$$(document).on('pageInit', function (e) {
-    // Get page data from event data
-    var page = e.detail.page;
 
-    if (page.name === 'about') {
-        // Following code will be executed for page with data-page attribute equal to "about"
-        // myApp.alert('Here comes About page');
-    }
+myApp.onPageInit('report', function (page) {
+
+    var slider = new Slider('#ex1');
+    var slider2 = new Slider('#ex2');
+    var slider3 = new Slider('#ex3');
+    var slider4 = new Slider('#ex4');
+    
 });
 
-// Option 2. Using live 'pageInit' event handlers for each page
-$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
-    // Following code will be executed for page with data-page attribute equal to "about"
-    // myApp.alert('Here comes About page');
-});
 
 $$('.panel-close').on('click', function (e) {
     myApp.closePanel();
 });
+
+
+
+
+
+
+

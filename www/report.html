@@ -1,0 +1,55 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="link icon-only open-panel"><img src="./img/menu.png"></a>
+        </div>
+        <div class="center sliding"><img class="img_toolbar" src="./img/img_toolbar_bell.svg"><img class="img_toolbar2" src="./img/img_toolbar_bike.svg"></div>
+        <div class="right">
+            <a href="index.html"><img class="img_logo_big" src="./img/img_logo_big.png"></a>
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="report" class="page">
+        <div class="page-content">
+            <div class="content-block">
+                <h2>Отчет о тренировке</h2>
+
+                <div class="report-box text-in">
+                    <div class="report-box-in">
+                        <div class="report-box-text">Сон</div>
+                        <div><input id="ex1" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="10"/></div>
+                    </div>
+                    <div class="report-box-in">
+                        <div class="report-box-text">Состоние мышц</div>
+                        <div><input id="ex2" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="10"/></div>
+                    </div>
+                    <div class="report-box-in">
+                        <div class="report-box-text">Пульс</div>
+                        <div><input id="ex3" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="10"/></div>
+                    </div>
+                    <div class="report-box-in">
+                        <div class="report-box-text">Истощение</div>
+                        <div><input id="ex4" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="10"/></div>
+                    </div>
+                </div>
+
+                <div class="row statistics_btn">
+                    <div class="col-md-3"><button type="submit" class="button button-big button-raised btn-border btn-stat"><img class="report-img" style="margin-top:15px;" src="./img/report-air.png"></button><p class="text-in report-left">Джетлаг</p></div>
+                    <div class="col-md-3"><button type="submit" class="button button-big button-raised btn-border btn-stat"><img class="report-img" src="./img/report-head.png"></button><p class="text-in report-left">Болезнь</p></div>
+                    <div class="col-md-3"><button type="submit" class="button button-big button-raised btn-border btn-stat"><img class="report-img" src="./img/report-man.png"></button><p class="text-in report-left">Травма</p></div>
+                </div>
+
+                <div class="btn-center">
+                    <p class="buttons-row">
+                        <button type="submit" id="report" class="button button-big button-raised button-fill btn-border rous">Отправить отчет</button>
+                    </p>
+                </div>
+
+        </div>
+    </div>
+</div>
+</div>
