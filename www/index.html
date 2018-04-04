@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-    <!-- Required meta tags-->
+  <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <!-- Your app title -->
+   <!-- Your app title -->
     <title>3go</title>
 
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
-
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -28,7 +25,12 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
         <div class="content-block">
-            <p>Left panel content goes here</p>
+            <div class="row left-menu-href"><a href="plan.html" class="panel-close">Training plan</a></div>
+            <div class="row left-menu-href"><a href="statistics.html" class="panel-close">Statistics/analytics</a></div>
+            <div class="row left-menu-href"><a href="settings.html" class="panel-close">Settings</a></div>
+            <div class="row left-menu-href"><a href="extras.html" class="panel-close">Extras</a></div>
+            <div class="row left-menu-href"><a href="camps.html" class="panel-close">Camps and races</a></div>
+            <div class="row left-menu-href"><a href="1on1.html" class="panel-close">1 on 1</a></div>
         </div>
     </div>
 
@@ -66,7 +68,7 @@
                             <table class="menu-box">
                                 <tr>
                                     <td><a href="plan.html"><div class="menu-box-in"><img src="./img/btn_traing_plan.svg"><p class="menu-box-in-text">Training plan</p></div></a></td>
-                                    <td><div class="menu-box-in"><img src="./img/btn_analytics.svg"><p class="menu-box-in-text">Statistics/analytics</p></div></td>
+                                    <td><a href="statistics.html"><div class="menu-box-in"><img src="./img/btn_analytics.svg"><p class="menu-box-in-text">Statistics/analytics</p></div></a></td>
                                 </tr>
                                 <tr>
                                     <td><a href="settings.html"><div class="menu-box-in"><img src="./img/btn_settings.svg"><p class="menu-box-in-text">Settings</p></div></a></td>
@@ -88,7 +90,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
-
+    <script type="text/javascript" src="js/Chart.min.js"></script>
 
 </body>
 

@@ -125,6 +125,42 @@ h1{
     color: white;
 }
 
+h2{
+    font-family: MuseoSansCyrl500;
+    color: white;
+    font-size:25px;
+}
+
+.left-menu-href{
+    margin-bottom: 20px;
+}
+
+.statistics_oval{
+    position: relative;
+    bottom: 3px;
+    right: 5px;
+    height: 7px;
+}
+
+.statistics_text{
+    margin-top: 25px;
+}
+
+.statistics_btn{
+    margin-top: 50px;
+}
+
+.btn-stat{
+    border: 2px solid grey;
+    color: grey;
+    width: 90px !important;
+}
+
+.button.btn-stat.active{
+    border-color: #fe2d88;
+    background: none !important;
+}
+
 .setting-text{
     font-family: MuseoSansCyrl500;
     font-size: 17px;

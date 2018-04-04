@@ -42,3 +42,6 @@ $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
     // myApp.alert('Here comes About page');
 });
 
+$$('.panel-close').on('click', function (e) {
+    myApp.closePanel();
+});
