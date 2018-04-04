@@ -63,6 +63,22 @@ a {
     margin-top: 0px;
 }
 
+.camp-box{
+    background-color: rgba(255,255,255,.1);
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.camp-date{
+    color: grey;
+}
+
+
+
 .menu-box{
     margin-top:25px;
     width: 100%;
@@ -129,18 +145,52 @@ h1{
     color: white;
 }
 
+.text-in3{
+    font-family: MuseoSansCyrl500;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .btn-border{
-    border-radius: 15px;
+    border-radius: 15px !important;
 }
 
 .rous{
     background-color: #fe2d88 !important;
 }
 
+.button.button-big{
+    height: 55px;
+    font-weight: bold;
+}
+
 .btn-center{
    margin-top: 50px; position: relative;margin-left: auto;margin-right: auto;width:100%;font-family: MuseoSansCyrl500; font-weight: bold;
 }
 
+.img_chart_scale{
+    position: relative;margin-left: auto;margin-right: auto;margin-top: 50px;width: 189px;
+}
+
+.chart_scale{
+    margin-top: 55px;
+    font-family: MuseoSansCyrl500;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.chart_scale_time{
+    position: absolute;
+    left:70px;
+    top:30px;
+}
+
+.chart_scale_hour{
+    font-family: MuseoSansCyrl500;
+    font-weight: bold;
+    color: white;
+}
 
 .setting-check-in{
     position: relative;
@@ -199,10 +249,29 @@ h1{
     padding: 0 35px;
 }
 
+.camps-text{
+    margin-bottom: 25px;
+}
+
 
 .sport-block{
     margin-top: 15px;
     margin-bottom: 35px;
+}
+
+.sport-block2{
+    margin-bottom: 12px;
+}
+
+.sport-block3{
+    margin-top: 55px;
+    margin-bottom: 25px;
+}
+
+.img_oval{
+    position: relative;
+    left: 15px;
+
 }
 
 @media (max-width: 320px){
