@@ -54,6 +54,19 @@ a {
     padding-bottom: 0px;
 }
 
+.page {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #303030;
+    background: url("../img/back.png") no-repeat fixed bottom;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
 .profile-box {
     font-family: MuseoSansCyrl500;
     padding:5px;
@@ -202,6 +215,11 @@ h2{
     background: none !important;
 }
 
+.button.btn-wizard2.active{
+    border-color: #fe2d88;
+    background: none !important;
+}
+
 .wizard-in-input-text{
     float: right;
     position: relative;
@@ -223,6 +241,23 @@ h2{
     width: 30px;
     right:35px;
 }
+
+.wizard-in-input-text4{
+    float: left;
+    position: relative;
+    top: 4px;
+    left:0px;
+}
+
+.wizard-table{
+    width: 100%;
+}
+
+.wizard-table TD{
+    width: 50%;
+    padding:5px;
+}
+
 
 .wizard-dop-text{
     margin-left: 29px;
@@ -500,6 +535,10 @@ h2{
     background-color: none;
 }
 
+.btn-wizard2:hover{
+    border-color: white;
+}
+
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
     background-color: none;
@@ -532,7 +571,9 @@ h2{
     transform: rotate(45deg);
 }
 
-
+.wizard-table .button .container .checkmark{
+    right: 10px;
+}
 
 
 
