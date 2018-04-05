@@ -10,6 +10,9 @@
     <content src="index.html" />
     <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#292929" />
+    <preference name="orientation" value="portrait" />
 
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />

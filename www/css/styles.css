@@ -138,6 +138,17 @@ h2{
     font-size:25px;
 }
 
+.h2{
+    font-family: MuseoSansCyrl500;
+    color: white;
+    font-size:24px;
+}
+
+.start-img{
+    margin-bottom: 10vh;
+}
+
+
 .left-menu-href{
     margin-bottom: 20px;
 }
@@ -172,6 +183,89 @@ h2{
 .button.btn-stat.active{
     border-color: #fe2d88;
     background: none !important;
+}
+
+.btn-wizard{
+    width: 130px !important;
+    border: 2px solid grey;
+    color: grey;
+}
+
+.btn-wizard2{
+    width: 100% !important;
+    border: 2px solid grey;
+    color: grey;
+}
+
+.button.btn-wizard.active{
+    border-color: #fe2d88;
+    background: none !important;
+}
+
+.wizard-in-input-text{
+    float: right;
+    position: relative;
+    top: 3px;
+    right:15px;
+}
+
+.wizard-in-input-text2{
+    float: left;
+    position: relative;
+    top: 4px;
+    left:15px;
+}
+
+.wizard-in-input-text3{
+    float: right;
+    position: relative;
+    top: 3px;
+    width: 30px;
+    right:35px;
+}
+
+.wizard-dop-text{
+    margin-left: 29px;
+    margin-bottom: 5px;
+}
+
+.wiz-box{
+    margin-bottom: 25px;
+}
+
+.wizard-input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    height: 55px;
+    float: left;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    bottom: 3px;
+    left:15px;
+}
+
+.wizard-input2 {
+    height: 55px;
+    float: right;
+    position: relative;
+    bottom: 3px;
+    right:15px;
+}
+
+.swiper-pagination {
+    position: static;
+}
+
+.wizard-swip{
+    margin-bottom: 30px;
+    margin: 1px;
+}
+
+
+.swiper-pagination-bullet-active {
+    background: #fe2d88;
 }
 
 .setting-text{
@@ -362,6 +456,86 @@ h2{
 .report-box-text{
     margin-bottom: 10px;
 }
+
+.popup{
+    background: url(../img/back.png) no-repeat fixed bottom;
+    background-size: 100%;
+    background-color: #303030;
+}
+
+.popup.content-block {
+    padding: 0 15px;
+}
+
+
+/* Customize the label (the container) */
+.container {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 13.5px;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+    border: 2px solid grey;
+    border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: none;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: none;
+    border-color: white;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+
+
 
 @media (max-width: 320px){
 .content-block {
