@@ -10,8 +10,7 @@ var $$ = Dom7;
 // Add view
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
-    dynamicNavbar: false,
-    animateNavBackIcon:true,
+    dynamicNavbar: true,
 
 });
 
@@ -132,9 +131,7 @@ $$('#start_wizard').on('click', function (e) {
 
 $$('#next_swip').on('click', function (e) {
     var mySwiper = $$('.swiper-container')[0].swiper;
-
 // Here you can use all slider methods like:
-    mySwiper.slideNext();
 });
 
 
