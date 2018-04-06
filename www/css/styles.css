@@ -30,7 +30,7 @@
     background-color: #292929;
 }
 
-a {
+a{
     color: white;
 }
 
@@ -63,8 +63,6 @@ a {
     height: 100%;
     background: #303030;
     background: url("../img/back.png") no-repeat fixed bottom;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
 }
 
 .profile-box {
