@@ -744,7 +744,32 @@ h2{
     100% {-webkit-transform: scale(1.1, 1.1); opacity: 0.0;}
 }
 
+.wizard-bottom-btn{
+    width: 95%;
+}
 
+.grey{
+    background-color: grey !important;
+}
+
+.f7-icons{
+    position: relative;
+    top: 8px;
+}
+
+.left{
+    left: 5px;
+    float: left;
+}
+
+.right{
+    right: 5px;
+    float: right;
+}
+
+.btn-wizard-arrow{
+    width: 100%;
+}
 
 
 

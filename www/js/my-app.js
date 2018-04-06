@@ -11,16 +11,10 @@ var mainView = myApp.addView('.view-main', {
 
 });
 
-$$('.hide-navbar').on('click', function () {
-    mainView.hideNavbar();
-});
-
-
 if(window.localStorage.getItem('has_run') == null) {
     myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
 }
-
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -44,7 +38,6 @@ myApp.onPageInit('wizard', function (page) {
             type: 'bullets',
         },
     });
-
 
     var monthNames2 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August' , 'September' , 'October', 'November', 'December'];
     var monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август' , 'Сентябрь' , 'Октябрь', 'Ноябрь', 'Декабрь'];
@@ -79,6 +72,16 @@ myApp.onPageInit('wizard', function (page) {
         }
     });
 
+    $$('#prew_swip').on('click', function (e) {
+        var mySwiper = $$('.swiper-container')[0].swiper;
+        mySwiper.slidePrev();
+    });
+
+    $$('#next_swip').on('click', function (e) {
+        var mySwiper = $$('.swiper-container')[0].swiper;
+        mySwiper.slideNext();
+    });
+
     $$('.show-navbar').on('click', function () {
         mainView.showNavbar();
     });
@@ -87,11 +90,15 @@ myApp.onPageInit('wizard', function (page) {
         mainView.router.loadPage('index.html');
     });
 
+    $$('#btn-wizard-start').on('click', function (e) {
+        $$("#btn-wizard-start").css("display", "none");
+        $$("#btn-wizard-arrow").show();
+    });
+
+
+
 
 });
-
-
-
 
 
 myApp.onPageInit('report', function (page) {
@@ -106,18 +113,14 @@ $$('.panel-close').on('click', function (e) {
     myApp.closePanel();
 });
 
-
 $$('#start_wizard').on('click', function (e) {
     myApp.closeModal('.start-popup');
     mainView.router.loadPage('wizard.html');
 });
 
 
-
-
-$$('#next_swip').on('click', function (e) {
-    var mySwiper = $$('.swiper-container')[0].swiper;
-// Here you can use all slider methods like:
+$$('.hide-navbar').on('click', function () {
+    mainView.hideNavbar();
 });
 
 
