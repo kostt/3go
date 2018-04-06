@@ -169,7 +169,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="wizard-swip">
-                                <h2>В дополнение<br> к необходимому<br> времени (максимум 15<br> часов в неделю), я могу<br> дополнительно выделить<br> (Х часов)</h2>
+                                <h2>В дополнение к необходимому времени (максимум 15 часов в неделю), я могу дополнительно выделить (Х часов)</h2>
                                 <div class="row wiz-box">
                                     <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="0" type="text"><span class="wizard-in-input-text3">часов</span></div>
                                 </div>
@@ -297,33 +297,40 @@
                                 <h2>Мой часовой пояс</h2>
 
                                 <div class="list-block">
-                                    <ul>
-                                        <a href="#" class="item-link smart-select">
-                                            <select name="fruits">
-                                                <option value="apple" selected>Apple</option>
-                                                <option value="pineapple">Pineapple</option>
-                                            </select>
-                                            <div class="item-content">
-                                                <div class="item-inner">
-                                                    <div class="item-title">Fruit</div>
-                                                    <div class="item-after">Apple</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <li>
-                                    </ul>
-                                </div>
 
-                                <div class = "item-content">
-                                    <div class = "item-inner">
-                                        <div class = "item-title">Countries</div>
-                                    </div>
+                                    <a href="#" class="item-link smart-select smart-select-init" data-open-in="popup" data-page-title="Часовой пояс" data-back-text="Назад">
+                                        <select name="fruits">
+                                            <option value="apple">UTC+7</option>
+                                            <option value="pineapple">UTC+8</option>
+                                        </select>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-after">Apple</div>
+                                                <div class="smart-select-arrow-bottom"></div>
+                                            </div>
+                                        </div>
+                                    </a>
+
                                 </div>
-                                </a>
 
                                 <h2>Мой главный старт состоится</h2>
 
+                                <div class="block block-strong no-padding">
+                                    <div id="calendar-inline-container"></div>
+                                </div>
 
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wizard-swip">
+                                <div class="img_chart_scale2" id="start_traning">
+                                    <div class="ringbase ring1"></div>
+                                    <div class="ringbase ring2"></div>
+                                    <div class="pulse"></div>
+                                    <div class="chart_scale_time2"><div class="oval"></div>ВПЕРЕД,<br>К ЦЕЛИ!</div>
+                                </div>
+                                <div class="last_slide_text"><p class="text-in">Расчитать мои тренировочные нагрузки и сформировать план</p></div>
                             </div>
                         </div>
                     </div>
@@ -331,7 +338,7 @@
                     <div class="swiper-pagination"></div>
 
                     <p class="buttons-row">
-                        <button type="submit" class="button button-big button-raised button-fill btn-border rous">Далее</button>
+                        <button type="submit" id="next_swip" class="button button-big button-raised button-fill btn-border rous">Далее</button>
                     </p>
 
                 </div>
