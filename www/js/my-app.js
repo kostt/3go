@@ -51,7 +51,7 @@ myApp.onPageInit('wizard', function (page) {
         speed: 400,
         spaceBetween: 100,
         preventClicks: true,
-        loop: true,
+        loop: false,
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
