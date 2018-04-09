@@ -75,11 +75,27 @@ myApp.onPageInit('wizard', function (page) {
     $$('#prew_swip').on('click', function (e) {
         var mySwiper = $$('.swiper-container')[0].swiper;
         mySwiper.slidePrev();
+        if(mySwiper.activeIndex == 0){
+            $$("#btn-wizard-start").show();
+            $$(".btn-wizard-arrow").css("display", "none");
+        }
     });
 
     $$('#next_swip').on('click', function (e) {
         var mySwiper = $$('.swiper-container')[0].swiper;
         mySwiper.slideNext();
+    });
+
+    $$('#next_swip2').on('click', function (e) {
+        var mySwiper = $$('.swiper-container')[0].swiper;
+        mySwiper.slideNext();
+
+        if(mySwiper.activeIndex == 9){
+            $$(".btn-wizard-arrow").css("display", "none");
+            $$(".swiper-pagination").css("display", "none");
+        }
+
+
     });
 
     $$('.show-navbar').on('click', function () {
@@ -92,7 +108,7 @@ myApp.onPageInit('wizard', function (page) {
 
     $$('#btn-wizard-start').on('click', function (e) {
         $$("#btn-wizard-start").css("display", "none");
-        $$("#btn-wizard-arrow").show();
+        $$(".btn-wizard-arrow").show();
     });
 
 
