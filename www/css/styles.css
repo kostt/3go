@@ -415,7 +415,10 @@ h2{
     position: absolute;
     left:70px;
     top:30px;
+    z-index: 20;
 }
+
+
 
 .chart_scale_time2{
     position: absolute;
