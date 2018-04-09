@@ -47,7 +47,7 @@ myApp.onPageInit('plan', function (page) {
     var myLineChart = new Chart(document.getElementById("canvas").getContext("2d")).Line(LineChart, options);
 
 
-    var pieData1 = [{value: 90, color: 'blue', highlight: "transparent",}, {value: 10, color: 'transparent'}];
+    var pieData1 = [{value: 90, color: 'deepskyblue', highlight: "transparent",}, {value: 10, color: 'transparent'}];
     var options1 = {segmentShowStroke: false}
     var context1 = document.getElementById('skills').getContext('2d');
     var skillsChart1 = new Chart(context1).Pie(pieData1, options1);
