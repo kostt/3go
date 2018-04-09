@@ -47,6 +47,24 @@ myApp.onPageInit('plan', function (page) {
     var myLineChart = new Chart(document.getElementById("canvas").getContext("2d")).Line(LineChart, options);
 
 
+    var pieData1 = [{value: 90, color: 'blue', highlight: "transparent",}, {value: 10, color: 'transparent'}];
+    var options1 = {segmentShowStroke: false}
+    var context1 = document.getElementById('skills').getContext('2d');
+    var skillsChart1 = new Chart(context1).Pie(pieData1, options1);
+
+    var pieData2 = [{value: 70, color: 'white', highlight: "transparent",}, {value: 30, color: 'transparent'}];
+    var options2 = {segmentShowStroke: false}
+    var context2 = document.getElementById('skills2').getContext('2d');
+    var skillsChart2 = new Chart(context2).Pie(pieData2, options2);
+
+    var pieData3 = [{value: 50, color: '#fe2d88', highlight: "transparent",}, {value: 50, color: 'transparent'}];
+    var options3 = {segmentShowStroke: false}
+    var context3 = document.getElementById('skills3').getContext('2d');
+    var skillsChart3 = new Chart(context3).Pie(pieData3, options3);
+
+
+
+
 
 
     $$("#create_report").click(function(){
@@ -156,6 +174,8 @@ myApp.onPageInit('report', function (page) {
 
 myApp.onPageInit('statistics', function (page) {
 
+
+
     var LineChart = {
         labels : ["Sun", "Mon","Tues","Wed","Thur","Fri","Sat"],
         datasets : [
@@ -172,6 +192,7 @@ myApp.onPageInit('statistics', function (page) {
                 pointColor : "transparent",
                 pointStrokeColor : "transparent",
                 data : [20,30,20,50,20,60,20,70,20,80],
+                lineWidth: 10,
             }
         ],
     }
@@ -180,10 +201,10 @@ myApp.onPageInit('statistics', function (page) {
         scaleFontSize : 12,
         scaleFontColor : "grey",
         scaleShowLabels: false,
-
     }
 
-    var myLineChart = new Chart(document.getElementById("canvas").getContext("2d")).Line(LineChart, options);
+    var ctx = document.getElementById("canvas").getContext("2d");
+    var myLineChart = new Chart(ctx).Line(LineChart, options);
 
 
 });
