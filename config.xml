@@ -13,7 +13,8 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#292929" />
     <preference name="orientation" value="portrait" />
-
+    <allow-navigation href="*youtube*" />
+    <allow-navigation href="*ytimg*" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
