@@ -24,6 +24,15 @@ $$(document).on('deviceready', function() {
 
 myApp.onPageInit('plan', function (page) {
 
+    $$('.img_chart_scale').animate(
+            {
+                'opacity': 1,
+            }, {
+            // Animation duraion in ms, optional (default to 300)
+            duration: 3000,
+        }
+        );
+
     var LineChart = {
         labels : ["10", "20","30","40","50","60"],
         datasets : [
