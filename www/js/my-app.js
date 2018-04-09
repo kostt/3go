@@ -23,6 +23,32 @@ $$(document).on('deviceready', function() {
 
 
 myApp.onPageInit('plan', function (page) {
+
+    var LineChart = {
+        labels : ["10", "20","30","40","50","60"],
+        datasets : [
+            {
+                fillColor : "transparent",
+                strokeColor : "#fe2d88",
+                pointColor : "transparent",
+                pointStrokeColor : "transparent",
+                data : [10,20,10,30,10,40,10,50,10,60],
+            }
+        ],
+    }
+
+    var options = {
+        scaleFontSize : 14,
+        scaleFontColor : "white",
+        scaleShowLabels: false,
+        scaleShowGridLines : false,
+    }
+
+    var myLineChart = new Chart(document.getElementById("canvas").getContext("2d")).Line(LineChart, options);
+
+
+
+
     $$("#create_report").click(function(){
         mainView.router.loadPage('report.html')
     });
@@ -123,6 +149,46 @@ myApp.onPageInit('report', function (page) {
     var slider3 = new Slider('#ex3');
     var slider4 = new Slider('#ex4');
 });
+
+
+
+
+
+myApp.onPageInit('statistics', function (page) {
+
+    var LineChart = {
+        labels : ["Sun", "Mon","Tues","Wed","Thur","Fri","Sat"],
+        datasets : [
+            {
+                fillColor : "transparent",
+                strokeColor : "#fe2d88",
+                pointColor : "transparent",
+                pointStrokeColor : "transparent",
+                data : [10,20,10,30,10,40,10,50,10,60],
+            },
+            {
+                fillColor : "transparent",
+                strokeColor : "white",
+                pointColor : "transparent",
+                pointStrokeColor : "transparent",
+                data : [20,30,20,50,20,60,20,70,20,80],
+            }
+        ],
+    }
+
+    var options = {
+        scaleFontSize : 12,
+        scaleFontColor : "grey",
+        scaleShowLabels: false,
+
+    }
+
+    var myLineChart = new Chart(document.getElementById("canvas").getContext("2d")).Line(LineChart, options);
+
+
+});
+
+
 
 
 $$('.panel-close').on('click', function (e) {

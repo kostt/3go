@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/Chart.min.js" afterPath="$PROJECT_DIR$/www/js/Chart.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/plan.html" afterPath="$PROJECT_DIR$/www/plan.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/statistics.html" afterPath="$PROJECT_DIR$/www/statistics.html" />
     </list>
     <ignored path="3go.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,13 +36,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="4" />
+            <state relative-caret-position="367">
+              <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
               <folding>
-                <marker date="1523268066624" expanded="true" signature="361:458" ph="{...}" />
+                <marker date="1523278574224" expanded="true" signature="361:458" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -49,8 +51,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="74" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
+            <state relative-caret-position="1620">
+              <caret line="117" column="66" selection-start-line="117" selection-start-column="66" selection-end-line="117" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statistics.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/statistics.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="30" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -59,14 +71,14 @@
       <file leaf-file-name="plan.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/plan.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -103,7 +115,6 @@
         <option value="$PROJECT_DIR$/www/img/btn_1_on_1.svg" />
         <option value="$PROJECT_DIR$/www/img/btn_analytics.svg" />
         <option value="$PROJECT_DIR$/www/img/btn_settings.svg" />
-        <option value="$PROJECT_DIR$/www/js/Chart.min.js" />
         <option value="$PROJECT_DIR$/www/js/bootstrap-slider.min.js" />
         <option value="$PROJECT_DIR$/www/css/bootstrap-slider.min.css" />
         <option value="$PROJECT_DIR$/www/img/img_toolbar_bike.svg" />
@@ -111,17 +122,18 @@
         <option value="$PROJECT_DIR$/www/1on1.html" />
         <option value="$PROJECT_DIR$/www/camps.html" />
         <option value="$PROJECT_DIR$/www/extras.html" />
-        <option value="$PROJECT_DIR$/www/plan.html" />
         <option value="$PROJECT_DIR$/www/report.html" />
-        <option value="$PROJECT_DIR$/www/statistics.html" />
         <option value="$PROJECT_DIR$/www/start.html" />
         <option value="$PROJECT_DIR$/www/js/swiper.min.js" />
         <option value="$PROJECT_DIR$/www/css/framework7-icons.css" />
         <option value="$PROJECT_DIR$/www/css/styles.css" />
         <option value="$PROJECT_DIR$/www/wizard.html" />
-        <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/js/my-app.js" />
         <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/www/js/Chart.min.js" />
+        <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/plan.html" />
+        <option value="$PROJECT_DIR$/www/statistics.html" />
+        <option value="$PROJECT_DIR$/www/js/my-app.js" />
       </list>
     </option>
   </component>
@@ -229,24 +241,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3go.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3go.com" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -334,12 +328,12 @@
       <workItem from="1522914761314" duration="18000" />
       <workItem from="1522921008010" duration="18663000" />
       <workItem from="1523001132177" duration="18185000" />
-      <workItem from="1523260906840" duration="5011000" />
+      <workItem from="1523260906840" duration="14063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101263000" />
+    <option name="totallyTimeSpent" value="110315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -387,7 +381,7 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1523268066624" expanded="true" signature="361:458" ph="{...}" />
+            <marker date="1523278574224" expanded="true" signature="361:458" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -487,7 +481,7 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1523268066624" expanded="true" signature="361:458" ph="{...}" />
+            <marker date="1523278574224" expanded="true" signature="361:458" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -544,13 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/Chart.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="159438" selection-start-line="9" selection-start-column="159438" selection-end-line="9" selection-end-column="159438" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/bootstrap-slider.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -594,20 +581,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/start.html" />
-    <entry file="file://$PROJECT_DIR$/www/statistics.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/swiper.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -629,14 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/plan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -655,21 +620,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
+    <entry file="file://$PROJECT_DIR$/www/js/Chart.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="74" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
+        <state relative-caret-position="3075">
+          <caret line="38" column="433" selection-start-line="38" selection-start-column="433" selection-end-line="38" selection-end-column="433" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="4" />
-          <folding>
-            <marker date="1523268066624" expanded="true" signature="361:458" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,6 +633,48 @@
         <state relative-caret-position="240">
           <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/plan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="117" column="66" selection-start-line="117" selection-start-column="66" selection-end-line="117" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/statistics.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="180" column="30" selection-start-line="180" selection-start-column="30" selection-end-line="180" selection-end-column="30" />
+          <folding>
+            <marker date="1523278574224" expanded="true" signature="361:458" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
