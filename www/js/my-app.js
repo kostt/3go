@@ -24,14 +24,18 @@ $$(document).on('deviceready', function() {
 
 myApp.onPageInit('plan', function (page) {
 
-    $$('.img_chart_scale').animate(
+    myApp.showPreloader();
+    setTimeout(function () {
+        myApp.hidePreloader();
+        $$('.img_chart_scale').animate(
             {
                 'opacity': 1,
             }, {
-            // Animation duraion in ms, optional (default to 300)
-            duration: 3000,
-        }
+                duration: 1000,
+            }
         );
+    }, 500);
+
 
     var LineChart = {
         labels : ["10", "20","30","40","50","60"],
@@ -175,6 +179,67 @@ myApp.onPageInit('report', function (page) {
     var slider2 = new Slider('#ex2');
     var slider3 = new Slider('#ex3');
     var slider4 = new Slider('#ex4');
+});
+
+
+myApp.onPageInit('camps', function (page) {
+
+    $$.ajax({
+        url: 'http://3go-api.local/3go/camps',
+        method: 'post',
+        dataType: 'json',
+        crossDomain: true,
+        beforeSend: function() {myApp.showPreloader();},
+        complete: function() {myApp.hidePreloader();},
+        success: function (data) {
+
+            if (data.error) {
+                myApp.addNotification({
+                    title: 'Внимание!',
+                    message: data.error,
+                    hold: 3000,
+                    button: {
+                        text: 'Закрыть',
+                        color: 'blue'
+                    }
+                });
+
+            } else {
+
+                    var count = data.length-1;
+                    if (count>=1) {
+
+                        for (i = 0; i <= count; i++) {
+
+                            $$(".camps_result").append(
+                                '<div class="row sport-block2">'+
+                                '<div class="camp-box">'+
+                                '<div class="row text-in3">'+data[i].created_at+'</div>'+
+                                '<div class="row text-in2">'+data[i].name+'</div>'+
+                                '</div></div>');
+                        }
+                    }else{
+
+                        $$(".camps_result").append('<div class="row text-in2">Записи отсутствуют</div>');
+
+                    }
+
+            }
+        },
+        error: function(data) {
+
+            myApp.addNotification({
+                title: 'Внимание',
+                message: 'Ппроизошла ошибка. Проверьте соединение с интернетом',
+                hold: 3000,
+                button: {
+                    text: 'Закрыть',
+                    color: 'blue'
+                }
+            });
+        }
+    });
+
 });
 
 
