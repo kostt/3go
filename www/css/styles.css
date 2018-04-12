@@ -136,6 +136,7 @@ a{
 
 .img_toolbar2{
     margin-right:30px;
+    margin-top: 18.5px;
 }
 
 h1{
@@ -214,6 +215,28 @@ h2{
     width: 100% !important;
     border: 2px solid grey;
     color: grey;
+}
+
+
+
+.btn-wizard3{
+    width: 100% !important;
+    border: 2px solid #434343;
+    color: white;
+    background-color: #434343;
+}
+
+.button.btn-wizard3.active{
+    border-color: #fe2d88;
+    background-color: #434343;
+}
+
+.btn-wizard3.active-state{
+    background-color: #434343;
+}
+
+.btn-wizard3:hover{
+    border-color: #fe2d88;
 }
 
 .button.btn-wizard.active{
@@ -352,6 +375,10 @@ h2{
    margin-top: 50px; position: relative;margin-left: auto;margin-right: auto;width:100%;font-family: MuseoSansCyrl500; font-weight: bold;
 }
 
+.btn-center2{
+    position: relative;margin-left: auto;margin-right: auto;width:100%;font-family: MuseoSansCyrl500; font-weight: bold;
+}
+
 .img_chart_scale{
     position: relative;margin-left: auto;margin-right: auto;margin-top: 50px;width: 189px;opacity: 0;
 }
@@ -405,6 +432,13 @@ h2{
 }
 
 #skills3{
+    position: absolute;
+    margin-top: -26.5px;
+    margin-left: -22.8px;
+    z-index: -4;
+}
+
+#skills4{
     position: absolute;
     margin-top: -26.5px;
     margin-left: -22.8px;
@@ -831,8 +865,69 @@ h2{
 }
 
 
+.list-block ul {
+    background: #434343;
+    color: white;
+}
+
+
+
+.block_video{
+    background-color: rgba(0,0,0,.7);
+    z-index: 99999999;
+    height: 150px;
+    right: 0px;
+    left: 0px;
+    position: absolute;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.block_video_text{
+    color: grey;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
+    position: absolute;
+    left: 20vw;
+    top: 17vw;
+}
+
+
+
+.block_video_text2{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    position: absolute;
+    width: auto;
+    background: #fe2d88;
+    padding: 3px;
+    padding-left: 8px;
+    padding-right: 15px;
+    right: -1vw;
+    bottom: 3vw;
+}
+
+
+.arrow_box {
+    position: absolute;
+    border: 14px solid transparent;	border-right: 10px solid #fe2d88;
+    left: -24px;
+    bottom: 0px;
+}
+
+
+
 @media (max-width: 320px){
 .content-block {
     padding: 0 15px;
 }
+
+    .block_video{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+
 }
