@@ -11,10 +11,10 @@ var mainView = myApp.addView('.view-main', {
 
 });
 
-// if(window.localStorage.getItem('has_run') == null) {
-//     myApp.popup('.start-popup');
+if(window.localStorage.getItem('has_run') == null) {
+    myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-// }
+}
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -23,19 +23,45 @@ $$(document).on('deviceready', function() {
 
 
 myApp.onPageInit('plan', function (page) {
+    plan(3);
+});
+
+
+function plan(category){
+
+    $$(".plan_result").empty();
 
     myApp.showPreloader();
     setTimeout(function () {
         myApp.hidePreloader();
-        $$('.img_chart_scale').animate(
-            {
-                'opacity': 1,
-            }, {
-                duration: 1000,
-            }
-        );
+        $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
     }, 500);
 
+    $$(".cat1").attr('src', '/img/img_rider.svg');
+    $$(".cat2").attr('src', '/img/img_running.svg');
+    $$(".cat3").attr('src', '/img/img_swiming.svg');
+    data = [10,20,10,30,10,40,10,50,10,60];
+    data2 = [90,20,60,30,80,40,20,60,10,20];
+    data3 = [30,10,50,20,70,10,40,80,20,30];
+    if(category == 1){$$(".cat1").attr('src', '/img/img_rider_a.svg'); data = data; value_beg = 10; value_rid = 50; value_swim = 70;}
+    if(category == 2){$$(".cat2").attr('src', '/img/img_running_a.svg');data = data2; value_beg = 50; value_rid = 20; value_swim = 10;}
+    if(category == 3){$$(".cat3").attr('src', '/img/img_swiming_a.svg');data = data3; value_beg = 70; value_rid = 30; value_swim = 90;}
+    value_beg_out = 100-value_beg;
+    value_rid_out = 100-value_rid;
+    value_swim_out = 100-value_swim;
+
+    $$(".plan_result").append(
+        '<div class="img_chart_scale">' +
+        '<div class="first_oval"></div>' +
+        '<div class="first_oval2"></div>' +
+        '<canvas id="skills" width="227" height="227"></canvas>' +
+        '<canvas id="skills2" width="233" height="233"></canvas>' +
+        '<canvas id="skills3" width="239" height="239"></canvas>' +
+        '<div class="chart_scale_time"><div class="chart_scale_hour">12</div><p class="chart_scale_hour_text">часов</p></div>' +
+        '<img src="./img/img_chart_scale.svg">' +
+        '</div>' +
+        '<canvas id="canvas"></canvas>'
+    );
 
     var LineChart = {
         labels : ["10", "20","30","40","50","60"],
@@ -45,7 +71,7 @@ myApp.onPageInit('plan', function (page) {
                 strokeColor : "#fe2d88",
                 pointColor : "transparent",
                 pointStrokeColor : "transparent",
-                data : [10,20,10,30,10,40,10,50,10,60],
+                data : data,
             }
         ],
     }
@@ -59,17 +85,17 @@ myApp.onPageInit('plan', function (page) {
 
     var myLineChart = new Chart(document.getElementById("canvas").getContext("2d")).Line(LineChart, options);
 
-    var pieData1 = [{value: 90, color: 'deepskyblue', highlight: "transparent",}, {value: 10, color: 'transparent'}];
+    var pieData1 = [{value: value_beg, color: 'deepskyblue', highlight: "transparent",}, {value: value_beg_out, color: 'transparent'}];
     var options1 = {segmentShowStroke: false}
     var context1 = document.getElementById('skills').getContext('2d');
     var skillsChart1 = new Chart(context1).Pie(pieData1, options1);
 
-    var pieData2 = [{value: 70, color: 'white', highlight: "transparent",}, {value: 30, color: 'transparent'}];
+    var pieData2 = [{value: value_rid, color: 'white', highlight: "transparent",}, {value: value_rid_out, color: 'transparent'}];
     var options2 = {segmentShowStroke: false}
     var context2 = document.getElementById('skills2').getContext('2d');
     var skillsChart2 = new Chart(context2).Pie(pieData2, options2);
 
-    var pieData3 = [{value: 50, color: '#fe2d88', highlight: "transparent",}, {value: 50, color: 'transparent'}];
+    var pieData3 = [{value: value_swim, color: '#fe2d88', highlight: "transparent",}, {value: value_swim_out, color: 'transparent'}];
     var options3 = {segmentShowStroke: false}
     var context3 = document.getElementById('skills3').getContext('2d');
     var skillsChart3 = new Chart(context3).Pie(pieData3, options3);
@@ -78,9 +104,22 @@ myApp.onPageInit('plan', function (page) {
         mainView.router.loadPage('report.html')
     });
 
-});
+}
+
+
+
 
 myApp.onPageInit('wizard', function (page) {
+
+    $$('.pol').on('click', function () {$$('.pol').removeClass('active');$$(this).addClass('active');});
+    $$('.osob').on('click', function () {$$('.osob').removeClass('active');$$(this).addClass('active');});
+    $$('.triatlon').on('click', function () {$$('.triatlon').removeClass('active');$$(this).addClass('active');});
+    $$('.sprint').on('click', function () {$$('.sprint').removeClass('active');$$(this).addClass('active');});
+    $$('.ol_triat').on('click', function () {$$('.ol_triat').removeClass('active');$$(this).addClass('active');});
+    $$('.half').on('click', function () {$$('.half').removeClass('active');$$(this).addClass('active');});
+    $$('.long').on('click', function () {$$('.long').removeClass('active');$$(this).addClass('active');});
+    $$('.luch_start').on('click', function () {$$('.luch_start').removeClass('active');$$(this).addClass('active');});
+    $$('.kalendar').on('click', function () {$$('.kalendar').removeClass('active');$$(this).addClass('active');});
 
     var mySwiper = new Swiper('.swiper-container', {
         loop: false,
@@ -145,8 +184,6 @@ myApp.onPageInit('wizard', function (page) {
             $$(".btn-wizard-arrow").css("display", "none");
             $$(".swiper-pagination").css("display", "none");
         }
-
-
     });
 
     $$('.show-navbar').on('click', function () {
@@ -176,7 +213,6 @@ myApp.onPageInit('wizard', function (page) {
                 myApp.hidePreloader();
             }
         });
-        
     });
 
     $$('#btn-wizard-start').on('click', function (e) {
@@ -230,7 +266,6 @@ myApp.onPageInit('camps', function (page) {
                         $$(".camps_result").append('<div class="row text-in2 sport-block2">Записи отсутствуют</div>');
 
                     }
-
             }
         },
         error: function(data) {
@@ -238,20 +273,27 @@ myApp.onPageInit('camps', function (page) {
             myApp.hidePreloader();
         }
     });
-
 });
+
+
+
 
 
 
 myApp.onPageInit('extras', function (page) {
-
     extras(1);
-
 });
 
 function extras(category) {
 
+    $$(".cat1").attr('src', '/img/img_rider.svg');
+    $$(".cat2").attr('src', '/img/img_running.svg');
+    $$(".cat3").attr('src', '/img/img_swiming.svg');
     $$(".extras_video").empty();
+
+    if(category == 1){$$(".cat1").attr('src', '/img/img_rider_a.svg');}
+    if(category == 2){$$(".cat2").attr('src', '/img/img_running_a.svg');}
+    if(category == 3){$$(".cat3").attr('src', '/img/img_swiming_a.svg');}
 
     $$.ajax({
         url: 'http://3go-api.local/3go/extras',
@@ -272,7 +314,6 @@ function extras(category) {
 
                     data.forEach(function(element, item) {
 
-
                         if(item == 0){
                             $$(".extras_result").append(
                                 '<div class="row extras_video">' +
@@ -286,15 +327,8 @@ function extras(category) {
                                 element.video +
                                 '<p class="text-in2">' + element.name + '</p></div>');
                         }
-
-
-
-
                     });
 
-
-
-                    
                 }else{
 
                     $$(".extras_result").append('<div class="row text-in2 extras_video">Записи отсутствуют</div>');
@@ -319,22 +353,49 @@ function extras(category) {
 
 myApp.onPageInit('statistics', function (page) {
 
+    var stat_time = $$('.btn-stat.active').val();
+    statistics(stat_time);
+
+    $$('.btn-stat').on('click', function () {
+        $$('.btn-stat').removeClass('active');
+        $$(this).addClass('active');
+        var stat_time = $$(this).val();
+        statistics(stat_time);
+    });
+});
+
+function statistics(stat_time){
+
+    $$(".statistics_result").empty();
+    $$(".statistics_result").append('<canvas id="canvas3"></canvas>');
+
+    data1 = [40,10,30,60,30,40,40];
+    data2 = [20,20,10,40,60,70,45];
+    data3 = [50,10,30,60,50,40,30];
+    labels = ["Sun", "Mon","Tues","Wed","Thur","Fri","Sat"];
+    labels2 = ["1","30"];
+    labels3 = ["1","2","3","4","5","6"];
+
+    if(stat_time == 1){data = data1;data2 = data2;labels = labels;}
+    if(stat_time == 2){data = data3;data2 = data1;labels = labels2;}
+    if(stat_time == 3){data = data2;data2 = data3;labels = labels3;}
+    
     var LineChart = {
-        labels : ["Sun", "Mon","Tues","Wed","Thur","Fri","Sat"],
+        labels : labels,
         datasets : [
             {
                 fillColor : "transparent",
                 strokeColor : "#fe2d88",
                 pointColor : "transparent",
                 pointStrokeColor : "transparent",
-                data : [10,20,10,30,10,40,10],
+                data : data,
             },
             {
                 fillColor : "transparent",
                 strokeColor : "white",
                 pointColor : "transparent",
                 pointStrokeColor : "transparent",
-                data : [20,30,20,50,20,60,20],
+                data : data2,
             }
         ],
     }
@@ -345,10 +406,13 @@ myApp.onPageInit('statistics', function (page) {
         scaleShowLabels: false,
     }
 
-    var ctx = document.getElementById("canvas").getContext("2d");
+    var ctx = document.getElementById("canvas3").getContext("2d");
     var myLineChart = new Chart(ctx).Line(LineChart, options);
 
-});
+}
+
+
+
 
 
 myApp.onPageInit('auth', function (page) {
@@ -398,7 +462,6 @@ myApp.onPageInit('auth', function (page) {
 
 
 myApp.onPageInit('registration', function (page) {
-
 
     $$('#register_user').on('click', function (e) {
 
@@ -451,20 +514,48 @@ myApp.onPageInit('registration', function (page) {
 
 myApp.onPageInit('training', function (page) {
 
+    $$('.btn-wizard3').on('click', function () {
+        $$('.btn-wizard3').removeClass('active');
+        $$(this).addClass('active');
+        tran_time = $$(this).val();
+        training(tran_time);
+    });
+
+    training(1);
+});
+
+
+function training(tran_time){
+
+    if(tran_time == 1){tran_value = 50; data = [10,20,30,40,50,60,70]; hour = 5;}
+    if(tran_time == 2){tran_value = 10; data = [90,80,70,60,50,30,20]; hour = 12;}
+    if(tran_time == 3){tran_value = 70; data = [10,20,30,40,50,60,70]; hour = 6;}
+    if(tran_time == 4){tran_value = 90; data = [90,80,70,60,50,30,20]; hour = 3;}
+    tran_value_out = 100-tran_value;
+
+    $$(".training_result").empty();
+    $$(".training_result").append(
+        '<div class="img_chart_scale">' +
+        '<div class="first_oval"></div>' +
+        '<div class="first_oval2"></div>' +
+        '<canvas id="skills4" width="239" height="239"></canvas>' +
+        '<div class="chart_scale_time"><div class="chart_scale_hour">'+hour+'</div><p class="chart_scale_hour_text">часов</p></div>' +
+        '<img src="./img/img_chart_scale.svg"></div>' +
+        '<div class="btn-center"><p class="buttons-row"><canvas id="canvas2"></canvas></p></div>'
+        );
+
+    var pieData4 = [{value: tran_value, color: '#fe2d88', highlight: "transparent",}, {value: tran_value_out, color: 'transparent'}];
+    var options4 = {segmentShowStroke: false}
+    var context4 = document.getElementById('skills4').getContext('2d');
+    var skillsChart4 = new Chart(context4).Pie(pieData4, options4);
+
     myApp.showPreloader();
     setTimeout(function () {
         myApp.hidePreloader();
-        $$('.img_chart_scale').animate(
-            {
-                'opacity': 1,
-            }, {
-                duration: 1000,
-            }
-        );
+        $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
     }, 500);
 
-
-    var LineChart = {
+    var LineChart6 = {
         labels : ["Sun", "Mon","Tues","Wed","Thur","Fri","Sat"],
         datasets : [
             {
@@ -472,28 +563,21 @@ myApp.onPageInit('training', function (page) {
                 strokeColor : "#fe2d88",
                 pointColor : "#fe2d88",
                 pointStrokeColor : "#fe2d88",
-                data : [10,20,30,40,50,60,70],
+                data : data,
             }
         ],
     }
 
-    var options = {
+    var options6 = {
         scaleFontSize : 14,
         scaleFontColor : "white",
         scaleShowLabels: false,
         scaleShowGridLines : false,
     }
 
-    var myLineChart = new Chart(document.getElementById("canvas2").getContext("2d")).Bar(LineChart, options);
-    
-    var pieData4 = [{value: 50, color: '#fe2d88', highlight: "transparent",}, {value: 50, color: 'transparent'}];
-    var options4 = {segmentShowStroke: false}
-    var context4 = document.getElementById('skills4').getContext('2d');
-    var skillsChart4 = new Chart(context4).Pie(pieData4, options4);
+    var myLineChart6 = new Chart(document.getElementById("canvas2").getContext("2d")).Bar(LineChart6, options6);
 
-    
-
-});
+}
 
 
 
