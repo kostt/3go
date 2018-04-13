@@ -536,6 +536,10 @@ function training(tran_time){
 
     myApp.showPreloader();
     setTimeout(function () {
+        var pieData4 = [{value: tran_value, color: '#fe2d88', highlight: "transparent",}, {value: tran_value_out, color: 'transparent'}];
+        var options4 = {segmentShowStroke: false}
+        var context4 = document.getElementById('skills4').getContext('2d');
+        var skillsChart4 = new Chart(context4).Pie(pieData4, options4);
         myApp.hidePreloader();
         $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
     }, 500);
@@ -579,10 +583,7 @@ function training(tran_time){
 
     var myLineChart6 = new Chart(document.getElementById("canvas2").getContext("2d")).Bar(LineChart6, options6);
 
-    var pieData4 = [{value: tran_value, color: '#fe2d88', highlight: "transparent",}, {value: tran_value_out, color: 'transparent'}];
-    var options4 = {segmentShowStroke: false}
-    var context4 = document.getElementById('skills4').getContext('2d');
-    var skillsChart4 = new Chart(context4).Pie(pieData4, options4);
+    
 
 }
 
