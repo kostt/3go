@@ -243,6 +243,7 @@ myApp.onPageInit('camps', function (page) {
         method: 'post',
         dataType: 'json',
         crossDomain: true,
+        timeout: 3000,
         beforeSend: function() {myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {

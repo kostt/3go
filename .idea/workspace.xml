@@ -35,14 +35,14 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="293" column="32" selection-start-line="293" selection-start-column="32" selection-end-line="293" selection-end-column="32" />
+            <state relative-caret-position="120">
+              <caret line="245" column="22" selection-start-line="245" selection-start-column="22" selection-end-line="245" selection-end-column="22" />
               <folding>
-                <marker date="1523606489578" expanded="true" signature="7708:8466" ph="{&quot;url&quot;: 'http://3go-api.local/3go/start'...}" />
-                <marker date="1523606489578" expanded="true" signature="8053:8273" ph="{...}" />
-                <marker date="1523606489578" expanded="true" signature="8101:8165" ph="{...}" />
-                <marker date="1523606489578" expanded="true" signature="8171:8256" ph="{...}" />
-                <marker date="1523606489578" expanded="true" signature="8312:8453" ph="{...}" />
+                <marker date="1523606901557" expanded="true" signature="7708:8466" ph="{&quot;url&quot;: 'http://3go-api.local/3go/start'...}" />
+                <marker date="1523606901557" expanded="true" signature="8053:8273" ph="{...}" />
+                <marker date="1523606901557" expanded="true" signature="8101:8165" ph="{...}" />
+                <marker date="1523606901557" expanded="true" signature="8171:8256" ph="{...}" />
+                <marker date="1523606901557" expanded="true" signature="8312:8453" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -310,12 +310,12 @@
       <workItem from="1523520732247" duration="12261000" />
       <workItem from="1523539435341" duration="6790000" />
       <workItem from="1523605990280" duration="175000" />
-      <workItem from="1523606354332" duration="155000" />
+      <workItem from="1523606354332" duration="548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157607000" />
+    <option name="totallyTimeSpent" value="158000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -411,11 +411,11 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1523606489578" expanded="true" signature="7708:8466" ph="{&quot;url&quot;: 'http://3go-api.local/3go/start'...}" />
-            <marker date="1523606489578" expanded="true" signature="8053:8273" ph="{...}" />
-            <marker date="1523606489578" expanded="true" signature="8101:8165" ph="{...}" />
-            <marker date="1523606489578" expanded="true" signature="8171:8256" ph="{...}" />
-            <marker date="1523606489578" expanded="true" signature="8312:8453" ph="{...}" />
+            <marker date="1523606901557" expanded="true" signature="7708:8466" ph="{&quot;url&quot;: 'http://3go-api.local/3go/start'...}" />
+            <marker date="1523606901557" expanded="true" signature="8053:8273" ph="{...}" />
+            <marker date="1523606901557" expanded="true" signature="8101:8165" ph="{...}" />
+            <marker date="1523606901557" expanded="true" signature="8171:8256" ph="{...}" />
+            <marker date="1523606901557" expanded="true" signature="8312:8453" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -659,14 +659,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="293" column="32" selection-start-line="293" selection-start-column="32" selection-end-line="293" selection-end-column="32" />
+        <state relative-caret-position="120">
+          <caret line="245" column="22" selection-start-line="245" selection-start-column="22" selection-end-line="245" selection-end-column="22" />
           <folding>
-            <marker date="1523606489578" expanded="true" signature="7708:8466" ph="{&quot;url&quot;: 'http://3go-api.local/3go/start'...}" />
-            <marker date="1523606489578" expanded="true" signature="8053:8273" ph="{...}" />
-            <marker date="1523606489578" expanded="true" signature="8101:8165" ph="{...}" />
-            <marker date="1523606489578" expanded="true" signature="8171:8256" ph="{...}" />
-            <marker date="1523606489578" expanded="true" signature="8312:8453" ph="{...}" />
+            <marker date="1523606901557" expanded="true" signature="7708:8466" ph="{&quot;url&quot;: 'http://3go-api.local/3go/start'...}" />
+            <marker date="1523606901557" expanded="true" signature="8053:8273" ph="{...}" />
+            <marker date="1523606901557" expanded="true" signature="8101:8165" ph="{...}" />
+            <marker date="1523606901557" expanded="true" signature="8171:8256" ph="{...}" />
+            <marker date="1523606901557" expanded="true" signature="8312:8453" ph="{...}" />
           </folding>
         </state>
       </provider>
