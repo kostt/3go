@@ -37,15 +37,15 @@ function plan(category){
         $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
     }, 500);
 
-    $$(".cat1").attr('src', '/img/img_rider.svg');
-    $$(".cat2").attr('src', '/img/img_running.svg');
-    $$(".cat3").attr('src', '/img/img_swiming.svg');
+    $$(".cat1").attr('src', './img/img_rider.svg');
+    $$(".cat2").attr('src', './img/img_running.svg');
+    $$(".cat3").attr('src', './img/img_swiming.svg');
     data = [10,20,10,30,10,40,10,50,10,60];
     data2 = [90,20,60,30,80,40,20,60,10,20];
     data3 = [30,10,50,20,70,10,40,80,20,30];
-    if(category == 1){$$(".cat1").attr('src', '/img/img_rider_a.svg'); data = data; value_beg = 10; value_rid = 50; value_swim = 70;}
-    if(category == 2){$$(".cat2").attr('src', '/img/img_running_a.svg');data = data2; value_beg = 50; value_rid = 20; value_swim = 10;}
-    if(category == 3){$$(".cat3").attr('src', '/img/img_swiming_a.svg');data = data3; value_beg = 70; value_rid = 30; value_swim = 90;}
+    if(category == 1){$$(".cat1").attr('src', './img/img_rider_a.svg'); data = data; value_beg = 10; value_rid = 50; value_swim = 70;}
+    if(category == 2){$$(".cat2").attr('src', './img/img_running_a.svg');data = data2; value_beg = 50; value_rid = 20; value_swim = 10;}
+    if(category == 3){$$(".cat3").attr('src', './img/img_swiming_a.svg');data = data3; value_beg = 70; value_rid = 30; value_swim = 90;}
     value_beg_out = 100-value_beg;
     value_rid_out = 100-value_rid;
     value_swim_out = 100-value_swim;
@@ -192,27 +192,29 @@ myApp.onPageInit('wizard', function (page) {
 
     $$('#start_traning').on('click', function (e) {
 
-        $$.ajax({
-            url: 'http://3go-api.local/3go/start',
-            method: 'post',
-            dataType: 'json',
-            data: {},
-            crossDomain: true,
-            beforeSend: function() {myApp.showPreloader();},
-            complete: function() {myApp.hidePreloader();},
-            success: function (data) {
+        mainView.router.loadPage('index.html');
 
-                if (data.error) {
-                    error(data.error);
-                } else {
-                    mainView.router.loadPage('index.html');
-                }
-            },
-            error: function(data) {
-                error('Произошла ошибка. Проверьте соединение с интернетом');
-                myApp.hidePreloader();
-            }
-        });
+        // $$.ajax({
+        //     url: 'http://3go-api.local/3go/start',
+        //     method: 'post',
+        //     dataType: 'json',
+        //     data: {},
+        //     crossDomain: true,
+        //     beforeSend: function() {myApp.showPreloader();},
+        //     complete: function() {myApp.hidePreloader();},
+        //     success: function (data) {
+        //
+        //         if (data.error) {
+        //             error(data.error);
+        //         } else {
+        //             mainView.router.loadPage('index.html');
+        //         }
+        //     },
+        //     error: function(data) {
+        //         error('Произошла ошибка. Проверьте соединение с интернетом');
+        //         myApp.hidePreloader();
+        //     }
+        // });
     });
 
     $$('#btn-wizard-start').on('click', function (e) {
@@ -286,14 +288,14 @@ myApp.onPageInit('extras', function (page) {
 
 function extras(category) {
 
-    $$(".cat1").attr('src', '/img/img_rider.svg');
-    $$(".cat2").attr('src', '/img/img_running.svg');
-    $$(".cat3").attr('src', '/img/img_swiming.svg');
+    $$(".cat1").attr('src', './img/img_rider.svg');
+    $$(".cat2").attr('src', './img/img_running.svg');
+    $$(".cat3").attr('src', './img/img_swiming.svg');
     $$(".extras_video").empty();
 
-    if(category == 1){$$(".cat1").attr('src', '/img/img_rider_a.svg');}
-    if(category == 2){$$(".cat2").attr('src', '/img/img_running_a.svg');}
-    if(category == 3){$$(".cat3").attr('src', '/img/img_swiming_a.svg');}
+    if(category == 1){$$(".cat1").attr('src', './img/img_rider_a.svg');}
+    if(category == 2){$$(".cat2").attr('src', './img/img_running_a.svg');}
+    if(category == 3){$$(".cat3").attr('src', './img/img_swiming_a.svg');}
 
     $$.ajax({
         url: 'http://3go-api.local/3go/extras',
