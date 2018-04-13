@@ -31,6 +31,12 @@ function plan(category){
 
     $$(".plan_result").empty();
 
+    myApp.showPreloader();
+    setTimeout(function () {
+        myApp.hidePreloader();
+        $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
+    }, 500);
+
     $$(".cat1").attr('src', './img/img_rider.svg');
     $$(".cat2").attr('src', './img/img_running.svg');
     $$(".cat3").attr('src', './img/img_swiming.svg');
@@ -546,6 +552,13 @@ function training(tran_time){
         '<div class="btn-center"><p class="buttons-row"><canvas id="canvas2"></canvas></p></div>'
         );
 
+    var pieData4 = [{value: tran_value, color: '#fe2d88', highlight: "transparent",}, {value: tran_value_out, color: 'transparent'}];
+    var options4 = {segmentShowStroke: false}
+    var context4 = document.getElementById('skills4').getContext('2d');
+    var skillsChart4 = new Chart(context4).Pie(pieData4, options4);
+
+    
+
     var LineChart6 = {
         labels : ["Sun", "Mon","Tues","Wed","Thur","Fri","Sat"],
         datasets : [
@@ -567,11 +580,7 @@ function training(tran_time){
     }
 
     var myLineChart6 = new Chart(document.getElementById("canvas2").getContext("2d")).Bar(LineChart6, options6);
-
-    var pieData4 = [{value: tran_value, color: '#fe2d88', highlight: "transparent",}, {value: tran_value_out, color: 'transparent'}];
-    var options4 = {segmentShowStroke: false}
-    var context4 = document.getElementById('skills4').getContext('2d');
-    var skillsChart4 = new Chart(context4).Pie(pieData4, options4);
+    
 
     myApp.showPreloader();
     setTimeout(function () {
