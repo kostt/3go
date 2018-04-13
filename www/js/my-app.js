@@ -31,12 +31,6 @@ function plan(category){
 
     $$(".plan_result").empty();
 
-    myApp.showPreloader();
-    setTimeout(function () {
-        myApp.hidePreloader();
-        $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
-    }, 500);
-
     $$(".cat1").attr('src', './img/img_rider.svg');
     $$(".cat2").attr('src', './img/img_running.svg');
     $$(".cat3").attr('src', './img/img_swiming.svg');
@@ -533,6 +527,8 @@ myApp.onPageInit('training', function (page) {
 
 
 function training(tran_time){
+
+    $$(".training_result").empty();
     
     if(tran_time == 1){tran_value = 50; data = [10,20,30,40,50,60,70]; hour = 5;}
     if(tran_time == 2){tran_value = 10; data = [90,80,70,60,50,30,20]; hour = 12;}
@@ -540,12 +536,11 @@ function training(tran_time){
     if(tran_time == 4){tran_value = 90; data = [90,80,70,60,50,30,20]; hour = 3;}
     tran_value_out = 100-tran_value;
 
-    $$(".training_result").empty();
     $$(".training_result").append(
         '<div class="img_chart_scale">' +
-        '<div class="first_oval"></div>' +
         '<div class="first_oval2"></div>' +
         '<canvas id="skills4" width="239" height="239"></canvas>' +
+        '<div class="first_oval"></div>' +
         '<div class="chart_scale_time"><div class="chart_scale_hour">'+hour+'</div><p class="chart_scale_hour_text">часов</p></div>' +
         '<img src="./img/img_chart_scale.svg"></div>' +
         '<div class="btn-center"><p class="buttons-row"><canvas id="canvas2"></canvas></p></div>'
