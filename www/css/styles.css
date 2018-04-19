@@ -380,7 +380,7 @@ h2{
 }
 
 .img_chart_scale{
-    position: relative;margin-left: auto;margin-right: auto;margin-top: 50px;width: 189px;opacity: 0;
+    position: relative;margin-left: auto;margin-right: auto;margin-top: 50px;width: 189px; height:189px; opacity: 0;
 }
 
 .img_chart_scale2{
@@ -395,7 +395,8 @@ h2{
     color: white;
 }
 
-.img_first_oval{
+.img_chart_scale .img_first_oval{
+    position: absolute;
     z-index: 99;
 }
 
@@ -407,7 +408,7 @@ h2{
     height: 210px;
     background: #303030;
     border-radius: 150px;
-    z-index: -1;
+    z-index: 10;
 }
 
 .first_oval2{

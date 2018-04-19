@@ -115,7 +115,7 @@ function plan(category, obj){
         '<canvas id="skills" style="z-index: -4;" width="239" height="239"></canvas>' +
         '<div class="first_oval"></div>' +
         '<div class="chart_scale_time"><div class="chart_scale_hour">0</div><p class="chart_scale_hour_text">часов</p></div>' +
-        '<img src="./img/img_chart_scale.svg"></div>' +
+        '<img class="img_first_oval" src="./img/img_chart_scale.svg"></div>' +
         '</div>'
     );
 
