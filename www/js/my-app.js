@@ -11,10 +11,10 @@ var mainView = myApp.addView('.view-main', {
 
 });
 
-if(window.localStorage.getItem('has_run') == null) {
-    myApp.popup('.start-popup');
+// if(window.localStorage.getItem('has_run') == null) {
+//     myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-}
+// }
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -23,86 +23,183 @@ $$(document).on('deviceready', function() {
 
 
 myApp.onPageInit('plan', function (page) {
-    plan(3);
-});
 
-
-function plan(category){
+    $$(".cat3").attr('src', './img/img_swiming_a.svg');
 
     $$(".plan_result").empty();
 
-    myApp.showPreloader();
-    setTimeout(function () {
-        myApp.hidePreloader();
-        $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
-    }, 500);
+    $$(".plan_result").append(
+        '<div class="img_chart_scale">' +
+        '<div class="first_oval2"></div>' +
+        '<canvas id="skills" style="z-index: -4;" width="239" height="239"></canvas>' +
+        '<div class="first_oval"></div>' +
+        '<div class="chart_scale_time"><div class="chart_scale_hour">0</div><p class="chart_scale_hour_text">часов</p></div>' +
+        '<img src="./img/img_chart_scale.svg"></div>' +
+        '</div>'
+    );
 
-    $$(".cat1").attr('src', './img/img_rider.svg');
-    $$(".cat2").attr('src', './img/img_running.svg');
-    $$(".cat3").attr('src', './img/img_swiming.svg');
-    data = [10,20,10,30,10,40,10,50,10,60];
-    data2 = [90,20,60,30,80,40,20,60,10,20];
-    data3 = [30,10,50,20,70,10,40,80,20,30];
-    if(category == 1){$$(".cat1").attr('src', './img/img_rider_a.svg'); data = data; value_beg = 10; value_rid = 50; value_swim = 70;}
-    if(category == 2){$$(".cat2").attr('src', './img/img_running_a.svg');data = data2; value_beg = 50; value_rid = 20; value_swim = 10;}
-    if(category == 3){$$(".cat3").attr('src', './img/img_swiming_a.svg');data = data3; value_beg = 70; value_rid = 30; value_swim = 90;}
-    value_beg_out = 100-value_beg;
-    value_rid_out = 100-value_rid;
-    value_swim_out = 100-value_swim;
+    $$.ajax({
+        url: 'http://www.3go.training:8081/api/v1/workout/',
+        method: 'get',
+        crossDomain: true,
+        timeout: 3000,
+        beforeSend: function() {myApp.showPreloader();},
+        complete: function() {myApp.hidePreloader();},
+        success: function (data) {
+
+            $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
+            var obj = JSON.parse(data);
+            $$(".chart_scale_hour").text(obj.swim);
+
+            $$(".cat1").click(function(){
+                $$(".cat1").attr('src', './img/img_rider.svg');
+                $$(".cat2").attr('src', './img/img_running.svg');
+                $$(".cat3").attr('src', './img/img_swiming.svg');
+                $$(".cat1").attr('src', './img/img_rider_a.svg');
+                plan(1, obj);
+
+            });
+
+            $$(".cat2").click(function(){
+                $$(".cat1").attr('src', './img/img_rider.svg');
+                $$(".cat2").attr('src', './img/img_running.svg');
+                $$(".cat3").attr('src', './img/img_swiming.svg');
+                $$(".cat2").attr('src', './img/img_running_a.svg');
+                plan(2, obj);
+
+            });
+
+            $$(".cat3").click(function(){
+                $$(".cat1").attr('src', './img/img_rider.svg');
+                $$(".cat2").attr('src', './img/img_running.svg');
+                $$(".cat3").attr('src', './img/img_swiming.svg');
+                $$(".cat3").attr('src', './img/img_swiming_a.svg');
+                plan(3, obj);
+
+            });
+
+
+            plan(3, obj);
+
+
+        },
+        error: function(data) {
+            error('Произошла ошибка. Проверьте соединение с интернетом');
+            myApp.hidePreloader();
+        }
+    });
+
+
+
+$$("#create_report").click(function(){
+    mainView.router.loadPage('report.html');
+});
+
+
+
+
+});
+
+
+function plan(category, obj){
+
+    $$(".plan_result").empty();
+
+    setTimeout(function () {
+        $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
+    }, 100);
 
     $$(".plan_result").append(
         '<div class="img_chart_scale">' +
-        '<div class="first_oval"></div>' +
         '<div class="first_oval2"></div>' +
-        '<canvas id="skills" width="227" height="227"></canvas>' +
-        '<canvas id="skills2" width="233" height="233"></canvas>' +
-        '<canvas id="skills3" width="239" height="239"></canvas>' +
-        '<div class="chart_scale_time"><div class="chart_scale_hour">12</div><p class="chart_scale_hour_text">часов</p></div>' +
-        '<img src="./img/img_chart_scale.svg">' +
-        '</div>' +
-        '<canvas id="canvas"></canvas>'
+        '<canvas id="skills" style="z-index: -4;" width="239" height="239"></canvas>' +
+        '<div class="first_oval"></div>' +
+        '<div class="chart_scale_time"><div class="chart_scale_hour">0</div><p class="chart_scale_hour_text">часов</p></div>' +
+        '<img src="./img/img_chart_scale.svg"></div>' +
+        '</div>'
     );
 
-    var LineChart = {
-        labels : ["10", "20","30","40","50","60"],
-        datasets : [
-            {
-                fillColor : "transparent",
-                strokeColor : "#fe2d88",
-                pointColor : "transparent",
-                pointStrokeColor : "transparent",
-                data : data,
-            }
-        ],
+    pieData = [obj.bike, obj.run, obj.swim];
+
+    if(category == 1){
+        $$(".chart_scale_hour").text(obj.swim);
     }
 
-    var options = {
-        scaleFontSize : 14,
-        scaleFontColor : "white",
-        scaleShowLabels: false,
-        scaleShowGridLines : false,
+    if(category == 2){
+        $$(".chart_scale_hour").text(obj.run);
     }
 
-    var myLineChart = new Chart(document.getElementById("canvas").getContext("2d")).Line(LineChart, options);
+    if(category == 3){
+        $$(".chart_scale_hour").text(obj.bike);
+    }
 
-    var pieData1 = [{value: value_beg, color: 'deepskyblue', highlight: "transparent",}, {value: value_beg_out, color: 'transparent'}];
-    var options1 = {segmentShowStroke: false}
-    var context1 = document.getElementById('skills').getContext('2d');
-    var skillsChart1 = new Chart(context1).Pie(pieData1, options1);
-
-    var pieData2 = [{value: value_rid, color: 'white', highlight: "transparent",}, {value: value_rid_out, color: 'transparent'}];
-    var options2 = {segmentShowStroke: false}
-    var context2 = document.getElementById('skills2').getContext('2d');
-    var skillsChart2 = new Chart(context2).Pie(pieData2, options2);
-
-    var pieData3 = [{value: value_swim, color: '#fe2d88', highlight: "transparent",}, {value: value_swim_out, color: 'transparent'}];
-    var options3 = {segmentShowStroke: false}
-    var context3 = document.getElementById('skills3').getContext('2d');
-    var skillsChart3 = new Chart(context3).Pie(pieData3, options3);
-
-    $$("#create_report").click(function(){
-        mainView.router.loadPage('report.html')
+    var ctx = document.getElementById("skills").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            datasets: [{
+                backgroundColor: [
+                    "deepskyblue",
+                    "white",
+                    "#fe2d88",
+                ],
+                data: pieData
+            }]
+        },
+        options: {
+            responsive: false,
+            elements: {
+                arc: {
+                    borderWidth: 0
+                }
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: false
+            },
+        }
     });
+
+
+
+    // var LineChart = {
+    //     labels : ["10", "20","30","40","50","60"],
+    //     datasets : [
+    //         {
+    //             fillColor : "transparent",
+    //             strokeColor : "#fe2d88",
+    //             pointColor : "transparent",
+    //             pointStrokeColor : "transparent",
+    //             data : data,
+    //         }
+    //     ],
+    // }
+    //
+    // var options = {
+    //     scaleFontSize : 14,
+    //     scaleFontColor : "white",
+    //     scaleShowLabels: false,
+    //     scaleShowGridLines : false,
+    // }
+    //
+    // var myLineChart = new Chart(document.getElementById("canvas").getContext("2d")).Line(LineChart, options);
+    //
+    // var pieData1 = [{value: value_beg, color: 'deepskyblue', highlight: "transparent",}, {value: value_beg_out, color: 'transparent'}];
+    // var options1 = {segmentShowStroke: false, animation: false}
+    // var context1 = document.getElementById('skills').getContext('2d');
+    // var skillsChart1 = new Chart(context1).Pie(pieData1, options1);
+    //
+    // var pieData2 = [{value: value_rid, color: 'white', highlight: "transparent",}, {value: value_rid_out, color: 'transparent'}];
+    // var options2 = {segmentShowStroke: false, animation: false}
+    // var context2 = document.getElementById('skills2').getContext('2d');
+    // var skillsChart2 = new Chart(context2).Pie(pieData2, options2);
+    //
+    // var pieData3 = [{value: value_swim, color: '#fe2d88', highlight: "transparent",}, {value: value_swim_out, color: 'transparent'}];
+    // var options3 = {segmentShowStroke: false, animation: false}
+    // var context3 = document.getElementById('skills3').getContext('2d');
+    // var skillsChart3 = new Chart(context3).Pie(pieData3, options3);
 
 }
 
@@ -231,6 +328,69 @@ myApp.onPageInit('report', function (page) {
     var slider2 = new Slider('#ex2');
     var slider3 = new Slider('#ex3');
     var slider4 = new Slider('#ex4');
+
+    var jetlag = 0;
+    var sick = 0;
+    var trauma = 0;
+
+    $$('#jetlag').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#jetlag2').removeClass('active'); jetlag = 0;}else{$$(this).addClass('active'); $$('#jetlag2').addClass('active');jetlag = 1;}});
+    $$('#sick').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#sick2').removeClass('active'); sick = 0;}else{$$(this).addClass('active'); $$('#sick2').addClass('active'); sick = 1;}});
+    $$('#trauma').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#trauma2').removeClass('active'); trauma = 0;}else{$$(this).addClass('active'); $$('#trauma2').addClass('active'); trauma = 1;}});
+
+    $$('#report').on('click', function (e) {
+
+        var dream = $$('#ex1').val();
+        var muscules = $$('#ex2').val();
+        var pulse = $$('#ex3').val();
+        var exhaustion = $$('#ex4').val();
+
+        $$.ajax({
+            url: 'http://www.3go.training:8081/api/v1/workout/',
+            method: 'get',
+            crossDomain: true,
+            timeout: 3000,
+            beforeSend: function() {myApp.showPreloader();},
+            complete: function() {myApp.hidePreloader();},
+            success: function (data) {
+                var obj = JSON.parse(data);
+
+                var arr = { swim: obj.swim, bike: obj.bike, run: obj.run, jetlag: jetlag, sick: sick, trauma: trauma,
+                    dream: dream, muscules: muscules, pulse: pulse, exhaustion: exhaustion, date: null};
+
+
+                $$.ajax({
+                    url: 'http://www.3go.training:8081/api/v1/workout/report/',
+                    method: 'post',
+                    dataType: 'json',
+                    data: JSON.stringify(arr),
+                    crossDomain: true,
+                    timeout: 3000,
+                    beforeSend: function() {myApp.showPreloader();},
+                    complete: function() {myApp.hidePreloader();},
+                    success: function (data) {
+
+                        error('Отчет отправлен');
+                    },
+                    error: function(data) {
+                        error('Произошла ошибка. Проверьте соединение с интернетом');
+                        myApp.hidePreloader();
+                    }
+                });
+
+            },
+            error: function(data) {
+                error('Произошла ошибка. Проверьте соединение с интернетом');
+                myApp.hidePreloader();
+            }
+        });
+
+
+
+
+
+
+    });
+
 });
 
 
@@ -384,35 +544,75 @@ function statistics(stat_time){
     if(stat_time == 1){data = data1;data2 = data2;labels = labels;}
     if(stat_time == 2){data = data3;data2 = data1;labels = labels2;}
     if(stat_time == 3){data = data2;data2 = data3;labels = labels3;}
-    
-    var LineChart = {
-        labels : labels,
-        datasets : [
-            {
-                fillColor : "transparent",
-                strokeColor : "#fe2d88",
-                pointColor : "transparent",
-                pointStrokeColor : "transparent",
-                data : data,
+
+    var chartData = {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "P1",
+                fill: false,
+                backgroundColor: 'transparent',
+                borderColor: '#fe2d88',
+                data: data
+            }, {
+                label: "P2",
+                fill: false,
+                backgroundColor: 'transparent',
+                borderColor: 'white',
+                data: data2
+            }]
+        },
+        options: {
+            elements: { point: { radius: 0 } },
+            responsive: false,
+            legend: {
+                display: false
             },
-            {
-                fillColor : "transparent",
-                strokeColor : "white",
-                pointColor : "transparent",
-                pointStrokeColor : "transparent",
-                data : data2,
+            scales: {
+
+                yAxes: [{
+                    display: false,
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }],
             }
-        ],
+
+        }
     }
 
-    var options = {
-        scaleFontSize : 12,
-        scaleFontColor : "grey",
-        scaleShowLabels: false,
-    }
-
-    var ctx = document.getElementById("canvas3").getContext("2d");
-    var myLineChart = new Chart(ctx).Line(LineChart, options);
+    var canvas = document.getElementById('canvas3');
+    var myChart = new Chart(canvas, chartData);
+    
+    // var LineChart = {
+    //     labels : labels,
+    //     datasets : [
+    //         {
+    //             fillColor : "transparent",
+    //             strokeColor : "#fe2d88",
+    //             pointColor : "transparent",
+    //             pointStrokeColor : "transparent",
+    //             data : data,
+    //         },
+    //         {
+    //             fillColor : "transparent",
+    //             strokeColor : "white",
+    //             pointColor : "transparent",
+    //             pointStrokeColor : "transparent",
+    //             data : data2,
+    //         }
+    //     ],
+    // }
+    //
+    // var options = {
+    //     scaleFontSize : 12,
+    //     scaleFontColor : "grey",
+    //     scaleShowLabels: false,
+    // }
+    //
+    // var ctx = document.getElementById("canvas3").getContext("2d");
+    // var myLineChart = new Chart(ctx).Line(LineChart, options);
 
 }
 
@@ -521,71 +721,178 @@ myApp.onPageInit('registration', function (page) {
 
 myApp.onPageInit('training', function (page) {
 
-    $$('.btn-wizard3').on('click', function () {
-        $$('.btn-wizard3').removeClass('active');
-        $$(this).addClass('active');
-        tran_time = $$(this).val();
-        training(tran_time);
+
+    $$.ajax({
+        url: 'http://www.3go.training:8081/api/v1/plan/',
+        method: 'get',
+        crossDomain: true,
+        timeout: 3000,
+        beforeSend: function() {myApp.showPreloader();},
+        complete: function() {myApp.hidePreloader();},
+        success: function (data) {
+
+            $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
+            var obj = JSON.parse(data);
+
+            $$('.btn-wizard3').on('click', function () {
+                $$('.btn-wizard3').removeClass('active');
+                $$(this).addClass('active');
+                tran_time = $$(this).val();
+                training(tran_time, obj);
+            });
+
+            training(1, obj);
+
+        },
+        error: function(data) {
+            error('Произошла ошибка. Проверьте соединение с интернетом');
+            myApp.hidePreloader();
+        }
     });
 
-    training(1);
+
+
+
 });
 
 
-function training(tran_time){
+function training(tran_time, obj){
 
     $$(".training_result").empty();
 
-    myApp.showPreloader();
     setTimeout(function () {
-        myApp.hidePreloader();
         $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
     }, 500);
-    
-    if(tran_time == 1){tran_value = 50; data = [10,20,30,40,50,60,70]; hour = 5;}
-    if(tran_time == 2){tran_value = 10; data = [90,80,70,60,50,30,20]; hour = 12;}
-    if(tran_time == 3){tran_value = 70; data = [10,20,30,40,50,60,70]; hour = 6;}
-    if(tran_time == 4){tran_value = 90; data = [90,80,70,60,50,30,20]; hour = 3;}
-    tran_value_out = 100-tran_value;
 
     $$(".training_result").append(
         '<div class="img_chart_scale">' +
         '<div class="first_oval2"></div>' +
         '<canvas id="skills4" style="z-index: -4;" width="239" height="239"></canvas>' +
         '<div class="first_oval"></div>' +
-        '<div class="chart_scale_time"><div class="chart_scale_hour">'+hour+'</div><p class="chart_scale_hour_text">часов</p></div>' +
+        '<div class="chart_scale_time"><div class="chart_scale_hour">0</div><p class="chart_scale_hour_text">часов</p></div>' +
         '<img src="./img/img_chart_scale.svg"></div>' +
         '<div class="btn-center"><p class="buttons-row"><canvas id="canvas2"></canvas></p></div>'
         );
 
-    var LineChart6 = {
-        labels : ["Sun", "Mon","Tues","Wed","Thur","Fri","Sat"],
-        datasets : [
-            {
-                fillColor : "#fe2d88",
-                strokeColor : "#fe2d88",
-                pointColor : "#fe2d88",
-                pointStrokeColor : "#fe2d88",
-                data : data,
-            }
-        ],
+    if(tran_time == 1){
+        var sum = obj.day['swim']+obj.day['bike']+obj.day['run'];
+        pieData = [obj.day['swim'], obj.day['bike'], obj.day['run']];
     }
 
-    var options6 = {
-        scaleFontSize : 14,
-        scaleFontColor : "white",
-        scaleShowLabels: false,
-        scaleShowGridLines : false,
+    if(tran_time == 2){
+
+        labels = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+
+        var sum = 0; var sum_run = 0; var sum_bike = 0; var sum_swim = 0;
+        var week_swim = []; var week_run = []; var week_bike = [];
+
+        obj.week.forEach(function(element) {
+            week_swim.push(element['swim']);
+            week_run.push(element['run']);
+            week_bike.push(element['bike']);
+            sum += element['swim']+element['bike']+element['run'];
+            sum_run += element['run'];
+            sum_bike += element['bike'];
+            sum_swim += element['swim'];
+        });
+
+        $$(".chart_scale_hour").text(sum);
+        pieData = [sum_swim, sum_bike, sum_run];
     }
 
-    var myLineChart6 = new Chart(document.getElementById("canvas2").getContext("2d")).Bar(LineChart6, options6);
 
-    var pieData4 = [{value: tran_value, color: '#fe2d88', highlight: "transparent",}, {value: tran_value_out, color: 'transparent'}];
-    var options4 = {segmentShowStroke: false}
-    var context4 = document.getElementById('skills4').getContext('2d');
-    var skillsChart4 = new Chart(context4).Pie(pieData4, options4);
+
+    if(tran_time == 3){
+
+        labels = ["1", "2", "3"];
+
+        var sum = 0; var sum_run = 0; var sum_bike = 0; var sum_swim = 0;
+        var week_swim = []; var week_run = []; var week_bike = [];
+
+        obj.month.forEach(function(element) {
+            week_swim.push(element['swim']);
+            week_run.push(element['run']);
+            week_bike.push(element['bike']);
+            sum += element['swim']+element['bike']+element['run'];
+            sum_run += element['run'];
+            sum_bike += element['bike'];
+            sum_swim += element['swim'];
+        });
+
+        $$(".chart_scale_hour").text(sum);
+        pieData = [sum_swim, sum_bike, sum_run];
+
+    }
     
+    if(tran_time != 1) {
+        var chartData = {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "P1",
+                    backgroundColor: '#fe2d88',
+                    data: week_swim
+                }, {
+                    label: "P2",
+                    backgroundColor: 'white',
+                    data: week_run
+                }, {
+                    label: "P3",
+                    backgroundColor: 'deepskyblue',
+                    data: week_bike
+                }]
+            },
+            options: {
+                responsive: false,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        stacked: true
+                    }],
+                    xAxes: [{
+                        stacked: true
+                    }]
+                },
 
+            }
+        }
+
+        var canvas = document.getElementById('canvas2');
+        var myChart = new Chart(canvas, chartData);
+    }
+
+
+    var ctx99 = document.getElementById("skills4").getContext('2d');
+    var myChart99 = new Chart(ctx99, {
+        type: 'pie',
+        data: {
+            datasets: [{
+                backgroundColor: [
+                    "#fe2d88",
+                    "deepskyblue",
+                    "white",
+                ],
+                data: pieData
+            }]
+        },
+        options: {
+            responsive: false,
+            elements: {
+                arc: {
+                    borderWidth: 0
+                }
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: false
+            },
+        }
+    });
 
 
 }

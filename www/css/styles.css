@@ -372,7 +372,7 @@ h2{
 }
 
 .btn-center{
-   margin-top: 50px; position: relative;margin-left: auto;margin-right: auto;width:100%;font-family: MuseoSansCyrl500; font-weight: bold;
+   margin-top: 10vh; position: relative;margin-left: auto;margin-right: auto;width:100%;font-family: MuseoSansCyrl500; font-weight: bold;
 }
 
 .btn-center2{
@@ -419,9 +419,11 @@ h2{
 
 #skills{
     position: absolute;
-    margin-top: -21px;
-    margin-left: -19px;
-    z-index: -2;
+    margin-top: -27px;
+    margin-left: -24px;
+    z-index: -4;
+    width: 239px;
+    height: 239px;
 }
 
 #skills2{
@@ -440,14 +442,17 @@ h2{
 
 #skills4{
     position: absolute;
-    margin-top: -26.5px;
-    margin-left: -22.8px;
+    margin-top: -27px;
+    margin-left: -24px;
     z-index: -4;
+    width: 239px;
+    height: 239px;
 }
 
 .chart_scale_time{
     position: absolute;
-    left:70px;
+    left: 0;
+    right: 0;
     top:30px;
     z-index: 20;
     text-align: center;
@@ -690,6 +695,10 @@ h2{
 
 .wizard-table .button .container .checkmark{
     right: 10px;
+}
+
+.white{
+    color: white;
 }
 
 .toolbar.calendar-custom-toolbar{
