@@ -42,7 +42,7 @@ myApp.onPageInit('plan', function (page) {
         url: 'http://www.3go.training:8081/api/v1/workout/',
         method: 'get',
         crossDomain: true,
-        timeout: 3000,
+        timeout: 5000,
         beforeSend: function() {myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
@@ -726,7 +726,7 @@ myApp.onPageInit('training', function (page) {
         url: 'http://www.3go.training:8081/api/v1/plan/',
         method: 'get',
         crossDomain: true,
-        timeout: 3000,
+        timeout: 5000,
         beforeSend: function() {myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
@@ -768,7 +768,7 @@ function training(tran_time, obj){
         '<div class="img_chart_scale">' +
         '<div class="first_oval2"></div>' +
         '<canvas id="skills4" style="z-index: -4;" width="239" height="239"></canvas>' +
-        '<div class="first_oval"></div>' +
+        '<div class="first_oval" style="z-index: -3;"></div>' +
         '<div class="chart_scale_time"><div class="chart_scale_hour">0</div><p class="chart_scale_hour_text">часов</p></div>' +
         '<img src="./img/img_chart_scale.svg"></div>' +
         '<div class="btn-center"><p class="buttons-row"><canvas id="canvas2"></canvas></p></div>'
