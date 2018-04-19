@@ -768,9 +768,9 @@ function training(tran_time, obj){
         '<div class="img_chart_scale">' +
         '<div class="first_oval2"></div>' +
         '<canvas id="skills4" style="z-index: -4;" width="239" height="239"></canvas>' +
-        '<div class="first_oval" style="z-index: -3;"></div>' +
+        '<div class="first_oval"></div>' +
         '<div class="chart_scale_time"><div class="chart_scale_hour">0</div><p class="chart_scale_hour_text">часов</p></div>' +
-        '<img src="./img/img_chart_scale.svg"></div>' +
+        '<img class="img_first_oval" src="./img/img_chart_scale.svg"></div>' +
         '<div class="btn-center"><p class="buttons-row"><canvas id="canvas2"></canvas></p></div>'
         );
 
@@ -891,6 +891,9 @@ function training(tran_time, obj){
             tooltips: {
                 enabled: false
             },
+            animation: {
+                duration: 0
+            }
         }
     });
 
