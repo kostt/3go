@@ -11,10 +11,10 @@ var mainView = myApp.addView('.view-main', {
 
 });
 
-if(window.localStorage.getItem('has_run') == null) {
-    myApp.popup('.start-popup');
+// if(window.localStorage.getItem('has_run') == null) {
+//     myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-}
+// }
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -42,7 +42,7 @@ myApp.onPageInit('plan', function (page) {
         url: 'http://www.3go.training:8081/api/v1/workout/',
         method: 'get',
         crossDomain: true,
-        timeout: 5000,
+        timeout: 10000,
         beforeSend: function() {myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
@@ -159,6 +159,9 @@ function plan(category, obj){
             tooltips: {
                 enabled: false
             },
+            animation: {
+                duration: 0
+            }
         }
     });
 
@@ -348,7 +351,7 @@ myApp.onPageInit('report', function (page) {
             url: 'http://www.3go.training:8081/api/v1/workout/',
             method: 'get',
             crossDomain: true,
-            timeout: 3000,
+            timeout: 10000,
             beforeSend: function() {myApp.showPreloader();},
             complete: function() {myApp.hidePreloader();},
             success: function (data) {
@@ -364,7 +367,7 @@ myApp.onPageInit('report', function (page) {
                     dataType: 'json',
                     data: JSON.stringify(arr),
                     crossDomain: true,
-                    timeout: 3000,
+                    timeout: 10000,
                     beforeSend: function() {myApp.showPreloader();},
                     complete: function() {myApp.hidePreloader();},
                     success: function (data) {
@@ -726,7 +729,7 @@ myApp.onPageInit('training', function (page) {
         url: 'http://www.3go.training:8081/api/v1/plan/',
         method: 'get',
         crossDomain: true,
-        timeout: 5000,
+        timeout: 10000,
         beforeSend: function() {myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
