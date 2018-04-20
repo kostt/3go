@@ -15,6 +15,12 @@
     <preference name="orientation" value="portrait" />
     <allow-navigation href="*youtube*" />
     <allow-navigation href="*ytimg*" />
+    <universal-links>
+        <host name="trigo-9f40e.app.goo.gl" scheme="https" />
+        <host name="trigo-9f40e.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback"/>
+        </host>
+    </universal-links>
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -30,4 +36,11 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-buildinfo" spec="~2.0.1" />
+    <plugin name="cordova-universal-links-plugin" spec="~1.2.1" />
+    <plugin name="cordova-plugin-browsertab" spec="~0.2.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.2.1" />
+    <plugin name="cordova-plugin-customurlscheme" spec="~4.3.0">
+        <variable name="URL_SCHEME" value="com.firebase.cordova" />
+    </plugin>
 </widget>
