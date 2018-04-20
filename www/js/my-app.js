@@ -11,10 +11,11 @@ var mainView = myApp.addView('.view-main', {
 
 });
 
-// if(window.localStorage.getItem('has_run') == null) {
-//     myApp.popup('.start-popup');
+if(window.localStorage.getItem('has_run') == null) {
+    // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-// }
+    mainView.router.loadPage('auth.html');
+}
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -78,18 +79,13 @@ myApp.onPageInit('plan', function (page) {
 
             });
 
-
             plan(3, obj);
-
-
         },
         error: function(data) {
             error('Произошла ошибка. Проверьте соединение с интернетом');
             myApp.hidePreloader();
         }
     });
-
-
 
 $$("#create_report").click(function(){
     mainView.router.loadPage('report.html');
@@ -106,11 +102,11 @@ function plan(category, obj){
     $$(".plan_result").empty();
 
     setTimeout(function () {
-        $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
+        $$('.img_chart_scale3').animate({'opacity': 1,}, {duration: 1000,});
     }, 100);
 
     $$(".plan_result").append(
-        '<div class="img_chart_scale">' +
+        '<div class="img_chart_scale3">' +
         '<div class="first_oval2"></div>' +
         '<canvas id="skills" style="z-index: -4;" width="239" height="239"></canvas>' +
         '<div class="first_oval"></div>' +
@@ -119,18 +115,19 @@ function plan(category, obj){
         '</div>'
     );
 
-    pieData = [obj.bike, obj.run, obj.swim];
+    pieData = [obj.swim, obj.run, obj.bike];
+    $$(".chart_scale_hour").text(obj.bike+obj.run+obj.swim);
 
     if(category == 1){
-        $$(".chart_scale_hour").text(obj.swim);
+
     }
 
     if(category == 2){
-        $$(".chart_scale_hour").text(obj.run);
+
     }
 
     if(category == 3){
-        $$(".chart_scale_hour").text(obj.bike);
+
     }
 
     var ctx = document.getElementById("skills").getContext('2d');
@@ -139,9 +136,9 @@ function plan(category, obj){
         data: {
             datasets: [{
                 backgroundColor: [
-                    "deepskyblue",
-                    "white",
                     "#fe2d88",
+                    "white",
+                    "deepskyblue",
                 ],
                 data: pieData
             }]
@@ -211,18 +208,21 @@ function plan(category, obj){
 
 myApp.onPageInit('wizard', function (page) {
 
-    $$('.pol').on('click', function () {$$('.pol').removeClass('active');$$(this).addClass('active');});
+    var gender = 'm';
+    var primary_start = 'sprint';
+
+    $$('.pol').on('click', function () {$$('.pol').removeClass('active');$$(this).addClass('active'); gender = $$(this).attr('data-action');});
     $$('.osob').on('click', function () {$$('.osob').removeClass('active');$$(this).addClass('active');});
     $$('.triatlon').on('click', function () {$$('.triatlon').removeClass('active');$$(this).addClass('active');});
     $$('.sprint').on('click', function () {$$('.sprint').removeClass('active');$$(this).addClass('active');});
     $$('.ol_triat').on('click', function () {$$('.ol_triat').removeClass('active');$$(this).addClass('active');});
     $$('.half').on('click', function () {$$('.half').removeClass('active');$$(this).addClass('active');});
     $$('.long').on('click', function () {$$('.long').removeClass('active');$$(this).addClass('active');});
-    $$('.luch_start').on('click', function () {$$('.luch_start').removeClass('active');$$(this).addClass('active');});
+    $$('.luch_start').on('click', function () {$$('.luch_start').removeClass('active');$$(this).addClass('active'); primary_start = $$(this).attr('data-action');});
     $$('.kalendar').on('click', function () {$$('.kalendar').removeClass('active');$$(this).addClass('active');});
 
     var mySwiper = new Swiper('.swiper-container', {
-        loop: false,
+        loop: true,
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
@@ -292,31 +292,91 @@ myApp.onPageInit('wizard', function (page) {
 
     $$('#start_traning').on('click', function (e) {
 
-        mainView.router.loadPage('index.html');
+            var age = $$('#old').val();
+            var diabetic = $$('#diabetic').is(':checked');
+            var vegetarian = $$('#vegetarian').is(':checked');
+            var handicapped = $$('#handicapped').is(':checked');
+            var astmatics = $$('#astmatics').is(':checked');
+            var aged = $$('#aged').is(':checked');
+            var has_experience = $$('#has_experience').val();
+            var best_swim = $$('#best_swim').val();
+            var best_run = $$('#best_run').val();
+            var best_bike = $$('#best_bike').val();
+            var sprint_personal_best = $$('#sprint_personal_best').val();
+            var olimpic_personal_best = $$('#olimpic_personal_best').val();
+            var half_personal_best = $$('#half_personal_best').val();
+            var full_personal_best = $$('#full_personal_best').val();
+            var free_time = $$('#free_time').val();
+            var months = [];
+            var time_zone = $$('#time_zone').text();
+            var start_date = new Date();
 
-        // $$.ajax({
-        //     url: 'http://3go-api.local/3go/start',
-        //     method: 'post',
-        //     dataType: 'json',
-        //     data: {},
-        //     crossDomain: true,
-        //     timeout: 3000,
-        //     beforeSend: function() {myApp.showPreloader();},
-        //     complete: function() {myApp.hidePreloader();},
-        //     success: function (data) {
-        //
-        //         if (data.error) {
-        //             error(data.error);
-        //         } else {
-        //             mainView.router.loadPage('index.html');
-        //         }
-        //     },
-        //     error: function(data) {
-        //         error('Произошла ошибка. Проверьте соединение с интернетом');
-        //         myApp.hidePreloader();
-        //     }
-        // });
-    });
+        for(i=1; i<12; i++){
+            if($$('#month'+i).is(':checked')){
+                months.push(i);
+            }
+        }
+
+        
+        
+
+        // var gender = 0;
+        // var age = 0;
+        // var diabetic = 0;
+        // var vegetarian = 0;
+        // var handicapped = 0;
+        // var astmatics = 0;
+        // var aged = 0;
+        // var has_experience = 0;
+        // var best_swim = 0;
+        // var best_run = 0;
+        // var best_bike = 0;
+        // var sprint_personal_best = 0;
+        // var olimpic_personal_best = 0;
+        // var half_personal_best = 0;
+        // var full_personal_best = 0;
+        // var primary_start = 0;
+        // var free_time = 0;
+        // var months = [1,2];
+        // var time_zone = 0;
+        // var start_date = new Date();
+        
+        if(age.length == 0){age = 0;}
+        if(has_experience.length == 0){has_experience = 0;}
+        if(best_swim.length == 0){best_swim = 0;}
+        if(best_run.length == 0){best_run = 0;}
+        if(best_bike.length == 0){best_bike = 0;}
+        if(sprint_personal_best.length == 0){sprint_personal_best = 0;}
+        if(olimpic_personal_best.length == 0){olimpic_personal_best = 0;}
+        if(half_personal_best.length == 0){half_personal_best = 0;}
+        if(full_personal_best.length == 0){full_personal_best = 0;}
+        if(free_time.length == 0){free_time = 0;}
+
+            var arr2 = {gender: gender, age: age, diabetic: diabetic, vegetarian: vegetarian, handicapped: handicapped, astmatics: astmatics, aged: aged, has_experience: has_experience, best_swim: best_swim, best_run: best_run, best_bike: best_bike, sprint_personal_best: sprint_personal_best, olimpic_personal_best: olimpic_personal_best, half_personal_best: half_personal_best, full_personal_best: full_personal_best, primary_start: primary_start, free_time: free_time, months: months, time_zone: time_zone, start_date: start_date};
+
+            $$.ajax({
+                url: 'http://www.3go.training:8081/api/v1/profile/',
+                method: 'post',
+                dataType: 'json',
+                data: JSON.stringify(arr2),
+                crossDomain: true,
+                timeout: 10000,
+                beforeSend: function() {myApp.showPreloader();},
+                complete: function() {myApp.hidePreloader();},
+                success: function (data) {
+
+                    mainView.router.loadPage('index.html');
+                },
+                error: function(data) {
+                    error('Произошла ошибка. Проверьте соединение с интернетом');
+                    myApp.hidePreloader();
+                }
+            });
+
+
+});
+
+
 
     $$('#btn-wizard-start').on('click', function (e) {
         $$("#btn-wizard-start").css("display", "none");
@@ -336,9 +396,9 @@ myApp.onPageInit('report', function (page) {
     var sick = 0;
     var trauma = 0;
 
-    $$('#jetlag').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#jetlag2').removeClass('active'); jetlag = 0;}else{$$(this).addClass('active'); $$('#jetlag2').addClass('active');jetlag = 1;}});
-    $$('#sick').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#sick2').removeClass('active'); sick = 0;}else{$$(this).addClass('active'); $$('#sick2').addClass('active'); sick = 1;}});
-    $$('#trauma').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#trauma2').removeClass('active'); trauma = 0;}else{$$(this).addClass('active'); $$('#trauma2').addClass('active'); trauma = 1;}});
+    $$('#jetlag').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#jetlag2').removeClass('white'); jetlag = 0;}else{$$(this).addClass('active'); $$('#jetlag2').addClass('white');jetlag = 1;}});
+    $$('#sick').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#sick2').removeClass('white'); sick = 0;}else{$$(this).addClass('active'); $$('#sick2').addClass('white'); sick = 1;}});
+    $$('#trauma').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#trauma2').removeClass('white'); trauma = 0;}else{$$(this).addClass('active'); $$('#trauma2').addClass('white'); trauma = 1;}});
 
     $$('#report').on('click', function (e) {
 
@@ -346,6 +406,7 @@ myApp.onPageInit('report', function (page) {
         var muscules = $$('#ex2').val();
         var pulse = $$('#ex3').val();
         var exhaustion = $$('#ex4').val();
+        var date = new Date();
 
         $$.ajax({
             url: 'http://www.3go.training:8081/api/v1/workout/',
@@ -358,7 +419,7 @@ myApp.onPageInit('report', function (page) {
                 var obj = JSON.parse(data);
 
                 var arr = { swim: obj.swim, bike: obj.bike, run: obj.run, jetlag: jetlag, sick: sick, trauma: trauma,
-                    dream: dream, muscules: muscules, pulse: pulse, exhaustion: exhaustion, date: null};
+                    dream: dream, muscules: muscules, pulse: pulse, exhaustion: exhaustion, date: date};
 
 
                 $$.ajax({
@@ -625,6 +686,30 @@ function statistics(stat_time){
 
 myApp.onPageInit('auth', function (page) {
 
+    // FirebaseUI config.
+    var uiConfig = {
+        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInOptions: [
+            // Leave the lines as is for the providers you want to offer your users.
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+            firebase.auth.GithubAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+    };
+
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    // The start method will wait until the DOM is loaded.
+    ui.start('#firebaseui-auth-container', uiConfig);
+
+
+
+
     $$('#reg_btn').on('click', function (e) {
         mainView.router.loadPage('registration.html');
     });
@@ -765,7 +850,7 @@ function training(tran_time, obj){
 
     setTimeout(function () {
         $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
-    }, 500);
+    }, 100);
 
     $$(".training_result").append(
         '<div class="img_chart_scale">' +
@@ -807,7 +892,11 @@ function training(tran_time, obj){
 
     if(tran_time == 3){
 
-        labels = ["1", "2", "3"];
+        labels = [];
+
+        for(i=1;i<=obj.month.length; i++){
+            labels.push(i);
+        }
 
         var sum = 0; var sum_run = 0; var sum_bike = 0; var sum_swim = 0;
         var week_swim = []; var week_run = []; var week_bike = [];
@@ -938,7 +1027,31 @@ function error(message){
             color: 'blue'
         }
     });
+}
 
+if ( !Date.prototype.toISOString ) {
+    ( function() {
+
+        function pad(number) {
+            var r = String(number);
+            if ( r.length === 1 ) {
+                r = '0' + r;
+            }
+            return r;
+        }
+
+        Date.prototype.toISOString = function() {
+            return this.getUTCFullYear()
+                + '-' + pad( this.getUTCMonth() + 1 )
+                + '-' + pad( this.getUTCDate() )
+                + 'T' + pad( this.getUTCHours() )
+                + ':' + pad( this.getUTCMinutes() )
+                + ':' + pad( this.getUTCSeconds() )
+                + '.' + String( (this.getUTCMilliseconds()/1000).toFixed(3) ).slice( 2, 5 )
+                + 'Z';
+        };
+
+    }() );
 }
 
 

@@ -383,6 +383,10 @@ h2{
     position: relative;margin-left: auto;margin-right: auto;margin-top: 50px;width: 189px; height:189px; opacity: 0;
 }
 
+.img_chart_scale3{
+    position: relative;margin-left: auto;margin-right: auto;margin-top: 50px;width: 189px; height:189px; opacity: 0;
+}
+
 .img_chart_scale2{
     position: relative;margin-left: auto;margin-right: auto;margin-top: 50px;width: 189px;height: 350px;
 }
@@ -396,6 +400,11 @@ h2{
 }
 
 .img_chart_scale .img_first_oval{
+    position: absolute;
+    z-index: 99;
+}
+
+.img_chart_scale3 .img_first_oval{
     position: absolute;
     z-index: 99;
 }

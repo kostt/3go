@@ -11,20 +11,20 @@
                             <div class="wizard-swip">
                                 <h2>Пол</h2>
                                 <div class="row">
-                                    <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard active pol" value="Мужской"></div>
-                                    <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard pol" value="Женский"></div>
+                                    <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard active pol" data-action="m" value="Мужской"></div>
+                                    <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard pol" data-action="f" value="Женский"></div>
                                 </div>
                                 <h2>Возраст</h2>
                                 <div class="row">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="old" placeholder="20" type="text"><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" id="old" name="old" placeholder="20" type="text"><span class="wizard-in-input-text">лет</span></div>
                                 </div>
                                 <h2>Рост</h2>
                                 <div class="row">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="rost" placeholder="180" type="text"><span class="wizard-in-input-text">см</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" id="w_rost" name="rost" placeholder="180" type="text"><span class="wizard-in-input-text">см</span></div>
                                 </div>
                                 <h2>Вес</h2>
                                 <div class="row">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="ves" placeholder="80" type="text"><span class="wizard-in-input-text">кг</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" id="w_ves" name="ves" placeholder="80" type="text"><span class="wizard-in-input-text">кг</span></div>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                                 <div class="row wiz-box">
                                     <div class="button button-big button-raised btn-border btn-wizard2 osob">
                                         <label class="container"><span class="wizard-in-input-text2">Диабетик</span>
-                                            <input type="checkbox">
+                                            <input id="diabetic" type="checkbox">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -42,7 +42,7 @@
                                 <div class="row wiz-box">
                                     <div class="button button-big button-raised btn-border btn-wizard2 osob">
                                         <label class="container"><span class="wizard-in-input-text2">Вегатерианец</span>
-                                            <input type="checkbox">
+                                            <input id="vegetarian" type="checkbox">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -50,7 +50,7 @@
                                 <div class="row wiz-box">
                                     <div class="button button-big button-raised btn-border btn-wizard2 osob">
                                         <label class="container"><span class="wizard-in-input-text2">Инвалид</span>
-                                            <input type="checkbox">
+                                            <input id="handicapped" type="checkbox">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -58,7 +58,7 @@
                                 <div class="row wiz-box">
                                     <div class="button button-big button-raised btn-border btn-wizard2 osob">
                                         <label class="container"><span class="wizard-in-input-text2">Астматик</span>
-                                            <input type="checkbox">
+                                            <input id="astmatics" type="checkbox">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -66,7 +66,7 @@
                                 <div class="row wiz-box">
                                     <div class="button button-big button-raised btn-border btn-wizard2 osob">
                                         <label class="container"><span class="wizard-in-input-text2">Пожилой человек (60+)</span>
-                                            <input type="checkbox">
+                                            <input id="aged" type="checkbox">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -81,20 +81,20 @@
                                     <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard triatlon" value="Нет"></div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" id="has_experience" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
                                 </div>
                                 <h2>Лучшие результаты</h2>
                                 <div class="row wiz-box">
                                     <div class="wizard-dop-text">Плавание 100 м</div>
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="0" type="text"><span class="wizard-in-input-text3">минут</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" id="best_swim" name="" placeholder="0" type="text"><span class="wizard-in-input-text3">минут</span></div>
                                 </div>
                                 <div class="row wiz-box">
                                     <div class="wizard-dop-text">Велосипед 40 км</div>
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="0" type="text"><span class="wizard-in-input-text3">минут</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" id="best_bike" name="" placeholder="0" type="text"><span class="wizard-in-input-text3">минут</span></div>
                                 </div>
                                 <div class="row wiz-box">
                                     <div class="wizard-dop-text">Бег 10 км</div>
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="0" type="text"><span class="wizard-in-input-text3">минут</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" id="best_run" name="" placeholder="0" type="text"><span class="wizard-in-input-text3">минут</span></div>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                                     <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard sprint" value="Нет"></div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="sprint_personal_best" class="wizard-input" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
                                 </div>
                                 <h2>Личный рекорд в олимпийском триатлоне</h2>
                                 <div class="row wiz-box">
@@ -114,7 +114,7 @@
                                     <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard ol_triat" value="Нет"></div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="olimpic_personal_best" class="wizard-input" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                                     <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard half" value="Нет"></div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="half_personal_best" class="wizard-input" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
                                 </div>
                                 <h2>Личный рекорд full (long distance)</h2>
                                 <div class="row wiz-box">
@@ -134,7 +134,7 @@
                                     <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard long" value="Нет"></div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="full_personal_best" class="wizard-input" name="" placeholder="5" type="text"><span class="wizard-in-input-text">лет</span></div>
                                 </div>
                             </div>
                         </div>
@@ -142,25 +142,25 @@
                             <div class="wizard-swip">
                                 <h2>Личный главный старт на следующий сезон</h2>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2 active luch_start">
+                                    <div class="button button-big button-raised btn-border btn-wizard2 active luch_start" data-action="sprint">
                                         <label class="container"><span class="wizard-in-input-text2">Спринт</span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2 luch_start">
+                                    <div class="button button-big button-raised btn-border btn-wizard2 luch_start" data-action="full">
                                         <label class="container"><span class="wizard-in-input-text2">Олимпийский триатлон</span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2 luch_start">
+                                    <div class="button button-big button-raised btn-border btn-wizard2 luch_start" data-action="half">
                                         <label class="container"><span class="wizard-in-input-text2">Half</span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2 luch_start">
+                                    <div class="button button-big button-raised btn-border btn-wizard2 luch_start" data-action="olimpic">
                                         <label class="container"><span class="wizard-in-input-text2">Full</span>
                                         </label>
                                     </div>
@@ -171,7 +171,7 @@
                             <div class="wizard-swip">
                                 <h2>В дополнение к необходимому времени (максимум 15 часов в неделю), я могу дополнительно выделить (Х часов)</h2>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input" name="" placeholder="0" type="text"><span class="wizard-in-input-text3">часов</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="free_time" class="wizard-input" name="" placeholder="0" type="text"><span class="wizard-in-input-text3">часов</span></div>
                                 </div>
 
                             </div>
@@ -185,7 +185,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Январь</span>
-                                                    <input type="checkbox">
+                                                    <input id="month1" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -193,7 +193,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Июль</span>
-                                                    <input type="checkbox">
+                                                    <input id="month7" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -203,7 +203,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Февраль</span>
-                                                    <input type="checkbox">
+                                                    <input id="month2" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -211,7 +211,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Август</span>
-                                                    <input type="checkbox">
+                                                    <input id="month8" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -221,7 +221,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Март</span>
-                                                    <input type="checkbox">
+                                                    <input id="month3" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -229,7 +229,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Сентябрь</span>
-                                                    <input type="checkbox">
+                                                    <input id="month9" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -239,7 +239,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Аплерь</span>
-                                                    <input type="checkbox">
+                                                    <input id="month4" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -247,7 +247,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Октябрь</span>
-                                                    <input type="checkbox">
+                                                    <input id="month10" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -257,7 +257,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Май</span>
-                                                    <input type="checkbox">
+                                                    <input id="month5" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -265,7 +265,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Ноябрь</span>
-                                                    <input type="checkbox">
+                                                    <input id="month11" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -275,7 +275,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Июнь</span>
-                                                    <input type="checkbox">
+                                                    <input id="month6" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -283,7 +283,7 @@
                                         <td>
                                             <div class="button button-big button-raised btn-border btn-wizard2 kalendar">
                                                 <label class="container"><span class="wizard-in-input-text4">Декабрь</span>
-                                                    <input type="checkbox">
+                                                    <input id="month12" type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
@@ -305,7 +305,7 @@
                                         </select>
                                         <div class="item-content">
                                             <div class="item-inner">
-                                                <div class="item-after">Apple</div>
+                                                <div id="time_zone" class="item-after">UTC+7</div>
                                                 <div class="smart-select-arrow-bottom"></div>
                                             </div>
                                         </div>
