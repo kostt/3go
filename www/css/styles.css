@@ -324,7 +324,11 @@ h2{
 
 .wizard-swip{
     margin-bottom: 30px;
-    margin: 1px;
+    margin: 20px;
+}
+
+.content-block2{
+    color: grey;
 }
 
 

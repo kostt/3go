@@ -12,9 +12,9 @@ var mainView = myApp.addView('.view-main', {
 });
 
 if(window.localStorage.getItem('has_run') == null) {
-    // myApp.popup('.start-popup');
+    myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-    mainView.router.loadPage('auth.html');
+    // mainView.router.loadPage('wizard.html');
 }
 
 // Handle Cordova Device Ready Event
@@ -221,14 +221,6 @@ myApp.onPageInit('wizard', function (page) {
     $$('.luch_start').on('click', function () {$$('.luch_start').removeClass('active');$$(this).addClass('active'); primary_start = $$(this).attr('data-action');});
     $$('.kalendar').on('click', function () {$$('.kalendar').removeClass('active');$$(this).addClass('active');});
 
-    var mySwiper = new Swiper('.swiper-container', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-        },
-    });
-
     var monthNames2 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August' , 'September' , 'October', 'November', 'December'];
     var monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август' , 'Сентябрь' , 'Октябрь', 'Ноябрь', 'Декабрь'];
 
@@ -262,33 +254,60 @@ myApp.onPageInit('wizard', function (page) {
         }
     });
 
+
+    var mySwiper = new Swiper('.swiper-container', {
+        loop: false,
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+    });
+
+    var mySwiper = $$('.swiper-container')[0].swiper;
+
     $$('#prew_swip').on('click', function (e) {
-        var mySwiper = $$('.swiper-container')[0].swiper;
         mySwiper.slidePrev();
+    });
+
+    $$('#next_swip, #next_swip2').on('click', function (e) {
+        mySwiper.slideNext();
+    });
+
+    mySwiper.on('slideChange', function (e) {
+
         if(mySwiper.activeIndex == 0){
             $$("#btn-wizard-start").show();
             $$(".btn-wizard-arrow").css("display", "none");
         }
-    });
 
-    $$('#next_swip').on('click', function (e) {
-        var mySwiper = $$('.swiper-container')[0].swiper;
-        mySwiper.slideNext();
-    });
-
-    $$('#next_swip2').on('click', function (e) {
-        var mySwiper = $$('.swiper-container')[0].swiper;
-        mySwiper.slideNext();
-
-        if(mySwiper.activeIndex == 9){
+        if(this.activeIndex == 9){
             $$(".btn-wizard-arrow").css("display", "none");
             $$(".swiper-pagination").css("display", "none");
         }
+
+        if(this.activeIndex == 1){
+            $$("#btn-wizard-start").css("display", "none");
+            $$(".btn-wizard-arrow").show();
+        }
+
+        if(this.activeIndex == 8){
+            $$(".btn-wizard-arrow").show();
+            $$(".swiper-pagination").show();
+        }
+
     });
+
+
+
+
+
+
 
     $$('.show-navbar').on('click', function () {
         mainView.showNavbar();
     });
+
 
     $$('#start_traning').on('click', function (e) {
 
@@ -376,12 +395,6 @@ myApp.onPageInit('wizard', function (page) {
 
 });
 
-
-
-    $$('#btn-wizard-start').on('click', function (e) {
-        $$("#btn-wizard-start").css("display", "none");
-        $$(".btn-wizard-arrow").show();
-    });
 
 });
 
