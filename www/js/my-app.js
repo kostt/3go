@@ -207,7 +207,11 @@ function plan(category, obj){
 
 
 myApp.onPageInit('wizard', function (page) {
-
+    
+    $$('.number').on('input', function() {
+        this.value = this.value.replace(/\D/g, '');
+    });
+    
     var gender = 'm';
     var primary_start = 'sprint';
 
