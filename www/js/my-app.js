@@ -12,7 +12,7 @@ var mainView = myApp.addView('.view-main', {
 });
 
 if(window.localStorage.getItem('has_run') == null) {
-    myApp.popup('.start-popup');
+    // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
     // mainView.router.loadPage('wizard.html');
 }
@@ -218,7 +218,7 @@ myApp.onPageInit('wizard', function (page) {
     $$('.half').on('click', function () {$$('.half').removeClass('active');$$(this).addClass('active');});
     $$('.long').on('click', function () {$$('.long').removeClass('active');$$(this).addClass('active');});
     $$('.luch_start').on('click', function () {$$('.luch_start').removeClass('active');$$(this).addClass('active'); primary_start = $$(this).attr('data-action');});
-  
+
     $$('.osob, .kalendar').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active');}else{$$(this).addClass('active');}});
 
 
@@ -688,6 +688,12 @@ myApp.onPageInit('auth', function (page) {
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig);
+
+    firebase.auth().signOut().then(function() {
+        alert("1");
+    }).catch(function(error) {
+        alert("2");
+    });
 
 
 
