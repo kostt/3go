@@ -303,6 +303,7 @@ myApp.onPageInit('wizard', function (page) {
         if(this.activeIndex == 9){
             $$(".btn-wizard-arrow").css("display", "none");
             $$(".swiper-pagination").css("display", "none");
+            $$(".page-content").scrollTop(0, 400);
         }
 
         if(this.activeIndex == 1){
