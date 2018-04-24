@@ -258,9 +258,11 @@ h2{
 
 .wizard-in-input-text2{
     float: left;
-    position: relative;
+    position: absolute;
     top: 4px;
     left:15px;
+    width: 100%;
+    text-align: left;
 }
 
 .wizard-in-input-text3{
@@ -273,9 +275,11 @@ h2{
 
 .wizard-in-input-text4{
     float: left;
-    position: relative;
+    position: absolute;
     top: 4px;
-    left:0px;
+    left:10px;
+    width: 100%;
+    text-align: left;
 }
 
 .wizard-table{
@@ -958,6 +962,16 @@ h2{
     .block_video{
         margin-left: 15px;
         margin-right: 15px;
+    }
+
+    .wizard-in-input-text4{
+        left:5px;
+    }
+
+    .h2 {
+        font-family: MuseoSansCyrl500;
+        color: white;
+        font-size: 23px;
     }
 
 

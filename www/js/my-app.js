@@ -212,14 +212,15 @@ myApp.onPageInit('wizard', function (page) {
     var primary_start = 'sprint';
 
     $$('.pol').on('click', function () {$$('.pol').removeClass('active');$$(this).addClass('active'); gender = $$(this).attr('data-action');});
-    $$('.osob').on('click', function () {$$('.osob').removeClass('active');$$(this).addClass('active');});
     $$('.triatlon').on('click', function () {$$('.triatlon').removeClass('active');$$(this).addClass('active');});
     $$('.sprint').on('click', function () {$$('.sprint').removeClass('active');$$(this).addClass('active');});
     $$('.ol_triat').on('click', function () {$$('.ol_triat').removeClass('active');$$(this).addClass('active');});
     $$('.half').on('click', function () {$$('.half').removeClass('active');$$(this).addClass('active');});
     $$('.long').on('click', function () {$$('.long').removeClass('active');$$(this).addClass('active');});
     $$('.luch_start').on('click', function () {$$('.luch_start').removeClass('active');$$(this).addClass('active'); primary_start = $$(this).attr('data-action');});
-    $$('.kalendar').on('click', function () {$$('.kalendar').removeClass('active');$$(this).addClass('active');});
+  
+    $$('.osob, .kalendar').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active');}else{$$(this).addClass('active');}});
+
 
     var monthNames2 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August' , 'September' , 'October', 'November', 'December'];
     var monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август' , 'Сентябрь' , 'Октябрь', 'Ноябрь', 'Декабрь'];
