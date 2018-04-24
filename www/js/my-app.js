@@ -14,7 +14,7 @@ var mainView = myApp.addView('.view-main', {
 if(window.localStorage.getItem('has_run') == null) {
     // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-    // mainView.router.loadPage('wizard.html');
+    mainView.router.loadPage('wizard.html');
 }
 
 // Handle Cordova Device Ready Event
@@ -373,6 +373,7 @@ myApp.onPageInit('report', function (page) {
     var slider2 = new Slider('#ex2');
     var slider3 = new Slider('#ex3');
     var slider4 = new Slider('#ex4');
+    var slider5 = new Slider('#ex0');
 
     var jetlag = false;
     var sick = false;
@@ -382,46 +383,65 @@ myApp.onPageInit('report', function (page) {
     $$('#sick').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#sick2').removeClass('white'); sick = false;}else{$$(this).addClass('active'); $$('#sick2').addClass('white'); sick = true;}});
     $$('#trauma').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#trauma2').removeClass('white'); trauma = false;}else{$$(this).addClass('active'); $$('#trauma2').addClass('white'); trauma = true;}});
 
+
+    $$.ajax({
+        url: 'http://www.3go.training:8081/api/v1/workout/',
+        method: 'get',
+        crossDomain: true,
+        timeout: 10000,
+        beforeSend: function() {myApp.showPreloader();},
+        complete: function() {myApp.hidePreloader();},
+        success: function (data) {
+            var obj = JSON.parse(data);
+
+            swim = obj.swim;
+            bike = obj.bike;
+            run = obj.run;
+
+            swim =1;
+
+            traning = 'Тренировка';
+            if(swim > 0){traning = 'Процент выполения Swim';}
+            if(bike > 0){traning = 'Процент выполения Bike';}
+            if(run > 0){traning = 'Процент выполения Run';}
+            $$('#traning').text(traning);
+
+        },
+        error: function(data) {
+            error('Произошла ошибка. Проверьте соединение с интернетом');
+            myApp.hidePreloader();
+        }
+    });
+
+
     $$('#report').on('click', function (e) {
 
+        var sport = $$('#ex0').val();
+        if(swim > 0){swim = sport;}
+        if(bike > 0){bike = sport;}
+        if(run > 0){run = sport;}
         var dream = $$('#ex1').val();
         var muscules = $$('#ex2').val();
         var pulse = $$('#ex3').val();
         var exhaustion = $$('#ex4').val();
         var date = new Date();
 
+        var arr = { swim: swim, bike: bike, run: run, jetlag: jetlag, sick: sick, trauma: trauma,
+            dream: dream, muscules: muscules, pulse: pulse, exhaustion: exhaustion, date: date};
+
         $$.ajax({
-            url: 'http://www.3go.training:8081/api/v1/workout/',
-            method: 'get',
+            url: 'http://www.3go.training:8081/api/v1/workout/report/',
+            method: 'post',
+            dataType: 'json',
+            data: JSON.stringify(arr),
             crossDomain: true,
             timeout: 10000,
             beforeSend: function() {myApp.showPreloader();},
             complete: function() {myApp.hidePreloader();},
             success: function (data) {
-                var obj = JSON.parse(data);
 
-                var arr = { swim: obj.swim, bike: obj.bike, run: obj.run, jetlag: jetlag, sick: sick, trauma: trauma,
-                    dream: dream, muscules: muscules, pulse: pulse, exhaustion: exhaustion, date: date};
-
-
-                $$.ajax({
-                    url: 'http://www.3go.training:8081/api/v1/workout/report/',
-                    method: 'post',
-                    dataType: 'json',
-                    data: JSON.stringify(arr),
-                    crossDomain: true,
-                    timeout: 10000,
-                    beforeSend: function() {myApp.showPreloader();},
-                    complete: function() {myApp.hidePreloader();},
-                    success: function (data) {
-
-                        error('Отчет отправлен');
-                    },
-                    error: function(data) {
-                        error('Произошла ошибка. Проверьте соединение с интернетом');
-                        myApp.hidePreloader();
-                    }
-                });
+                error('Отчет отправлен');
+                setTimeout(function () {mainView.router.loadPage('index.html');}, 100);
 
             },
             error: function(data) {
@@ -429,6 +449,9 @@ myApp.onPageInit('report', function (page) {
                 myApp.hidePreloader();
             }
         });
+
+
+
 
 
 
@@ -689,11 +712,18 @@ myApp.onPageInit('auth', function (page) {
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig);
 
-    firebase.auth().signOut().then(function() {
-        alert("1");
-    }).catch(function(error) {
-        alert("2");
-    });
+
+
+    firebase.auth().onAuthStateChanged((user)=> {
+        console.log(user)
+
+    if (user) {
+        console.log('USER SERVICE : user is signed in')
+        this.user = user;
+    } else {
+        console.log('USER SERVICE : user is signed out')
+    }
+});
 
 
 
@@ -796,6 +826,8 @@ myApp.onPageInit('registration', function (page) {
 
 
 myApp.onPageInit('training', function (page) {
+
+   $$('.tran').on('click', function () {$$('.tran').removeClass('active');$$(this).addClass('active');});
 
 
     $$.ajax({
