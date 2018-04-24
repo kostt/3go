@@ -298,16 +298,9 @@ myApp.onPageInit('wizard', function (page) {
 
     });
 
-
-
-
-
-
-
     $$('.show-navbar').on('click', function () {
         mainView.showNavbar();
     });
-
 
     $$('#start_traning').on('click', function (e) {
 
@@ -327,38 +320,14 @@ myApp.onPageInit('wizard', function (page) {
             var full_personal_best = $$('#full_personal_best').val();
             var free_time = $$('#free_time').val();
             var months = [];
-            var time_zone = $$('#time_zone').text();
+            var time_zone = $$('#time_zone').val();
             var start_date = new Date();
 
-        for(i=1; i<12; i++){
-            if($$('#month'+i).is(':checked')){
+            for(i=0; i<=11; i++){
+                if($$('#month'+i).is(':checked')){
                 months.push(i);
+                }
             }
-        }
-
-        
-        
-
-        // var gender = 0;
-        // var age = 0;
-        // var diabetic = 0;
-        // var vegetarian = 0;
-        // var handicapped = 0;
-        // var astmatics = 0;
-        // var aged = 0;
-        // var has_experience = 0;
-        // var best_swim = 0;
-        // var best_run = 0;
-        // var best_bike = 0;
-        // var sprint_personal_best = 0;
-        // var olimpic_personal_best = 0;
-        // var half_personal_best = 0;
-        // var full_personal_best = 0;
-        // var primary_start = 0;
-        // var free_time = 0;
-        // var months = [1,2];
-        // var time_zone = 0;
-        // var start_date = new Date();
         
         if(age.length == 0){age = 0;}
         if(has_experience.length == 0){has_experience = 0;}
@@ -383,7 +352,6 @@ myApp.onPageInit('wizard', function (page) {
                 beforeSend: function() {myApp.showPreloader();},
                 complete: function() {myApp.hidePreloader();},
                 success: function (data) {
-
                     mainView.router.loadPage('index.html');
                 },
                 error: function(data) {
@@ -405,13 +373,13 @@ myApp.onPageInit('report', function (page) {
     var slider3 = new Slider('#ex3');
     var slider4 = new Slider('#ex4');
 
-    var jetlag = 0;
-    var sick = 0;
-    var trauma = 0;
+    var jetlag = false;
+    var sick = false;
+    var trauma = false;
 
-    $$('#jetlag').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#jetlag2').removeClass('white'); jetlag = 0;}else{$$(this).addClass('active'); $$('#jetlag2').addClass('white');jetlag = 1;}});
-    $$('#sick').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#sick2').removeClass('white'); sick = 0;}else{$$(this).addClass('active'); $$('#sick2').addClass('white'); sick = 1;}});
-    $$('#trauma').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#trauma2').removeClass('white'); trauma = 0;}else{$$(this).addClass('active'); $$('#trauma2').addClass('white'); trauma = 1;}});
+    $$('#jetlag').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#jetlag2').removeClass('white'); jetlag = false;}else{$$(this).addClass('active'); $$('#jetlag2').addClass('white');jetlag = true;}});
+    $$('#sick').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#sick2').removeClass('white'); sick = false;}else{$$(this).addClass('active'); $$('#sick2').addClass('white'); sick = true;}});
+    $$('#trauma').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active'); $$('#trauma2').removeClass('white'); trauma = false;}else{$$(this).addClass('active'); $$('#trauma2').addClass('white'); trauma = true;}});
 
     $$('#report').on('click', function (e) {
 
