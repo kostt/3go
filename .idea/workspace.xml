@@ -35,10 +35,10 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="305" column="50" selection-start-line="305" selection-start-column="50" selection-end-line="305" selection-end-column="50" />
+            <state relative-caret-position="315">
+              <caret line="305" column="44" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
               <folding>
-                <marker date="1524580793322" expanded="true" signature="307:497" ph="//..." />
+                <marker date="1524580956925" expanded="true" signature="307:497" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -362,12 +362,12 @@
       <workItem from="1524210553237" duration="377000" />
       <workItem from="1524215921415" duration="15972000" />
       <workItem from="1524469822846" duration="540000" />
-      <workItem from="1524557359993" duration="18890000" />
+      <workItem from="1524557359993" duration="19054000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236041000" />
+    <option name="totallyTimeSpent" value="236205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -429,7 +429,7 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1524580793322" expanded="true" signature="307:497" ph="//..." />
+            <marker date="1524580956925" expanded="true" signature="307:497" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -706,10 +706,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="305" column="50" selection-start-line="305" selection-start-column="50" selection-end-line="305" selection-end-column="50" />
+        <state relative-caret-position="315">
+          <caret line="305" column="44" selection-start-line="305" selection-start-column="44" selection-end-line="305" selection-end-column="44" />
           <folding>
-            <marker date="1524580793322" expanded="true" signature="307:497" ph="//..." />
+            <marker date="1524580956925" expanded="true" signature="307:497" ph="//..." />
           </folding>
         </state>
       </provider>
