@@ -263,6 +263,8 @@ myApp.onPageInit('wizard', function (page) {
     var mySwiper = new Swiper('.swiper-container', {
         loop: false,
         spaceBetween: 10,
+        allowSlidePrev: false,
+        allowSlideNext: false,
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
@@ -271,12 +273,24 @@ myApp.onPageInit('wizard', function (page) {
 
     var mySwiper = $$('.swiper-container')[0].swiper;
 
+
     $$('#prew_swip').on('click', function (e) {
+
+        mySwiper.allowSlidePrev = true;
         mySwiper.slidePrev();
+        mySwiper.allowSlidePrev = false;
+        $$('.wizard-swip').scrollTop(0);
+        $$(".page-content").scrollTop(0, 400);
+
     });
 
     $$('#next_swip, #next_swip2').on('click', function (e) {
+
+        mySwiper.allowSlideNext = true;
         mySwiper.slideNext();
+        mySwiper.allowSlideNext = false;
+        $$(".page-content").scrollTop(0, 400);
+
     });
 
     mySwiper.on('slideChange', function (e) {
