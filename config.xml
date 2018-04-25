@@ -13,6 +13,7 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#292929" />
     <preference name="orientation" value="portrait" />
+    <preference name="AndroidLaunchMode" value="singleTask" />
     <allow-navigation href="*youtube*" />
     <allow-navigation href="*ytimg*" />
     <universal-links>
