@@ -4,6 +4,7 @@
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/wizard.html" afterPath="$PROJECT_DIR$/www/wizard.html" />
     </list>
     <ignored path="3go.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,15 +33,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="830" column="12" selection-start-line="830" selection-start-column="12" selection-end-line="830" selection-end-column="12" />
+            <state relative-caret-position="112">
+              <caret line="212" column="46" selection-start-line="212" selection-start-column="46" selection-end-line="212" selection-end-column="46" />
               <folding>
-                <marker date="1524657402260" expanded="true" signature="309:500" ph="//..." />
-                <marker date="1524657402260" expanded="true" signature="27817:28982" ph="//..." />
+                <marker date="1524662449038" expanded="true" signature="309:502" ph="//..." />
+                <marker date="1524662449038" expanded="true" signature="29080:30308" ph="//..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wizard.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/wizard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,7 +156,6 @@
         <option value="$PROJECT_DIR$/www/js/firebaseui.js" />
         <option value="$PROJECT_DIR$/www/css/firebaseui.css" />
         <option value="$PROJECT_DIR$/www/js/swiper.min.js" />
-        <option value="$PROJECT_DIR$/www/wizard.html" />
         <option value="$PROJECT_DIR$/www/training.html" />
         <option value="$PROJECT_DIR$/www/statistics.html" />
         <option value="$PROJECT_DIR$/www/settings.html" />
@@ -160,6 +170,7 @@
         <option value="$PROJECT_DIR$/www/js/config.js" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/js/my-app.js" />
+        <option value="$PROJECT_DIR$/www/wizard.html" />
       </list>
     </option>
   </component>
@@ -369,12 +380,12 @@
       <workItem from="1524215921415" duration="15972000" />
       <workItem from="1524469822846" duration="540000" />
       <workItem from="1524557359993" duration="21020000" />
-      <workItem from="1524639153526" duration="14882000" />
+      <workItem from="1524639153526" duration="20410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253053000" />
+    <option name="totallyTimeSpent" value="258581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -436,8 +447,8 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1524657402260" expanded="true" signature="309:500" ph="//..." />
-            <marker date="1524657402260" expanded="true" signature="27817:28982" ph="//..." />
+            <marker date="1524662449038" expanded="true" signature="309:502" ph="//..." />
+            <marker date="1524662449038" expanded="true" signature="29080:30308" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -639,14 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/wizard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3630">
-          <caret line="312" column="77" selection-start-line="312" selection-start-column="77" selection-end-line="312" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/plan.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -672,24 +675,6 @@
             <element signature="e#13605#13860#2" expanded="true" />
             <element signature="e#13979#14234#2" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <marker date="1524642015436" expanded="true" signature="854:2350" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/auth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,14 +705,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="43" />
+          <folding>
+            <marker date="1524642015436" expanded="true" signature="854:2350" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="830" column="12" selection-start-line="830" selection-start-column="12" selection-end-line="830" selection-end-column="12" />
+        <state relative-caret-position="112">
+          <caret line="212" column="46" selection-start-line="212" selection-start-column="46" selection-end-line="212" selection-end-column="46" />
           <folding>
-            <marker date="1524657402260" expanded="true" signature="309:500" ph="//..." />
-            <marker date="1524657402260" expanded="true" signature="27817:28982" ph="//..." />
+            <marker date="1524662449038" expanded="true" signature="309:502" ph="//..." />
+            <marker date="1524662449038" expanded="true" signature="29080:30308" ph="//..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/wizard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>

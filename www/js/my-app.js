@@ -14,7 +14,7 @@ var mainView = myApp.addView('.view-main', {
 // if(window.localStorage.getItem('has_run') == null) {
     // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-    mainView.router.loadPage('auth.html');
+    mainView.router.loadPage('wizard.html');
 // }
 
 // Handle Cordova Device Ready Event
@@ -27,10 +27,7 @@ $$(document).on('DOMContentLoaded', function(){
    
 });
 
-function onDeviceReady() {
-    // Now safe to use device APIs
-   
-}
+
 
 myApp.onPageInit('plan', function (page) {
     
@@ -212,23 +209,36 @@ function plan(category, obj){
 
 
 myApp.onPageInit('wizard', function (page) {
-    
-    $$('.number').on('input', function() {
-        this.value = this.value.replace(/\D/g, '');
+
+    $$('.number').on('change keyup input click', function() {
+        if(this.value.match(/[^0-9]/g)){
+            this.value = this.value.replace(/[^0-9]/g, "");
+        };
     });
+
+
     
     var gender = 'm';
     var primary_start = 'sprint';
 
     $$('.pol').on('click', function () {$$('.pol').removeClass('active');$$(this).addClass('active'); gender = $$(this).attr('data-action');});
-    $$('.triatlon').on('click', function () {$$('.triatlon').removeClass('active');$$(this).addClass('active');});
-    $$('.sprint').on('click', function () {$$('.sprint').removeClass('active');$$(this).addClass('active');});
-    $$('.ol_triat').on('click', function () {$$('.ol_triat').removeClass('active');$$(this).addClass('active');});
+
     $$('.half').on('click', function () {$$('.half').removeClass('active');$$(this).addClass('active');});
     $$('.long').on('click', function () {$$('.long').removeClass('active');$$(this).addClass('active');});
     $$('.luch_start').on('click', function () {$$('.luch_start').removeClass('active');$$(this).addClass('active'); primary_start = $$(this).attr('data-action');});
 
     $$('.osob, .kalendar').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active');}else{$$(this).addClass('active');}});
+
+    $$('.triatlon_y').on('click', function () {$$('.triatlon_n').removeClass('active');$$(this).addClass('active');$$('#has_experience').prop("disabled", false);});
+    $$('.triatlon_n').on('click', function () {$$('.triatlon_y').removeClass('active');$$(this).addClass('active');$$('#has_experience').prop("disabled", true);$$('#has_experience').val('');});
+    $$('.sprint_y').on('click', function () {$$('.sprint_n').removeClass('active');$$(this).addClass('active');$$('#sprint_personal_best').prop("disabled", false);});
+    $$('.sprint_n').on('click', function () {$$('.sprint_y').removeClass('active');$$(this).addClass('active');$$('#sprint_personal_best').prop("disabled", true);$$('#sprint_personal_best').val('');});
+    $$('.ol_triat_y').on('click', function () {$$('.ol_triat_n').removeClass('active');$$(this).addClass('active');$$('#olimpic_personal_best').prop("disabled", false);});
+    $$('.ol_triat_n').on('click', function () {$$('.ol_triat_y').removeClass('active');$$(this).addClass('active');$$('#olimpic_personal_best').prop("disabled", true);$$('#olimpic_personal_best').val('');});
+    $$('.half_y').on('click', function () {$$('.half_n').removeClass('active');$$(this).addClass('active');$$('#half_personal_best').prop("disabled", false);});
+    $$('.half_n').on('click', function () {$$('.half_y').removeClass('active');$$(this).addClass('active');$$('#half_personal_best').prop("disabled", true);$$('#half_personal_best').val('');});
+    $$('.long_y').on('click', function () {$$('.long_n').removeClass('active');$$(this).addClass('active');$$('#full_personal_best').prop("disabled", false);});
+    $$('.long_n').on('click', function () {$$('.long_y').removeClass('active');$$(this).addClass('active');$$('#full_personal_best').prop("disabled", true);$$('#full_personal_best').val('');});
 
 
     var monthNames2 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August' , 'September' , 'October', 'November', 'December'];
@@ -718,106 +728,106 @@ function statistics(stat_time){
 
 myApp.onPageInit('auth', function (page) {
 
-    // // FirebaseUI config.
-    // var uiConfig = {
-    //     callbacks: {
-    //         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-    //             var user = authResult.user;
-    //             var credential = authResult.credential;
-    //             var isNewUser = authResult.additionalUserInfo.isNewUser;
-    //             var providerId = authResult.additionalUserInfo.providerId;
-    //             var operationType = authResult.operationType;
-    //             // Do something with the returned AuthResult.
-    //             // Return type determines whether we continue the redirect automatically
-    //             // or whether we leave that to developer to handle.
-    //             return true;
-    //         },
-    //         signInSuccess: function(currentUser, credential, redirectUrl) {
-    //
-    //             alert("Да");
-    //             // This callback will be deprecated. `signInSuccessWithAuthResult` should
-    //             // be used instead.
-    //             // Do something.
-    //             // Return type determines whether we continue the redirect automatically
-    //             // or whether we leave that to developer to handle.
-    //             return true;
-    //         },
-    //         signInFailure: function(error) {
-    //
-    //             alert("Да");
-    //             // Some unrecoverable error occurred during sign-in.
-    //             // Return a promise when error handling is completed and FirebaseUI
-    //             // will reset, clearing any UI. This commonly occurs for error code
-    //             // 'firebaseui/anonymous-upgrade-merge-conflict' when merge conflict
-    //             // occurs. Check below for more details on this.
-    //             return handleUIError(error);
-    //         },
-    //         uiShown: function() {
-    //             // The widget is rendered.
-    //             // Hide the loader.
-    //             document.getElementById('loader').style.display = 'none';
-    //         }
-    //     },
-    //     credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
-    //     // Query parameter name for mode.
-    //     queryParameterForWidgetMode: 'mode',
-    //     // Query parameter name for sign in success url.
-    //     queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
-    //     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-    //     signInFlow: 'popup',
-    //     signInSuccessUrl: '<url-to-redirect-to-on-success>',
-    //     signInOptions: [
-    //         // Leave the lines as is for the providers you want to offer your users.
-    //         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    //         firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    //         firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    //         {
-    //             provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    //             // Whether the display name should be displayed in the Sign Up page.
-    //             requireDisplayName: true
-    //         },
-    //         {
-    //             provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-    //             // Invisible reCAPTCHA with image challenge and bottom left badge.
-    //             recaptchaParameters: {
-    //                 type: 'image',
-    //                 size: 'invisible',
-    //                 badge: 'bottomleft'
-    //             }
-    //         }
-    //     ],
-    //     // Terms of service url.
-    //     tosUrl: '<your-tos-url>'
-    // };
-    //
-    // var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    // // The start method will wait until the DOM is loaded.
-    // ui.start('#firebaseui-auth-container', uiConfig);
-
-
-
-
-
     // FirebaseUI config.
     var uiConfig = {
-        signInSuccessUrl: 'index.html',
+        callbacks: {
+            signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                var user = authResult.user;
+                var credential = authResult.credential;
+                var isNewUser = authResult.additionalUserInfo.isNewUser;
+                var providerId = authResult.additionalUserInfo.providerId;
+                var operationType = authResult.operationType;
+                // Do something with the returned AuthResult.
+                // Return type determines whether we continue the redirect automatically
+                // or whether we leave that to developer to handle.
+                return true;
+            },
+            signInSuccess: function(currentUser, credential, redirectUrl) {
+
+                alert("Да");
+                // This callback will be deprecated. `signInSuccessWithAuthResult` should
+                // be used instead.
+                // Do something.
+                // Return type determines whether we continue the redirect automatically
+                // or whether we leave that to developer to handle.
+                return true;
+            },
+            signInFailure: function(error) {
+
+                alert("Да");
+                // Some unrecoverable error occurred during sign-in.
+                // Return a promise when error handling is completed and FirebaseUI
+                // will reset, clearing any UI. This commonly occurs for error code
+                // 'firebaseui/anonymous-upgrade-merge-conflict' when merge conflict
+                // occurs. Check below for more details on this.
+                return handleUIError(error);
+            },
+            uiShown: function() {
+                // The widget is rendered.
+                // Hide the loader.
+                document.getElementById('loader').style.display = 'none';
+            }
+        },
+        credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
+        // Query parameter name for mode.
+        queryParameterForWidgetMode: 'mode',
+        // Query parameter name for sign in success url.
+        queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
+        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+        signInFlow: 'popup',
+        signInSuccessUrl: '<url-to-redirect-to-on-success>',
         signInOptions: [
             // Leave the lines as is for the providers you want to offer your users.
             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
             firebase.auth.FacebookAuthProvider.PROVIDER_ID,
             firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-            firebase.auth.GithubAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
-            firebase.auth.PhoneAuthProvider.PROVIDER_ID
+            {
+                provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                // Whether the display name should be displayed in the Sign Up page.
+                requireDisplayName: true
+            },
+            {
+                provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+                // Invisible reCAPTCHA with image challenge and bottom left badge.
+                recaptchaParameters: {
+                    type: 'image',
+                    size: 'invisible',
+                    badge: 'bottomleft'
+                }
+            }
         ],
         // Terms of service url.
         tosUrl: '<your-tos-url>'
     };
 
-    // Initialize the FirebaseUI Widget using Firebase.
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig);
+
+
+
+
+    //
+    // // FirebaseUI config.
+    // var uiConfig = {
+    //     signInSuccessUrl: 'index.html',
+    //     signInOptions: [
+    //         // Leave the lines as is for the providers you want to offer your users.
+    //         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    //         firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    //         firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    //         firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    //         firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    //         firebase.auth.PhoneAuthProvider.PROVIDER_ID
+    //     ],
+    //     // Terms of service url.
+    //     tosUrl: '<your-tos-url>'
+    // };
+    //
+    // // Initialize the FirebaseUI Widget using Firebase.
+    // var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    // // The start method will wait until the DOM is loaded.
+    // ui.start('#firebaseui-auth-container', uiConfig);
 
 
 
