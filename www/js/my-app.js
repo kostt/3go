@@ -12,8 +12,8 @@ var mainView = myApp.addView('.view-main', {
 });
 
 if(window.localStorage.getItem('has_run') == null) {
-    // myApp.popup('.start-popup');
-    // window.localStorage.setItem('has_run', 'true');
+    myApp.popup('.start-popup');
+    window.localStorage.setItem('has_run', 'true');
     // mainView.router.loadPage('auth.html');
 }
 
