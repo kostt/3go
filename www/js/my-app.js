@@ -7,14 +7,14 @@ var $$ = Dom7;
 // Add view
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
-    dynamicNavbar: false,
+    dynamicNavbar: true,
 
 });
 
 if(window.localStorage.getItem('has_run') == null) {
     // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-    mainView.router.loadPage('wizard.html');
+    // mainView.router.loadPage('auth.html');
 }
 
 // Handle Cordova Device Ready Event
@@ -24,9 +24,7 @@ $$(document).on('deviceready', function() {
 
 
 myApp.onPageInit('plan', function (page) {
-
-    $$(".cat3").attr('src', './img/img_swiming_a.svg');
-
+    
     $$(".plan_result").empty();
 
     $$(".plan_result").append(
@@ -50,36 +48,36 @@ myApp.onPageInit('plan', function (page) {
 
             $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
             var obj = JSON.parse(data);
-            $$(".chart_scale_hour").text(obj.swim);
-
-            $$(".cat1").click(function(){
+            
+            if(obj.bike > 0){
+                $$(".chart_scale_hour").text(obj.bike);
                 $$(".cat1").attr('src', './img/img_rider.svg');
                 $$(".cat2").attr('src', './img/img_running.svg');
                 $$(".cat3").attr('src', './img/img_swiming.svg');
                 $$(".cat1").attr('src', './img/img_rider_a.svg');
                 plan(1, obj);
-
-            });
-
-            $$(".cat2").click(function(){
+            }
+            
+            if(obj.run > 0){
+                $$(".chart_scale_hour").text(obj.run);
                 $$(".cat1").attr('src', './img/img_rider.svg');
                 $$(".cat2").attr('src', './img/img_running.svg');
                 $$(".cat3").attr('src', './img/img_swiming.svg');
                 $$(".cat2").attr('src', './img/img_running_a.svg');
                 plan(2, obj);
-
-            });
-
-            $$(".cat3").click(function(){
+            }
+            
+            if(obj.swim > 0){
+                $$(".chart_scale_hour").text(obj.swim);
                 $$(".cat1").attr('src', './img/img_rider.svg');
                 $$(".cat2").attr('src', './img/img_running.svg');
                 $$(".cat3").attr('src', './img/img_swiming.svg');
                 $$(".cat3").attr('src', './img/img_swiming_a.svg');
                 plan(3, obj);
+            }
 
-            });
-
-            plan(3, obj);
+            $$('.hide-animate').animate({'opacity': 1,}, {duration: 100,});
+            
         },
         error: function(data) {
             error('Произошла ошибка. Проверьте соединение с интернетом');
@@ -90,8 +88,6 @@ myApp.onPageInit('plan', function (page) {
 $$("#create_report").click(function(){
     mainView.router.loadPage('report.html');
 });
-
-
 
 
 });
@@ -389,11 +385,13 @@ myApp.onPageInit('wizard', function (page) {
 
 
 myApp.onPageInit('report', function (page) {
-    var slider = new Slider('#ex1');
+
+    var slider = new Slider('#ex0');
+    var slider1 = new Slider('#ex1');
     var slider2 = new Slider('#ex2');
     var slider3 = new Slider('#ex3');
     var slider4 = new Slider('#ex4');
-    var slider5 = new Slider('#ex0');
+
 
     var jetlag = false;
     var sick = false;
@@ -419,12 +417,12 @@ myApp.onPageInit('report', function (page) {
             run = obj.run;
 
             swim =1;
-
             traning = 'Тренировка';
-            if(swim > 0){traning = 'Процент выполения Swim';}
-            if(bike > 0){traning = 'Процент выполения Bike';}
-            if(run > 0){traning = 'Процент выполения Run';}
+            if(swim > 0){traning = 'Swim';}
+            if(bike > 0){traning = 'Bike';}
+            if(run > 0){traning = 'Run';}
             $$('#traning').text(traning);
+            $$('.hide-animate2').animate({'opacity': 1,}, {duration: 100,});
 
         },
         error: function(data) {
@@ -905,6 +903,7 @@ function training(tran_time, obj){
     if(tran_time == 1){
         var sum = obj.day['swim']+obj.day['bike']+obj.day['run'];
         pieData = [obj.day['swim'], obj.day['bike'], obj.day['run']];
+        $$(".chart_scale_hour").text(sum);
     }
 
     if(tran_time == 2){

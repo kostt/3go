@@ -481,6 +481,15 @@ h2{
 }
 
 
+.hide-animate{
+    opacity: 0;
+}
+
+.hide-animate2{
+    opacity: 0;
+}
+
+
 
 .chart_scale_time2{
     position: absolute;
@@ -635,6 +644,18 @@ h2{
 .report-box-text{
     margin-bottom: 10px;
 }
+
+/*.slider.slider-horizontal .tooltip{*/
+    /*transform: translateX(48%);*/
+/*}*/
+
+/*.tooltip-inner{*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*left: 0;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+/*}*/
 
 .popup{
     background: url(../img/back.png) no-repeat fixed bottom;
