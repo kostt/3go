@@ -4,7 +4,6 @@
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/auth.html" afterPath="$PROJECT_DIR$/www/auth.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
     </list>
     <ignored path="3go.com.iws" />
@@ -34,26 +33,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="734" column="14" selection-start-line="734" selection-start-column="14" selection-end-line="734" selection-end-column="14" />
+            <state relative-caret-position="104">
+              <caret line="788" column="0" selection-start-line="788" selection-start-column="0" selection-end-line="788" selection-end-column="0" />
               <folding>
-                <marker date="1524648534480" expanded="true" signature="306:494" ph="//..." />
-                <marker date="1524648534480" expanded="true" signature="357:494" ph="{...}" />
-                <marker date="1524648534480" expanded="true" signature="366:492" ph="//..." />
-                <marker date="1524648534480" expanded="true" signature="661:3144" ph="{...}" />
-                <marker date="1524648534480" expanded="true" signature="14038:17268" ph="{...}" />
-                <marker date="1524648534480" expanded="true" signature="15050:15935" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/workout/'...}" />
-                <marker date="1524648534480" expanded="true" signature="15332:15777" ph="{...}" />
-                <marker date="1524648534480" expanded="true" signature="27502:28144" ph="{&quot;signInSuccessUrl&quot;: '&lt;url-to-redirect-to-on-success&gt;'...}" />
-                <marker date="1524648534480" expanded="true" signature="27594:28062" ph="[...]" />
-                <marker date="1524648534480" expanded="true" signature="28448:28468" ph="{...}" />
-                <marker date="1524648534480" expanded="true" signature="28500:28623" ph="{...}" />
-                <marker date="1524648534480" expanded="true" signature="28629:28724" ph="{...}" />
-                <marker date="1524648534480" expanded="true" signature="33177:37449" ph="{...}" />
-                <marker date="1524648534480" expanded="true" signature="33928:34114" ph="{...}" />
+                <marker date="1524649574454" expanded="true" signature="306:494" ph="//..." />
+                <marker date="1524649574454" expanded="true" signature="357:494" ph="{...}" />
+                <marker date="1524649574454" expanded="true" signature="366:492" ph="//..." />
+                <marker date="1524649574454" expanded="true" signature="661:3144" ph="{...}" />
+                <marker date="1524649574454" expanded="true" signature="14038:17268" ph="{...}" />
+                <marker date="1524649574454" expanded="true" signature="15050:15935" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/workout/'...}" />
+                <marker date="1524649574454" expanded="true" signature="15332:15777" ph="{...}" />
+                <marker date="1524649574454" expanded="true" signature="32605:36877" ph="{...}" />
+                <marker date="1524649574454" expanded="true" signature="33356:33542" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -69,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="auth.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/auth.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+            <state relative-caret-position="75">
+              <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -172,8 +166,8 @@
         <option value="$PROJECT_DIR$/www/report.html" />
         <option value="$PROJECT_DIR$/www/css/styles.css" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/auth.html" />
         <option value="$PROJECT_DIR$/www/js/my-app.js" />
+        <option value="$PROJECT_DIR$/www/auth.html" />
       </list>
     </option>
   </component>
@@ -383,16 +377,16 @@
       <workItem from="1524215921415" duration="15972000" />
       <workItem from="1524469822846" duration="540000" />
       <workItem from="1524557359993" duration="21020000" />
-      <workItem from="1524639153526" duration="7627000" />
+      <workItem from="1524639153526" duration="8614000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245798000" />
+    <option name="totallyTimeSpent" value="246785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23939393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -401,7 +395,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32698962" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32698962" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -450,20 +444,15 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1524648534480" expanded="true" signature="306:494" ph="//..." />
-            <marker date="1524648534480" expanded="true" signature="357:494" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="366:492" ph="//..." />
-            <marker date="1524648534480" expanded="true" signature="661:3144" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="14038:17268" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="15050:15935" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/workout/'...}" />
-            <marker date="1524648534480" expanded="true" signature="15332:15777" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="27502:28144" ph="{&quot;signInSuccessUrl&quot;: '&lt;url-to-redirect-to-on-success&gt;'...}" />
-            <marker date="1524648534480" expanded="true" signature="27594:28062" ph="[...]" />
-            <marker date="1524648534480" expanded="true" signature="28448:28468" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="28500:28623" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="28629:28724" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="33177:37449" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="33928:34114" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="306:494" ph="//..." />
+            <marker date="1524649574454" expanded="true" signature="357:494" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="366:492" ph="//..." />
+            <marker date="1524649574454" expanded="true" signature="661:3144" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="14038:17268" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="15050:15935" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/workout/'...}" />
+            <marker date="1524649574454" expanded="true" signature="15332:15777" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="32605:36877" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="33356:33542" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -689,16 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <marker date="1524642015436" expanded="true" signature="854:2350" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="614">
@@ -719,14 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -738,34 +709,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/auth.html">
+    <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+        <state relative-caret-position="104">
+          <caret line="788" column="0" selection-start-line="788" selection-start-column="0" selection-end-line="788" selection-end-column="0" />
+          <folding>
+            <marker date="1524649574454" expanded="true" signature="306:494" ph="//..." />
+            <marker date="1524649574454" expanded="true" signature="357:494" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="366:492" ph="//..." />
+            <marker date="1524649574454" expanded="true" signature="661:3144" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="14038:17268" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="15050:15935" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/workout/'...}" />
+            <marker date="1524649574454" expanded="true" signature="15332:15777" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="32605:36877" ph="{...}" />
+            <marker date="1524649574454" expanded="true" signature="33356:33542" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
+    <entry file="file://$PROJECT_DIR$/www/report.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="734" column="14" selection-start-line="734" selection-start-column="14" selection-end-line="734" selection-end-column="14" />
+        <state relative-caret-position="210">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="43" />
           <folding>
-            <marker date="1524648534480" expanded="true" signature="306:494" ph="//..." />
-            <marker date="1524648534480" expanded="true" signature="357:494" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="366:492" ph="//..." />
-            <marker date="1524648534480" expanded="true" signature="661:3144" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="14038:17268" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="15050:15935" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/workout/'...}" />
-            <marker date="1524648534480" expanded="true" signature="15332:15777" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="27502:28144" ph="{&quot;signInSuccessUrl&quot;: '&lt;url-to-redirect-to-on-success&gt;'...}" />
-            <marker date="1524648534480" expanded="true" signature="27594:28062" ph="[...]" />
-            <marker date="1524648534480" expanded="true" signature="28448:28468" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="28500:28623" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="28629:28724" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="33177:37449" ph="{...}" />
-            <marker date="1524648534480" expanded="true" signature="33928:34114" ph="{...}" />
+            <marker date="1524642015436" expanded="true" signature="854:2350" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
