@@ -35,11 +35,11 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="839" column="0" selection-start-line="839" selection-start-column="0" selection-end-line="839" selection-end-column="0" />
+            <state relative-caret-position="367">
+              <caret line="830" column="12" selection-start-line="830" selection-start-column="12" selection-end-line="830" selection-end-column="12" />
               <folding>
-                <marker date="1524656458343" expanded="true" signature="309:500" ph="//..." />
-                <marker date="1524656458343" expanded="true" signature="27817:28997" ph="//..." />
+                <marker date="1524657402260" expanded="true" signature="309:500" ph="//..." />
+                <marker date="1524657402260" expanded="true" signature="27817:28982" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -369,12 +369,12 @@
       <workItem from="1524215921415" duration="15972000" />
       <workItem from="1524469822846" duration="540000" />
       <workItem from="1524557359993" duration="21020000" />
-      <workItem from="1524639153526" duration="14043000" />
+      <workItem from="1524639153526" duration="14882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252214000" />
+    <option name="totallyTimeSpent" value="253053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -436,8 +436,8 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1524656458343" expanded="true" signature="309:500" ph="//..." />
-            <marker date="1524656458343" expanded="true" signature="27817:28997" ph="//..." />
+            <marker date="1524657402260" expanded="true" signature="309:500" ph="//..." />
+            <marker date="1524657402260" expanded="true" signature="27817:28982" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -722,11 +722,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="839" column="0" selection-start-line="839" selection-start-column="0" selection-end-line="839" selection-end-column="0" />
+        <state relative-caret-position="367">
+          <caret line="830" column="12" selection-start-line="830" selection-start-column="12" selection-end-line="830" selection-end-column="12" />
           <folding>
-            <marker date="1524656458343" expanded="true" signature="309:500" ph="//..." />
-            <marker date="1524656458343" expanded="true" signature="27817:28997" ph="//..." />
+            <marker date="1524657402260" expanded="true" signature="309:500" ph="//..." />
+            <marker date="1524657402260" expanded="true" signature="27817:28982" ph="//..." />
           </folding>
         </state>
       </provider>

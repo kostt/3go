@@ -800,7 +800,7 @@ myApp.onPageInit('auth', function (page) {
 
     // FirebaseUI config.
     var uiConfig = {
-        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInSuccessUrl: 'index.html',
         signInOptions: [
             // Leave the lines as is for the providers you want to offer your users.
             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -827,7 +827,7 @@ myApp.onPageInit('auth', function (page) {
     if (user) {
         console.log('USER SERVICE : user is signed in');
         this.user = user;
-        alert(user);
+        alert(user.email);
     } else {
         console.log('USER SERVICE : user is signed out');
         alert(user);
