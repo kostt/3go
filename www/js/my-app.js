@@ -14,7 +14,7 @@ var mainView = myApp.addView('.view-main', {
 // if(window.localStorage.getItem('has_run') == null) {
     // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-
+    mainView.router.loadPage('auth.html');
 // }
 
 // Handle Cordova Device Ready Event
@@ -24,23 +24,13 @@ $$(document).on('deviceready', function() {
 });
 
 $$(document).on('DOMContentLoaded', function(){
-
-    var config = {
-        apiKey: "AIzaSyALZZKey84dDWiE9GL3piNnrrHj_Pillqk",
-        authDomain: "trigo-9f40e.firebaseapp.com",
-        databaseURL: "https://trigo-9f40e.firebaseio.com",
-        projectId: "trigo-9f40e",
-        storageBucket: "trigo-9f40e.appspot.com",
-        messagingSenderId: "640078757012"
-    };
-
-    firebase.initializeApp(config);
-
-    mainView.router.loadPage('auth.html');
    
-    
 });
 
+function onDeviceReady() {
+    // Now safe to use device APIs
+   
+}
 
 myApp.onPageInit('plan', function (page) {
     
