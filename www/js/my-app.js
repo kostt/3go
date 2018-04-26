@@ -221,28 +221,14 @@ function plan(category, obj){
 
 myApp.onPageInit('wizard', function (page) {
     
-    $$('.number').on("keydown",function(event){
-        if (event.keyCode == 190) {
-            event.preventDefault();
-            var str = $$(this).val();
-            str.substring(0, str.length - 1)
-        }
-        if (event.keyCode == 188) {
-            event.preventDefault();
-            var str = $$(this).val();
-            str.substring(0, str.length - 1)
-        }
-        if (event.keyCode == 189) {
-            event.preventDefault();
-            var str = $$(this).val();
-            str.substring(0, str.length - 1)
-        }
-        if (event.keyCode == 229) {
-            event.preventDefault();
-            var str = $$(this).val();
-            str.substring(0, str.length - 1)
-        }
-    });
+    // $$('.number').on("keydown",function(event){
+    //
+    //     if (event.keyCode == 229) {
+    //         event.preventDefault();
+    //         var str = $$(this).val();
+    //         str.substring(0, str.length - 1)
+    //     }
+    // });
 
 
     var gender = 'm';
@@ -1225,6 +1211,13 @@ function validate(evt) {
     }
 }
 
+
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
 
 
 
