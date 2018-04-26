@@ -224,23 +224,23 @@ myApp.onPageInit('wizard', function (page) {
     $$('.number').on("keydown",function(event){
         if (event.keyCode == 190) {
             event.preventDefault();
-            $$(this).val($$(this).val());
-            alert(event.keyCode);
+            var str = $$(this).val();
+            str.substring(0, str.length - 1)
         }
         if (event.keyCode == 188) {
             event.preventDefault();
-            $$(this).val($$(this).val());
-            alert(event.keyCode);
+            var str = $$(this).val();
+            str.substring(0, str.length - 1)
         }
         if (event.keyCode == 189) {
             event.preventDefault();
-            $$(this).val($$(this).val());
-            alert(event.keyCode);
+            var str = $$(this).val();
+            str.substring(0, str.length - 1)
         }
         if (event.keyCode == 229) {
             event.preventDefault();
-            $$(this).val($$(this).val());
-            alert(event.keyCode);
+            var str = $$(this).val();
+            str.substring(0, str.length - 1)
         }
     });
 
