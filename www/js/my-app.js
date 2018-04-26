@@ -226,8 +226,10 @@ myApp.onPageInit('wizard', function (page) {
         if (event.keyCode == 229) {
             event.preventDefault();
             var str = $$(this).val();
-            str = str.substring(0, str.length - 1);
-            $$(this).val(str);
+            var newstr = str.replace(',', '');
+            var newstr = str.replace('.', '');
+            var newstr = str.replace('-', '');
+            $$(this).val(newstr);
         }
     });
 
