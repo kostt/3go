@@ -221,17 +221,33 @@ function plan(category, obj){
 
 myApp.onPageInit('wizard', function (page) {
     
-    $$('.number').on("keydown",function(event){
-
-        if (event.keyCode == 229) {
-            event.preventDefault();
-            var str = $$(this).val();
-            var newstr = str.replace(',', '');
-            var newstr = str.replace('.', '');
-            var newstr = str.replace('-', '');
-            $$(this).val(newstr);
-        }
-    });
+    // $$('.number').on("keydown",function(event){
+    //     // if (event.keyCode == 190) {
+    //     //     event.preventDefault();
+    //     //     var str = $$(this).val();
+    //     //     str.substring(0, str.length - 1)
+    //     // }
+    //     // if (event.keyCode == 188) {
+    //     //     event.preventDefault();
+    //     //     var str = $$(this).val();
+    //     //     str.substring(0, str.length - 1)
+    //     // }
+    //     // if (event.keyCode == 189) {
+    //     //     event.preventDefault();
+    //     //     var str = $$(this).val();
+    //     //     str.substring(0, str.length - 1)
+    //     // }
+    //     if (event.keyCode == 190) {
+    //         event.preventDefault();
+    //         var str = $$(this).val();
+    //         str += '.';
+    //         alert(str);
+    //         // var newstr = str.replace(',', '');
+    //         // var newstr = str.replace('.', '');
+    //         // var newstr = str.replace('-', '');
+    //         $$(this).val(str);
+    //     }
+    // });
 
 
     var gender = 'm';
