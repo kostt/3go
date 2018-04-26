@@ -221,18 +221,26 @@ function plan(category, obj){
 
 myApp.onPageInit('wizard', function (page) {
 
+
+    $$(document).keyup(function(e) {
+        console.log(e.keyCode);
+    });
+
     $$('.number').on("keydown",function(event){
         if (event.keyCode == 190) {
             event.preventDefault();
             $$(this).val($$(this).val());
+            alert(event.keyCode);
         }
         if (event.keyCode == 188) {
             event.preventDefault();
             $$(this).val($$(this).val());
+            alert(event.keyCode);
         }
         if (event.keyCode == 189) {
             event.preventDefault();
             $$(this).val($$(this).val());
+            alert(event.keyCode);
         }
     });
 
