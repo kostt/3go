@@ -217,7 +217,10 @@ h2{
     color: grey;
 }
 
-
+#canvas4{
+    margin-top: 100px;
+    width: 100%;
+}
 
 .btn-wizard3{
     width: 100% !important;
@@ -235,9 +238,7 @@ h2{
     background-color: #434343;
 }
 
-.btn-wizard3:hover{
-    border-color: #fe2d88;
-}
+
 
 .button.btn-wizard.active{
     border-color: #fe2d88;
