@@ -222,6 +222,21 @@ h2{
     width: 100%;
 }
 
+#traning_run{
+    opacity: 0;
+    display: none;
+}
+
+#traning_swim{
+    display: none;
+    opacity: 0;
+}
+
+#traning_bike{
+    display: none;
+    opacity: 0;
+}
+
 .btn-wizard3{
     width: 100% !important;
     border: 2px solid #434343;

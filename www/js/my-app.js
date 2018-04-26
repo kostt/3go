@@ -6,15 +6,15 @@ var $$ = Dom7;
 
 // Add view
 var mainView = myApp.addView('.view-main', {
-    // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true,
-
+    preloadPreviousPage: false
 });
+
 
 // if(window.localStorage.getItem('has_run') == null) {
     // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-    // mainView.router.loadPage('wizard.html');
+    mainView.router.loadPage('auth.html');
 // }
 
 // Handle Cordova Device Ready Event
@@ -29,6 +29,9 @@ $$(document).on('DOMContentLoaded', function(){
     });
 });
 
+myApp.onPageInit('index', function (page) {
+
+});
 
 
 myApp.onPageInit('plan', function (page) {
@@ -176,7 +179,7 @@ function plan(category, obj){
                 fill: false,
                 backgroundColor: 'transparent',
                 borderColor: '#fe2d88',
-                borderWidth: 5,
+                borderWidth: 4,
                 data: [10,60,20,40,80,10],
             }]
         },
@@ -405,11 +408,14 @@ myApp.onPageInit('wizard', function (page) {
 
 myApp.onPageInit('report', function (page) {
 
-    var slider = new Slider('#ex0');
+
     var slider1 = new Slider('#ex1');
     var slider2 = new Slider('#ex2');
     var slider3 = new Slider('#ex3');
     var slider4 = new Slider('#ex4');
+    var slider5 = new Slider('#ex5');
+    var slider6 = new Slider('#ex6');
+    var slider7 = new Slider('#ex7');
 
 
     var jetlag = false;
@@ -435,12 +441,10 @@ myApp.onPageInit('report', function (page) {
             bike = obj.bike;
             run = obj.run;
 
-            swim =1;
-            traning = 'Тренировка';
-            if(swim > 0){traning = 'Swim';}
-            if(bike > 0){traning = 'Bike';}
-            if(run > 0){traning = 'Run';}
-            $$('#traning').text(traning);
+            if(swim > 0){$$('#traning_swim').show(); $$('#traning_swim').animate({'opacity': 1,}, {duration: 100,});}
+            if(bike > 0){$$('#traning_bike').show();$$('#traning_bike').animate({'opacity': 1,}, {duration: 100,});}
+            if(run > 0){$$('#traning_run').show();$$('#traning_run').animate({'opacity': 1,}, {duration: 100,});}
+
             $$('.hide-animate2').animate({'opacity': 1,}, {duration: 100,});
 
         },
@@ -453,10 +457,10 @@ myApp.onPageInit('report', function (page) {
 
     $$('#report').on('click', function (e) {
 
-        var sport = $$('#ex0').val();
-        if(swim > 0){swim = sport;}
-        if(bike > 0){bike = sport;}
-        if(run > 0){run = sport;}
+        if(swim > 0){swim = $$('#ex7').val();}else{swim = 0;}
+        if(bike > 0){bike = $$('#ex6').val();}else{bike = 0;}
+        if(run > 0){run = $$('#ex5').val();}else{run = 0;}
+
         var dream = $$('#ex1').val();
         var muscules = $$('#ex2').val();
         var pulse = $$('#ex3').val();
@@ -738,19 +742,19 @@ myApp.onPageInit('auth', function (page) {
         queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
         // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
         signInFlow: 'popup',
-        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInSuccessUrl: 'index.html',
         signInOptions: [
             // Leave the lines as is for the providers you want to offer your users.
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
             firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+            // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
             {
                 provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
                 // Whether the display name should be displayed in the Sign Up page.
                 requireDisplayName: true
             },
             {
-                provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+                // provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
                 // Invisible reCAPTCHA with image challenge and bottom left badge.
                 recaptchaParameters: {
                     type: 'image',
@@ -800,7 +804,9 @@ myApp.onPageInit('auth', function (page) {
     if (user) {
         console.log('USER SERVICE : user is signed in');
         this.user = user;
-        alert(user.email);
+
+        mUserId = user.getToken(true).toString();
+        alert(mUserId);
     } else {
         console.log('USER SERVICE : user is signed out');
         alert(user);
