@@ -227,21 +227,23 @@ myApp.onPageInit('wizard', function (page) {
     });
 
     $$('.number').on("keydown",function(event){
-        if (event.keyCode == 190) {
-            event.preventDefault();
-            $$(this).val($$(this).val());
-            alert(event.keyCode);
-        }
-        if (event.keyCode == 188) {
-            event.preventDefault();
-            $$(this).val($$(this).val());
-            alert(event.keyCode);
-        }
-        if (event.keyCode == 189) {
-            event.preventDefault();
-            $$(this).val($$(this).val());
-            alert(event.keyCode);
-        }
+        // if (event.keyCode == 190) {
+        //     event.preventDefault();
+        //     $$(this).val($$(this).val());
+        //     alert(event.keyCode);
+        // }
+        // if (event.keyCode == 188) {
+        //     event.preventDefault();
+        //     $$(this).val($$(this).val());
+        //     alert(event.keyCode);
+        // }
+        // if (event.keyCode == 189) {
+        //     event.preventDefault();
+        //     $$(this).val($$(this).val());
+        //     alert(event.keyCode);
+        // }
+
+        alert(event.keyCode);
     });
 
 
