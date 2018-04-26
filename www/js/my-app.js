@@ -14,7 +14,7 @@ var mainView = myApp.addView('.view-main', {
 // if(window.localStorage.getItem('has_run') == null) {
     // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-    mainView.router.loadPage('auth.html');
+    mainView.router.loadPage('wizard.html');
 // }
 
 // Handle Cordova Device Ready Event
@@ -780,12 +780,12 @@ myApp.onPageInit('auth', function (page) {
         signInSuccessUrl: 'index.html',
         signInOptions: [
             // Leave the lines as is for the providers you want to offer your users.
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
             firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-            firebase.auth.GithubAuthProvider.PROVIDER_ID,
+            // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+            // firebase.auth.GithubAuthProvider.PROVIDER_ID,
             firebase.auth.EmailAuthProvider.PROVIDER_ID,
-            firebase.auth.PhoneAuthProvider.PROVIDER_ID
+            // firebase.auth.PhoneAuthProvider.PROVIDER_ID
         ],
         // Terms of service url.
         tosUrl: '<your-tos-url>'
@@ -803,13 +803,35 @@ myApp.onPageInit('auth', function (page) {
 
     if (user) {
         console.log('USER SERVICE : user is signed in');
-        this.user = user;
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var uid = user.uid;
+        var phoneNumber = user.phoneNumber;
+        var providerData = user.providerData;
 
-        mUserId = user.getToken(true).toString();
+        user.getIdToken().then(function(accessToken) {
+            
+            document.getElementById('account-details').textContent = JSON.stringify({
+                displayName: displayName,
+                email: email,
+                emailVerified: emailVerified,
+                phoneNumber: phoneNumber,
+                photoURL: photoURL,
+                uid: uid,
+                accessToken: accessToken,
+                providerData: providerData
+            }, null, '  ');
+
+        });
+
+
+
         alert(mUserId);
     } else {
         console.log('USER SERVICE : user is signed out');
-        alert(user);
     }
 });
 
