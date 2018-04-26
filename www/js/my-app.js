@@ -221,6 +221,21 @@ function plan(category, obj){
 
 myApp.onPageInit('wizard', function (page) {
 
+    $$('.number').on("keydown",function(event){
+        if (event.keyCode == 190) {
+            event.preventDefault();
+            $$(this).val($$(this).val());
+        }
+        if (event.keyCode == 188) {
+            event.preventDefault();
+            $$(this).val($$(this).val());
+        }
+        if (event.keyCode == 189) {
+            event.preventDefault();
+            $$(this).val($$(this).val());
+        }
+    });
+
 
     var gender = 'm';
     var primary_start = 'sprint';
@@ -1201,7 +1216,6 @@ function validate(evt) {
         if(theEvent.preventDefault) theEvent.preventDefault();
     }
 }
-
 
 
 
