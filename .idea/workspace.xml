@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/styles.css" afterPath="$PROJECT_DIR$/www/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/report.html" afterPath="$PROJECT_DIR$/www/report.html" />
     </list>
     <ignored path="3go.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,9 +35,26 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="744" column="37" selection-start-line="744" selection-start-column="37" selection-end-line="744" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="142">
+              <caret line="777" column="25" selection-start-line="777" selection-start-column="25" selection-end-line="777" selection-end-column="25" />
+              <folding>
+                <marker date="1524740601175" expanded="true" signature="24255:30427" ph="{...}" />
+                <marker date="1524740601175" expanded="true" signature="24309:27799" ph="{&quot;queryParameterForWidgetMode&quot;: 'mode'...}" />
+                <marker date="1524740601175" expanded="true" signature="24333:26300" ph="{...}" />
+                <marker date="1524740601175" expanded="true" signature="24413:25016" ph="{...}" />
+                <marker date="1524740601175" expanded="true" signature="24759:24967" ph="//..." />
+                <marker date="1524740601175" expanded="true" signature="25095:25515" ph="{...}" />
+                <marker date="1524740601175" expanded="true" signature="25155:25466" ph="//..." />
+                <marker date="1524740601175" expanded="true" signature="25563:26070" ph="{...}" />
+                <marker date="1524740601175" expanded="true" signature="25623:26005" ph="//..." />
+                <marker date="1524740601175" expanded="true" signature="26107:26287" ph="{...}" />
+                <marker date="1524740601175" expanded="true" signature="26128:26193" ph="//..." />
+                <marker date="1524740601175" expanded="true" signature="26799:27717" ph="[...]" />
+                <marker date="1524740601175" expanded="true" signature="27096:27320" ph="{&quot;requireDisplayName&quot;: true...}" />
+                <marker date="1524740601175" expanded="true" signature="27337:27704" ph="{...}" />
+                <marker date="1524740601175" expanded="true" signature="27542:27687" ph="{&quot;type&quot;: 'image'...}" />
+                <marker date="1524740601175" expanded="true" signature="27992:28849" ph="//..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -317,12 +332,12 @@
       <workItem from="1524557359993" duration="21020000" />
       <workItem from="1524639153526" duration="24261000" />
       <workItem from="1524728718219" duration="8272000" />
-      <workItem from="1524739450811" duration="964000" />
+      <workItem from="1524739450811" duration="1151000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271668000" />
+    <option name="totallyTimeSpent" value="271855000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -376,7 +391,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1524740601175" expanded="true" signature="24255:30427" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="24309:27799" ph="{&quot;queryParameterForWidgetMode&quot;: 'mode'...}" />
+            <marker date="1524740601175" expanded="true" signature="24333:26300" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="24413:25016" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="24759:24967" ph="//..." />
+            <marker date="1524740601175" expanded="true" signature="25095:25515" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="25155:25466" ph="//..." />
+            <marker date="1524740601175" expanded="true" signature="25563:26070" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="25623:26005" ph="//..." />
+            <marker date="1524740601175" expanded="true" signature="26107:26287" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="26128:26193" ph="//..." />
+            <marker date="1524740601175" expanded="true" signature="26799:27717" ph="[...]" />
+            <marker date="1524740601175" expanded="true" signature="27096:27320" ph="{&quot;requireDisplayName&quot;: true...}" />
+            <marker date="1524740601175" expanded="true" signature="27337:27704" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="27542:27687" ph="{&quot;type&quot;: 'image'...}" />
+            <marker date="1524740601175" expanded="true" signature="27992:28849" ph="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -660,9 +692,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="744" column="37" selection-start-line="744" selection-start-column="37" selection-end-line="744" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="142">
+          <caret line="777" column="25" selection-start-line="777" selection-start-column="25" selection-end-line="777" selection-end-column="25" />
+          <folding>
+            <marker date="1524740601175" expanded="true" signature="24255:30427" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="24309:27799" ph="{&quot;queryParameterForWidgetMode&quot;: 'mode'...}" />
+            <marker date="1524740601175" expanded="true" signature="24333:26300" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="24413:25016" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="24759:24967" ph="//..." />
+            <marker date="1524740601175" expanded="true" signature="25095:25515" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="25155:25466" ph="//..." />
+            <marker date="1524740601175" expanded="true" signature="25563:26070" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="25623:26005" ph="//..." />
+            <marker date="1524740601175" expanded="true" signature="26107:26287" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="26128:26193" ph="//..." />
+            <marker date="1524740601175" expanded="true" signature="26799:27717" ph="[...]" />
+            <marker date="1524740601175" expanded="true" signature="27096:27320" ph="{&quot;requireDisplayName&quot;: true...}" />
+            <marker date="1524740601175" expanded="true" signature="27337:27704" ph="{...}" />
+            <marker date="1524740601175" expanded="true" signature="27542:27687" ph="{&quot;type&quot;: 'image'...}" />
+            <marker date="1524740601175" expanded="true" signature="27992:28849" ph="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
