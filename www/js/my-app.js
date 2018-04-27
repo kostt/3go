@@ -16,7 +16,7 @@ var mainView = myApp.addView('.view-main', {
 
 
 if(window.localStorage.getItem('has_run') == null) {
-    myApp.popup('.start-popup');
+    // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
     // mainView.router.loadPage('auth.html');
 }
@@ -1156,7 +1156,11 @@ function validate(evt) {
 
 
 
+var el = document.getElementById('img_logo_big');
 
+el.addEventListener('long-press', function(e) {
+    mainView.router.loadPage('wizard.html');
+});
 
 
 

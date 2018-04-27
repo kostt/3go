@@ -73,7 +73,6 @@
 
         clearTimeout(timer);
 
-        mainView.router.loadPage('wizard.html');
     }
 
 }(this, document));
