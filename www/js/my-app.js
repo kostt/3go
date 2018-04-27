@@ -830,7 +830,9 @@ myApp.onPageInit('auth', function (page) {
                 complete: function() {myApp.hidePreloader();},
                 success: function (data) {
 
+                    alert("Токен передан");
                     mainView.router.loadPage('index.html');
+                    
 
 
                 },
