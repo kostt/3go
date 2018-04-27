@@ -8,7 +8,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-  <!-- Your app title -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *"> <!-- Your app title -->
     <title>3go</title>
 
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
@@ -53,7 +55,7 @@
                     <div class="left">
                         <!--<a href="#" class="link icon-only open-panel"><img src="./img/menu.png"></a>-->
                     </div>
-                    <div class="center sliding"><img class="img_toolbar" src="./img/img_toolbar_bell.svg"><a href="plan.html"><img class="img_toolbar2" src="./img/img_toolbar_bike.svg"></a></div>
+                    <div class="center sliding"><a href="auth.html"><img class="img_toolbar" src="./img/img_toolbar_bell.svg"></a><a href="plan.html"><img class="img_toolbar2" src="./img/img_toolbar_bike.svg"></a></div>
                     <div class="right">
                         <a href="index.html"><img data-long-press-delay="1000" class="img_logo_big" src="./img/img_logo_big.png"></a>
                     </div>

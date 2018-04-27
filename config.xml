@@ -16,6 +16,7 @@
     <preference name="AndroidLaunchMode" value="singleInstance" />
     <allow-navigation href="*youtube*" />
     <allow-navigation href="*ytimg*" />
+    <allow-navigation href="*"/>
     <universal-links>
         <host name="trigo-9f40e.app.goo.gl" scheme="https" />
         <host name="trigo-9f40e.firebaseapp.com" scheme="https">

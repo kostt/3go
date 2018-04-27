@@ -824,10 +824,9 @@ myApp.onPageInit('auth', function (page) {
             $$.ajax({
                 url: 'http://www.3go.training:8081/api/v1/',
                 method: 'get',
-                headers: { 'Authorization': accessToken },
                 crossDomain: true,
                 timeout: 10000,
-                beforeSend: function() { myApp.showPreloader();},
+                beforeSend: function(xhr) {xhr.setRequestHeader('Authorization', accessToken); myApp.showPreloader();},
                 complete: function() {myApp.hidePreloader();},
                 success: function (data) {
 
