@@ -4,6 +4,10 @@ var myApp = new Framework7();
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
 
+var appData = {
+    token: ''
+};
+
 // Add view
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
@@ -720,91 +724,7 @@ function statistics(stat_time){
 
 
 myApp.onPageInit('auth', function (page) {
-
-    // // FirebaseUI config.
-    // var uiConfig = {
-    //     callbacks: {
-    //         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-    //             var user = authResult.user;
-    //             var credential = authResult.credential;
-    //             var isNewUser = authResult.additionalUserInfo.isNewUser;
-    //             var providerId = authResult.additionalUserInfo.providerId;
-    //             var operationType = authResult.operationType;
-    //             // Do something with the returned AuthResult.
-    //             // Return type determines whether we continue the redirect automatically
-    //             // or whether we leave that to developer to handle.
-    //             return true;
-    //         },
-    //         signInSuccess: function(currentUser, credential, redirectUrl) {
-    //
-    //             alert("Да");
-    //             // This callback will be deprecated. `signInSuccessWithAuthResult` should
-    //             // be used instead.
-    //             // Do something.
-    //             // Return type determines whether we continue the redirect automatically
-    //             // or whether we leave that to developer to handle.
-    //             return true;
-    //         },
-    //         signInFailure: function(error) {
-    //
-    //             alert("Да");
-    //             // Some unrecoverable error occurred during sign-in.
-    //             // Return a promise when error handling is completed and FirebaseUI
-    //             // will reset, clearing any UI. This commonly occurs for error code
-    //             // 'firebaseui/anonymous-upgrade-merge-conflict' when merge conflict
-    //             // occurs. Check below for more details on this.
-    //             return handleUIError(error);
-    //         },
-    //         uiShown: function() {
-    //             // The widget is rendered.
-    //             // Hide the loader.
-    //             document.getElementById('loader').style.display = 'none';
-    //         }
-    //     },
-    //     credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
-    //     // Query parameter name for mode.
-    //     queryParameterForWidgetMode: 'mode',
-    //     // Query parameter name for sign in success url.
-    //     queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
-    //     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-    //     signInFlow: 'popup',
-    //     signInSuccessUrl: 'index.html',
-    //     signInOptions: [
-    //         // Leave the lines as is for the providers you want to offer your users.
-    //         // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    //         firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    //         // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    //         {
-    //             provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    //             // Whether the display name should be displayed in the Sign Up page.
-    //             requireDisplayName: true
-    //         },
-    //         {
-    //             // provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-    //             // Invisible reCAPTCHA with image challenge and bottom left badge.
-    //             recaptchaParameters: {
-    //                 type: 'image',
-    //                 size: 'invisible',
-    //                 badge: 'bottomleft'
-    //             }
-    //         }
-    //     ],
-    //     // Terms of service url.
-    //     tosUrl: '<your-tos-url>'
-    // };
-    //
-    // var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    // // The start method will wait until the DOM is loaded.
-    // ui.start('#firebaseui-auth-container', uiConfig);
-
-
-
-
-
-
-
-
-
+    
     firebase.auth().onAuthStateChanged((user)=> {
         console.log(user);
 
@@ -819,6 +739,8 @@ myApp.onPageInit('auth', function (page) {
         var phoneNumber = user.phoneNumber;
         var providerData = user.providerData;
 
+        appData.token = accessToken;
+
         user.getIdToken().then(function(accessToken) {
 
             $$.ajax({
@@ -826,14 +748,11 @@ myApp.onPageInit('auth', function (page) {
                 method: 'get',
                 crossDomain: true,
                 timeout: 10000,
-                beforeSend: function(xhr) {xhr.setRequestHeader('Authorization', accessToken); myApp.showPreloader();},
+                beforeSend: function(xhr) {xhr.setRequestHeader('Authorization', appData.token); myApp.showPreloader();},
                 complete: function() {myApp.hidePreloader();},
                 success: function (data) {
 
-                    alert("Токен передан");
                     mainView.router.loadPage('index.html');
-                    
-
 
                 },
                 error: function(data) {
@@ -882,109 +801,7 @@ myApp.onPageInit('auth', function (page) {
     }
 });
 
-
-
-
-
-
-
-
-
-    $$('#reg_btn').on('click', function (e) {
-        mainView.router.loadPage('registration.html');
-    });
-
-    $$('#auth_btn').on('click', function (e) {
-
-        var auth_email = $$('#auth_email').val();
-        var auth_password = $$('#auth_password').val();
-
-        if(auth_email.length == 0 && auth_email.length == 0){
-            error('Заполните пустые поля');
-            return false;
-        }
-
-        $$.ajax({
-            url: 'http://3go-api.local/3go/auth',
-            method: 'post',
-            dataType: 'json',
-            data: {auth_email: auth_email, auth_password: auth_password},
-            crossDomain: true,
-            timeout: 3000,
-            beforeSend: function() {myApp.showPreloader();},
-            complete: function() {myApp.hidePreloader();},
-            success: function (data) {
-
-                if (data.error) {
-                    error(data.error);
-                } else {
-                    mainView.router.loadPage('index.html');
-                }
-            },
-            error: function(data) {
-                error('Произошла ошибка. Проверьте соединение с интернетом');
-                myApp.hidePreloader();
-            }
-        });
-
-    });
-    
 });
-
-
-
-
-
-myApp.onPageInit('registration', function (page) {
-
-    $$('#register_user').on('click', function (e) {
-
-        var reg_email = $$('#reg_email').val();
-        var reg_pass = $$('#reg_pass').val();
-        var reg_pass2 = $$('#reg_pass2').val();
-
-        if(reg_pass.length == 0 && reg_pass2.length == 0){
-            error('Заполните пустые поля');
-            return false;
-        }
-
-        if(reg_pass != reg_pass2){
-            error('Пароли не совпадают');
-            return false;
-        }
-
-        if(!isValidEmailAddress(reg_email)){
-            error('Не правильно введен Email');
-            return false;
-        }
-
-        $$.ajax({
-            url: 'http://3go-api.local/3go/registration',
-            method: 'post',
-            dataType: 'json',
-            data: {reg_email: reg_email, reg_pass: reg_pass},
-            crossDomain: true,
-            timeout: 3000,
-            beforeSend: function() {myApp.showPreloader();},
-            complete: function() {myApp.hidePreloader();},
-            success: function (data) {
-
-                if (data.error) {
-                    error(data.error);
-                } else {
-                    mainView.router.loadPage('index.html');
-                }
-            },
-            error: function(data) {
-                error('Произошла ошибка. Проверьте соединение с интернетом');
-                myApp.hidePreloader();
-            }
-        });
-
-    });
-
-});
-
 
 
 myApp.onPageInit('training', function (page) {
@@ -997,7 +814,7 @@ myApp.onPageInit('training', function (page) {
         method: 'get',
         crossDomain: true,
         timeout: 10000,
-        beforeSend: function() {myApp.showPreloader();},
+        beforeSend: function(xhr) {xhr.setRequestHeader('Authorization', appData.token); myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
 
