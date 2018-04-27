@@ -739,9 +739,9 @@ myApp.onPageInit('auth', function (page) {
         var phoneNumber = user.phoneNumber;
         var providerData = user.providerData;
 
-        appData.token = accessToken;
-
         user.getIdToken().then(function(accessToken) {
+
+            appData.token = accessToken;
 
             $$.ajax({
                 url: 'http://www.3go.training:8081/api/v1/',
