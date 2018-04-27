@@ -16,8 +16,8 @@ var mainView = myApp.addView('.view-main', {
 
 
 if(window.localStorage.getItem('has_run') == null) {
-    // myApp.popup('.start-popup');
-    // window.localStorage.setItem('has_run', 'true');
+    myApp.popup('.start-popup');
+    window.localStorage.setItem('has_run', 'true');
     // mainView.router.loadPage('auth.html');
 }
 
@@ -28,18 +28,74 @@ $$(document).on('deviceready', function() {
 });
 
 $$(document).on('DOMContentLoaded', function(){
-    document.addEventListener('long-press', function(e) {
-        e.target.setAttribute('data-editing', 'true');
+
+    var timer;
+    $$('#img_logo_big').on("touchstart",function(){
+        timer = setTimeout(function(){
+            mainView.router.loadPage('wizard.html');
+        },500);
+    }).on("touchend",function(){
+        clearTimeout(timer);
     });
-});
 
-myApp.onPageInit('index', function (page) {
 
 });
+
+
+
+myApp.onPageInit('*', function (page) {
+    
+    var timer;
+    $$('.img_logo_big').on("touchstart",function(){
+        timer = setTimeout(function(){
+            mainView.router.loadPage('wizard.html');
+        },500);
+    }).on("touchend",function(){
+        clearTimeout(timer);
+    });
+
+
+    //
+    // $$('.img_logo_big').on('touchend', function() {
+    //
+    //     alert("fdgs");
+    //     //Logic
+    // });
+
+    // var pressTimer;
+    // $$('.profile-box-name').on('keyup',function() {
+    //     alert("fdgs");
+    //     clearTimeout(pressTimer);
+    //     return false;
+    // });
+    // $$('.profile-box-name').on('keydown',function() {
+    //     pressTimer = setTimeout(function() {alert("fdgs");}, 400);
+    //     return false;
+    // });
+
+    // var pressTimer;
+    // $$('.img_logo_big').on('touchstart',function() {
+    //     clearTimeout(pressTimer);
+    //     return false;
+    // });
+    //
+    // $$('.img_logo_big').on('touchend', function() {
+    //     pressTimer = window.setTimeout(function() { alert("fdgs"); }, 500);
+    //     return false;
+    // });
+
+
+
+
+
+});
+
 
 
 myApp.onPageInit('plan', function (page) {
-    
+
+
+
     $$(".plan_result").empty();
 
     $$(".plan_result").append(
@@ -1081,10 +1137,6 @@ function training(tran_time, obj){
 
 
 
-
-
-
-
 $$('.panel-close').on('click', function (e) {
     myApp.closePanel();
 });
@@ -1155,12 +1207,6 @@ function validate(evt) {
 }
 
 
-
-var el = document.getElementById('img_logo_big');
-
-el.addEventListener('long-press', function(e) {
-    mainView.router.loadPage('wizard.html');
-});
 
 
 
