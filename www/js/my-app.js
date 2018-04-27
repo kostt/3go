@@ -221,33 +221,33 @@ function plan(category, obj){
 
 myApp.onPageInit('wizard', function (page) {
     
-    // $$('.number').on("keydown",function(event){
-    //     // if (event.keyCode == 190) {
-    //     //     event.preventDefault();
-    //     //     var str = $$(this).val();
-    //     //     str.substring(0, str.length - 1)
-    //     // }
-    //     // if (event.keyCode == 188) {
-    //     //     event.preventDefault();
-    //     //     var str = $$(this).val();
-    //     //     str.substring(0, str.length - 1)
-    //     // }
-    //     // if (event.keyCode == 189) {
-    //     //     event.preventDefault();
-    //     //     var str = $$(this).val();
-    //     //     str.substring(0, str.length - 1)
-    //     // }
-    //     if (event.keyCode == 190) {
-    //         event.preventDefault();
-    //         var str = $$(this).val();
-    //         str += '.';
-    //         alert(str);
-    //         // var newstr = str.replace(',', '');
-    //         // var newstr = str.replace('.', '');
-    //         // var newstr = str.replace('-', '');
-    //         $$(this).val(str);
-    //     }
-    // });
+    $$('.number').on("keydown",function(event){
+
+        // if (event.keyCode == 190) {
+        //     event.preventDefault();
+        //     var str = $$(this).val();
+        //     str.substring(0, str.length - 1)
+        // }
+        // if (event.keyCode == 188) {
+        //     event.preventDefault();
+        //     var str = $$(this).val();
+        //     str.substring(0, str.length - 1)
+        // }
+        // if (event.keyCode == 229) {
+        //     event.preventDefault();
+        //     var str = $$(this).val();
+        //     str.substring(0, str.length - 1)
+        // }
+        // if (event.keyCode == 190) {
+        //
+        //
+        //     var str = $$(this).val()+'33';
+        //     str = str.substring(0, str.length - 1);
+        //
+        //     $$(this).val(str);
+
+        // }
+    });
 
 
     var gender = 'm';
@@ -417,7 +417,7 @@ myApp.onPageInit('wizard', function (page) {
                 beforeSend: function() {myApp.showPreloader();},
                 complete: function() {myApp.hidePreloader();},
                 success: function (data) {
-                    mainView.router.loadPage('index.html');
+                    mainView.router.loadPage('auth.html');
                 },
                 error: function(data) {
                     error('Произошла ошибка. Проверьте соединение с интернетом');
@@ -839,23 +839,32 @@ myApp.onPageInit('auth', function (page) {
         var providerData = user.providerData;
 
         user.getIdToken().then(function(accessToken) {
-            
-            document.getElementById('account-details').textContent = JSON.stringify({
-                displayName: displayName,
-                email: email,
-                emailVerified: emailVerified,
-                phoneNumber: phoneNumber,
-                photoURL: photoURL,
-                uid: uid,
-                accessToken: accessToken,
-                providerData: providerData
-            }, null, '  ');
+
+            $$.ajax({
+                url: 'http://www.3go.training:8081/api/v1/',
+                method: 'get',
+                headers: { 'Authorization': accessToken },
+                crossDomain: true,
+                timeout: 10000,
+                beforeSend: function() { myApp.showPreloader();},
+                complete: function() {myApp.hidePreloader();},
+                success: function (data) {
+
+                    mainView.router.loadPage('index.html');
+
+
+                },
+                error: function(data) {
+                    error('Произошла ошибка. Проверьте соединение с интернетом');
+                    myApp.hidePreloader();
+                }
+            });
 
         });
 
 
 
-        alert(mUserId);
+
     } else {
         console.log('USER SERVICE : user is signed out');
     }
