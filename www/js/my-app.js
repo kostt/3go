@@ -17,7 +17,7 @@ var mainView = myApp.addView('.view-main', {
 
 if(window.localStorage.getItem('has_run') == null) {
     myApp.popup('.start-popup');
-    window.localStorage.setItem('has_run', 'true');
+    // window.localStorage.setItem('has_run', 'true');
     // mainView.router.loadPage('auth.html');
 }
 
@@ -49,8 +49,52 @@ myApp.onPageInit('plan', function (page) {
         '<div class="first_oval"></div>' +
         '<div class="chart_scale_time"><div class="chart_scale_hour">0</div><p class="chart_scale_hour_text">часов</p></div>' +
         '<img src="./img/img_chart_scale.svg"></div>' +
-        '</div>'
+        '</div><canvas id="canvas4"></canvas>'
     );
+
+    var chartData_line = {
+        type: 'line',
+        data: {
+            labels: ["10", "20","30","40","50","60"],
+            datasets: [{
+                label: "P1",
+                fill: false,
+                backgroundColor: 'transparent',
+                borderColor: '#fe2d88',
+                borderWidth: 4,
+                data: [10,60,20,40,80,10],
+            }]
+        },
+        options: {
+            elements: { point: { radius: 0 } },
+            responsive: false,
+            legend: {
+                display: false,
+            },
+            scales: {
+
+                yAxes: [{
+                    display: false,
+                    ticks: {
+                        beginAtZero:true,
+                    },
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false,
+                    },
+                    ticks: {
+                        fontColor: "white",
+                        beginAtZero:true,
+                    },
+                }],
+            }
+
+        }
+    }
+
+    var canvas_line = document.getElementById('canvas4');
+    var myChart_line = new Chart(canvas_line, chartData_line);
 
     $$.ajax({
         url: 'http://www.3go.training:8081/api/v1/workout/',
@@ -63,7 +107,7 @@ myApp.onPageInit('plan', function (page) {
 
             $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
             var obj = JSON.parse(data);
-            
+
             if(obj.bike > 0){
                 $$(".chart_scale_hour").text(obj.bike);
                 $$(".cat1").attr('src', './img/img_rider.svg');
@@ -122,24 +166,12 @@ function plan(category, obj){
         '<canvas id="skills" style="z-index: -4;" width="239" height="239"></canvas>' +
         '<div class="first_oval"></div>' +
         '<div class="chart_scale_time"><div class="chart_scale_hour">0</div><p class="chart_scale_hour_text">часов</p></div>' +
-        '<img class="img_first_oval" src="./img/img_chart_scale.svg"></canvas></div>' +
-        '</div><canvas id="canvas4">'
+        '<img class="img_first_oval" src="./img/img_chart_scale.svg"></div>' +
+        '</div><canvas id="canvas4"></canvas>'
     );
 
     pieData = [obj.swim, obj.run, obj.bike];
     $$(".chart_scale_hour").text(obj.bike+obj.run+obj.swim);
-
-    if(category == 1){
-
-    }
-
-    if(category == 2){
-
-    }
-
-    if(category == 3){
-
-    }
 
     var ctx = document.getElementById("skills").getContext('2d');
     var myChart = new Chart(ctx, {
@@ -174,7 +206,7 @@ function plan(category, obj){
     });
 
 
-    var chartData = {
+    var chartData_line = {
         type: 'line',
         data: {
             labels: ["10", "20","30","40","50","60"],
@@ -215,8 +247,11 @@ function plan(category, obj){
         }
     }
 
-    var canvas = document.getElementById('canvas4');
-    var myChart = new Chart(canvas, chartData);
+    var canvas_line = document.getElementById('canvas4');
+    var myChart_line = new Chart(canvas_line, chartData_line);
+
+
+
 }
 
 
@@ -356,8 +391,55 @@ myApp.onPageInit('wizard', function (page) {
         }
 
         if(this.activeIndex == 1){
+            var old = $$('#old').val();
+            var old = old.split('.');
+            $$('#old').val(old[0]);
             $$("#btn-wizard-start").css("display", "none");
             $$(".btn-wizard-arrow").show();
+        }
+
+        if(this.activeIndex == 3){
+            var has_experience = $$('#has_experience').val();
+            var has_experience = has_experience.split('.');
+            $$('#has_experience').val(has_experience[0]);
+
+            var best_swim = $$('#best_swim').val();
+            var best_swim = best_swim.split('.');
+            $$('#best_swim').val(best_swim[0]);
+
+            var best_bike = $$('#best_bike').val();
+            var best_bike = best_bike.split('.');
+            $$('#best_bike').val(best_bike[0]);
+
+            var best_run = $$('#best_run').val();
+            var best_run = best_run.split('.');
+            $$('#best_run').val(best_run[0]);
+        }
+
+        if(this.activeIndex == 4){
+            var sprint_personal_best = $$('#sprint_personal_best').val();
+            var sprint_personal_best = sprint_personal_best.split('.');
+            $$('#sprint_personal_best').val(sprint_personal_best[0]);
+
+            var olimpic_personal_best = $$('#olimpic_personal_best').val();
+            var olimpic_personal_best = olimpic_personal_best.split('.');
+            $$('#olimpic_personal_best').val(olimpic_personal_best[0]);
+        }
+
+        if(this.activeIndex == 5){
+            var half_personal_best = $$('#half_personal_best').val();
+            var half_personal_best = half_personal_best.split('.');
+            $$('#half_personal_best').val(half_personal_best[0]);
+
+            var full_personal_best = $$('#full_personal_best').val();
+            var full_personal_best = full_personal_best.split('.');
+            $$('#full_personal_best').val(full_personal_best[0]);
+        }
+
+        if(this.activeIndex == 7){
+            var free_time = $$('#free_time').val();
+            var free_time = free_time.split('.');
+            $$('#free_time').val(free_time[0]);
         }
 
         if(this.activeIndex == 8){
@@ -742,6 +824,7 @@ myApp.onPageInit('auth', function (page) {
         user.getIdToken().then(function(accessToken) {
 
             appData.token = accessToken;
+            window.localStorage.setItem('token', accessToken);
 
             $$.ajax({
                 url: 'http://www.3go.training:8081/api/v1/',
@@ -752,7 +835,10 @@ myApp.onPageInit('auth', function (page) {
                 complete: function() {myApp.hidePreloader();},
                 success: function (data) {
 
-                    mainView.router.loadPage('index.html');
+                    setTimeout(function () {
+                        mainView.router.loadPage('index.html');
+                    }, 1000);
+
 
                 },
                 error: function(data) {
@@ -814,7 +900,7 @@ myApp.onPageInit('training', function (page) {
         method: 'get',
         crossDomain: true,
         timeout: 10000,
-        beforeSend: function(xhr) {xhr.setRequestHeader('Authorization', appData.token); myApp.showPreloader();},
+        beforeSend: function() { myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
 
