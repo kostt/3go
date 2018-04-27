@@ -14,7 +14,7 @@ var mainView = myApp.addView('.view-main', {
 // if(window.localStorage.getItem('has_run') == null) {
     // myApp.popup('.start-popup');
     // window.localStorage.setItem('has_run', 'true');
-    mainView.router.loadPage('wizard.html');
+    // mainView.router.loadPage('auth.html');
 // }
 
 // Handle Cordova Device Ready Event
@@ -803,7 +803,7 @@ myApp.onPageInit('auth', function (page) {
 
     // FirebaseUI config.
     var uiConfig = {
-        signInSuccessUrl: 'index.html',
+        signInSuccessUrl: 'auth.html',
         signInOptions: [
             // Leave the lines as is for the providers you want to offer your users.
             // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -813,8 +813,14 @@ myApp.onPageInit('auth', function (page) {
             firebase.auth.EmailAuthProvider.PROVIDER_ID,
             // firebase.auth.PhoneAuthProvider.PROVIDER_ID
         ],
+        callbacks: {
+            'signInSuccess': function (currentUser, credential, redirectUrl) {
+                mainView.router.loadPage('index.html');
+                return false;
+            }
+        },
         // Terms of service url.
-        tosUrl: '<your-tos-url>'
+        tosUrl: 'auth.html',
     };
 
     // Initialize the FirebaseUI Widget using Firebase.
@@ -1238,6 +1244,9 @@ function validate(evt) {
         if(theEvent.preventDefault) theEvent.preventDefault();
     }
 }
+
+
+
 
 
 
