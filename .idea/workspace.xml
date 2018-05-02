@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/styles.css" afterPath="$PROJECT_DIR$/www/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/wizard.html" afterPath="$PROJECT_DIR$/www/wizard.html" />
     </list>
     <ignored path="3go.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,13 +34,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="909" column="54" selection-start-line="909" selection-start-column="54" selection-end-line="909" selection-end-column="54" />
+            <state relative-caret-position="1431">
+              <caret line="831" column="4" selection-start-line="831" selection-start-column="4" selection-end-line="831" selection-end-column="4" />
               <folding>
-                <marker date="1525267187662" expanded="true" signature="346:472" ph="//..." />
+                <marker date="1525270786808" expanded="true" signature="346:472" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -77,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wizard.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wizard.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/wizard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
-              <caret line="142" column="39" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
+            <state relative-caret-position="300">
+              <caret line="308" column="88" selection-start-line="308" selection-start-column="88" selection-end-line="308" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -110,13 +112,13 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="1010" column="16" selection-start-line="1010" selection-start-column="16" selection-end-line="1010" selection-end-column="16" />
+            <state relative-caret-position="298">
+              <caret line="739" column="59" selection-start-line="739" selection-start-column="59" selection-end-line="739" selection-end-column="59" />
               <folding>
-                <element signature="e#13465#13720#2" expanded="true" />
-                <element signature="e#13838#14093#2" expanded="true" />
-                <element signature="e#14212#14467#2" expanded="true" />
-                <marker date="1525263478502" expanded="true" signature="11773:11811" ph="{...}" />
+                <element signature="e#13788#14043#2" expanded="true" />
+                <element signature="e#14161#14416#2" expanded="true" />
+                <element signature="e#14535#14790#2" expanded="true" />
+                <marker date="1525270923771" expanded="true" signature="11798:11836" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -167,9 +169,9 @@
         <option value="$PROJECT_DIR$/www/plan.html" />
         <option value="$PROJECT_DIR$/www/js/long-press.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/wizard.html" />
-        <option value="$PROJECT_DIR$/www/css/styles.css" />
         <option value="$PROJECT_DIR$/www/js/my-app.js" />
+        <option value="$PROJECT_DIR$/www/css/styles.css" />
+        <option value="$PROJECT_DIR$/www/wizard.html" />
       </list>
     </option>
   </component>
@@ -385,12 +387,12 @@
       <workItem from="1524815532238" duration="12399000" />
       <workItem from="1524831433058" duration="9617000" />
       <workItem from="1524901567323" duration="3565000" />
-      <workItem from="1525259086497" duration="7110000" />
+      <workItem from="1525259086497" duration="10957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316836000" />
+    <option name="totallyTimeSpent" value="320683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="702" extended-state="0" />
@@ -445,7 +447,7 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1525267187662" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525270786808" expanded="true" signature="346:472" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -685,32 +687,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/wizard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
-          <caret line="142" column="39" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="1010" column="16" selection-start-line="1010" selection-start-column="16" selection-end-line="1010" selection-end-column="16" />
-          <folding>
-            <element signature="e#13465#13720#2" expanded="true" />
-            <element signature="e#13838#14093#2" expanded="true" />
-            <element signature="e#14212#14467#2" expanded="true" />
-            <marker date="1525263478502" expanded="true" signature="11773:11811" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -724,11 +705,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="909" column="54" selection-start-line="909" selection-start-column="54" selection-end-line="909" selection-end-column="54" />
+        <state relative-caret-position="1431">
+          <caret line="831" column="4" selection-start-line="831" selection-start-column="4" selection-end-line="831" selection-end-column="4" />
           <folding>
-            <marker date="1525267187662" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525270786808" expanded="true" signature="346:472" ph="//..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="739" column="59" selection-start-line="739" selection-start-column="59" selection-end-line="739" selection-end-column="59" />
+          <folding>
+            <element signature="e#13788#14043#2" expanded="true" />
+            <element signature="e#14161#14416#2" expanded="true" />
+            <element signature="e#14535#14790#2" expanded="true" />
+            <marker date="1525270923771" expanded="true" signature="11798:11836" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/wizard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="308" column="88" selection-start-line="308" selection-start-column="88" selection-end-line="308" selection-end-column="88" />
+          <folding />
         </state>
       </provider>
     </entry>

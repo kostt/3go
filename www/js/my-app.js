@@ -321,7 +321,7 @@ myApp.onPageInit('wizard', function (page) {
     $$('.half').on('click', function () {$$('.half').removeClass('active');$$(this).addClass('active');});
     $$('.long').on('click', function () {$$('.long').removeClass('active');$$(this).addClass('active');});
     $$('.luch_start').on('click', function () {$$('.luch_start').removeClass('active');$$(this).addClass('active'); primary_start = $$(this).attr('data-action');});
-    $$('.osob, .kalendar').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active');}else{$$(this).addClass('active');}});
+    $$('.kalendar').on('click', function () { if($$(this).hasClass('active')){$$(this).removeClass('active');}else{$$(this).addClass('active');}});
     $$('.triatlon_y').on('click', function () {$$('.triatlon_n').removeClass('active');$$(this).addClass('active');$$('#has_experience').prop("disabled", false);});
     $$('.triatlon_n').on('click', function () {$$('.triatlon_y').removeClass('active');$$(this).addClass('active');$$('#has_experience').prop("disabled", true);$$('#has_experience').val('');});
     $$('.sprint_y').on('click', function () {$$('.sprint_n').removeClass('active');$$(this).addClass('active');$$('#sprint_personal_best').prop("disabled", false);});
@@ -829,10 +829,6 @@ function statistics(stat_time){
 
 
 myApp.onPageInit('auth', function (page) {
-
-
-
-
     
     firebase.auth().onAuthStateChanged((user)=> {
         console.log(user);

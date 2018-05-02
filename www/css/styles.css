@@ -690,6 +690,7 @@ h2{
 /* Customize the label (the container) */
 .container {
     cursor: pointer;
+    width: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -715,7 +716,7 @@ h2{
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container:hover input ~ .button .checkmark {
     background-color: none;
 }
 
@@ -724,10 +725,23 @@ h2{
 /*}*/
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.container input:checked ~ .button{
+    border-color: #fe2d88;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .button .checkmark {
     background-color: none;
     border-color: white;
 }
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .button .wizard-in-input-text2 {
+    color: white;
+}
+
+
 
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -738,12 +752,12 @@ h2{
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked ~ .button .checkmark:after {
     display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.container .button .checkmark:after {
     left: 6px;
     top: 2px;
     width: 5px;
@@ -755,7 +769,7 @@ h2{
     transform: rotate(45deg);
 }
 
-.wizard-table .button .container .checkmark{
+.wizard-table .button .container .button .checkmark{
     right: 10px;
 }
 
