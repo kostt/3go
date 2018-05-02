@@ -741,6 +741,10 @@ h2{
     color: white;
 }
 
+.container input:checked ~ .button .wizard-in-input-text4 {
+    color: white;
+}
+
 
 
 
