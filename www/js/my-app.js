@@ -386,11 +386,12 @@ myApp.onPageInit('wizard', function (page) {
 
     $$('#prew_swip').on('click', function (e) {
 
+        $$('.wizard-swip').scrollTop(0);
+        $$(".page-content").scrollTop(0, 400);
         mySwiper.allowSlidePrev = true;
         mySwiper.slidePrev();
         mySwiper.allowSlidePrev = false;
-        $$('.wizard-swip').scrollTop(0);
-        $$(".page-content").scrollTop(0, 400);
+
 
     });
 
