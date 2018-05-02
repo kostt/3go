@@ -275,9 +275,10 @@ h2{
 .wizard-in-input-text2{
     float: left;
     position: absolute;
-    top: 4px;
-    left:15px;
-    width: 100%;
+    top: -14px;
+    left: 0px;
+    width: 90%;
+    padding: 20px;
     text-align: left;
 }
 
@@ -716,9 +717,9 @@ h2{
     background-color: none;
 }
 
-.btn-wizard2:hover{
-    border-color: #fe2d88;
-}
+/*.btn-wizard2:hover{*/
+    /*border-color: #fe2d88;*/
+/*}*/
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
