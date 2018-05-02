@@ -829,11 +829,16 @@ function statistics(stat_time){
 
 
 myApp.onPageInit('auth', function (page) {
+
+
+
+
     
     firebase.auth().onAuthStateChanged((user)=> {
         console.log(user);
 
     if (user) {
+
         console.log('USER SERVICE : user is signed in');
         // User is signed in.
         var displayName = user.displayName;
@@ -874,37 +879,42 @@ myApp.onPageInit('auth', function (page) {
 
         $$('#firebaseui-auth-container').text('Вход выполнен');
 
-        
+
     } else {
+
+
         console.log('USER SERVICE : user is signed out');
+        // FirebaseUI config.
+        var uiConfig = {
+            signInSuccessUrl: 'auth.html',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+            ],
+            callbacks: {
+                'signInSuccess': function (currentUser, credential, redirectUrl) {
+                    mainView.router.loadPage('index.html');
+                    return false;
+                }
+            },
+            // Terms of service url.
+            tosUrl: 'auth.html',
+        };
+
+
+        let ui = firebaseui.auth.AuthUI.getInstance();
+        if (!ui) {
+            ui = new firebaseui.auth.AuthUI(window.firebase.auth());
+        }
+        ui.start('#firebaseui-auth-container', uiConfig);
+
+
     }
-
-    // FirebaseUI config.
-    var uiConfig = {
-        signInSuccessUrl: 'auth.html',
-        signInOptions: [
-            // Leave the lines as is for the providers you want to offer your users.
-            // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-            // firebase.auth.GithubAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
-            // firebase.auth.PhoneAuthProvider.PROVIDER_ID
-        ],
-        callbacks: {
-            'signInSuccess': function (currentUser, credential, redirectUrl) {
-                mainView.router.loadPage('index.html');
-                return false;
-            }
-        },
-        // Terms of service url.
-        tosUrl: 'auth.html',
-    };
-
-    // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig);
 
 });
 
