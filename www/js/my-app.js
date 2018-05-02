@@ -386,7 +386,6 @@ myApp.onPageInit('wizard', function (page) {
 
     $$('#prew_swip').on('click', function (e) {
 
-        $$('.wizard-swip').scrollTop(0);
         $$(".page-content").scrollTop(0, 400);
         mySwiper.allowSlidePrev = true;
         mySwiper.slidePrev();
@@ -397,12 +396,10 @@ myApp.onPageInit('wizard', function (page) {
 
     $$('#next_swip, #next_swip2').on('click', function (e) {
 
+        $$(".page-content").scrollTop(0, 400);
         mySwiper.allowSlideNext = true;
         mySwiper.slideNext();
         mySwiper.allowSlideNext = false;
-        if(this.activeIndex != 9) {
-            $$(".page-content").scrollTop(0, 400);
-        }
 
     });
 
