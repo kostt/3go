@@ -293,10 +293,12 @@ h2{
 .wizard-in-input-text4{
     float: left;
     position: absolute;
-    top: 4px;
-    left:10px;
-    width: 100%;
+    top: -14px;
+    left: -10px;
+    width: 90%;
+    padding: 20px;
     text-align: left;
+    z-index: 100;
 }
 
 .wizard-table{
@@ -1006,7 +1008,7 @@ h2{
     }
 
     .wizard-in-input-text4{
-        left:5px;
+        left:-15px;
     }
 
     .h2 {
