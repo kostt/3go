@@ -1035,5 +1035,9 @@ h2{
         font-size: 23px;
     }
 
+    .checkmark {
+        right: 8px;
+    }
+
 
 }
