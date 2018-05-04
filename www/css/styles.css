@@ -1014,6 +1014,10 @@ h2{
     color: black;
 }
 
+.setting-text-in{
+    width: 80%;
+}
+
 
 @media (max-width: 320px){
 .content-block {
@@ -1038,6 +1042,5 @@ h2{
     .checkmark {
         right: 8px;
     }
-
 
 }

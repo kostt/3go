@@ -92,6 +92,38 @@ myApp.onPageInit('*', function (page) {
 
 
 
+
+myApp.onPageInit('settings', function (page) {
+
+
+    if(window.localStorage.getItem('push_note') == null) {
+        window.localStorage.setItem('push_note', 'false');
+        $('#push_note').removeAttr("checked");
+    }else{
+        if(window.localStorage.getItem('push_note') == 'true'){
+            $$('#push_note').attr('checked');
+        }else{
+            $$('#push_note').removeAttr("checked");
+        }
+    }
+
+
+    $$('#push_note').on('click', function (e) {
+        if(window.localStorage.getItem('push_note') == 'true') {
+            window.localStorage.setItem('push_note', 'false');
+        }else{
+            window.localStorage.setItem('push_note', 'true');
+        }
+    });
+
+    
+
+
+
+
+});
+
+
 myApp.onPageInit('plan', function (page) {
 
     $$(".plan_result").empty();
@@ -155,6 +187,7 @@ myApp.onPageInit('plan', function (page) {
         method: 'get',
         crossDomain: true,
         timeout: 10000,
+        cache: true,
         beforeSend: function() {myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
@@ -926,6 +959,7 @@ myApp.onPageInit('training', function (page) {
         method: 'get',
         crossDomain: true,
         timeout: 10000,
+        cache: true,
         beforeSend: function() { myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
