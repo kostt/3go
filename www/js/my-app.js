@@ -31,21 +31,6 @@ function onDeviceReady() {
 
 $$('.avatar').on('click', function () {
 
-    setTimeout(function(){
-
-        navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-            destinationType: Camera.DestinationType.DATA_URL,
-            sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-        function onPhotoURISuccess(imageData) {
-            alert(imageData);
-        }
-
-        function onFail(message) {
-            alert('Failed because: ' + message);
-        }
-
-    },1000);
 
 });
 
@@ -149,6 +134,8 @@ myApp.onPageInit('index', function (page) {
 
 
 myApp.onPageInit('plan', function (page) {
+
+
 
     $$(".plan_result").empty();
 
@@ -1180,6 +1167,18 @@ function training(tran_time, obj){
 
 
 myApp.onPageInit('settings', function (page) {
+
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+    function onPhotoURISuccess(imageData) {
+        alert(imageData);
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
 
     if(localStorage.getItem('push_note') == null) {
         localStorage.setItem('push_note', 'false');
