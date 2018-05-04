@@ -77,21 +77,7 @@ myApp.onPageInit('index', function (page) {
         $$('#displaySname').text(localStorage.getItem('displaySname'));
     }
 
-    $$('.avatar').on('click', function () {
 
-        navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-            destinationType: Camera.DestinationType.DATA_URL,
-            sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-        function onPhotoURISuccess(imageData) {
-            alert(imageData);
-        }
-
-        function onFail(message) {
-            alert('Failed because: ' + message);
-        }
-
-    });
 
 
         //     var buttons = [
@@ -1321,6 +1307,23 @@ function validate(evt) {
         if(theEvent.preventDefault) theEvent.preventDefault();
     }
 }
+
+
+$$('.avatar').on('click', function () {
+
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+    function onPhotoURISuccess(imageData) {
+        alert(imageData);
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+
+});
 
 
 
