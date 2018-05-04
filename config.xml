@@ -8,11 +8,38 @@
         Ariol
     </author>
     <content src="index.html" />
-    <preference name="AllowInlineMediaPlayback" value="true" />
-    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#292929" />
-    <preference name="orientation" value="portrait" />
+    <preference name="StatusBarBackgroundColor" value="#43a4f2" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="permissions" value="none" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="light-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="false" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="LoadUrlTimeoutValue" value="10000" />
+    <preference name="InAppBrowserStorageEnabled" value="true" />
+    <preference name="AndroidLaunchMode" value="singleTop" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="4500" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashScreenSpinnerColor" value="white" />
+    <preference name="CameraUsesGeolocation" value="false" />
+
+
+    <!--<preference name="AllowInlineMediaPlayback" value="true" />-->
+    <!--<preference name="MediaPlaybackRequiresUserAction" value="false" />-->
     <preference name="AndroidLaunchMode" value="singleInstance" />
     <allow-navigation href="*youtube*" />
     <allow-navigation href="*ytimg*" />

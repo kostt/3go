@@ -11,7 +11,7 @@ var appData = {
 // Add view
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
-    preloadPreviousPage: false
+    preloadPreviousPage: true
 });
 
 

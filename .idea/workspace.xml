@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/1on1.html" afterPath="$PROJECT_DIR$/www/1on1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/camps.html" afterPath="$PROJECT_DIR$/www/camps.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/extras.html" afterPath="$PROJECT_DIR$/www/extras.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/plan.html" afterPath="$PROJECT_DIR$/www/plan.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/report.html" afterPath="$PROJECT_DIR$/www/report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/settings.html" afterPath="$PROJECT_DIR$/www/settings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/statistics.html" afterPath="$PROJECT_DIR$/www/statistics.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/training.html" afterPath="$PROJECT_DIR$/www/training.html" />
     </list>
     <ignored path="3go.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,19 +32,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="1325" column="3" selection-start-line="1325" selection-start-column="3" selection-end-line="1325" selection-end-column="3" />
+            <state relative-caret-position="-345">
+              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
               <folding>
-                <marker date="1525440094727" expanded="true" signature="346:472" ph="//..." />
+                <marker date="1525440423176" expanded="true" signature="345:471" ph="//..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statistics.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="statistics.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/statistics.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -129,7 +120,6 @@
         <option value="$PROJECT_DIR$/www/wizard.html" />
         <option value="$PROJECT_DIR$/www/css/styles.css" />
         <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/www/js/my-app.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/settings.html" />
         <option value="$PROJECT_DIR$/www/1on1.html" />
@@ -139,6 +129,7 @@
         <option value="$PROJECT_DIR$/www/report.html" />
         <option value="$PROJECT_DIR$/www/statistics.html" />
         <option value="$PROJECT_DIR$/www/training.html" />
+        <option value="$PROJECT_DIR$/www/js/my-app.js" />
       </list>
     </option>
   </component>
@@ -320,12 +311,12 @@
       <workItem from="1524901567323" duration="3565000" />
       <workItem from="1525259086497" duration="11557000" />
       <workItem from="1525333547818" duration="1752000" />
-      <workItem from="1525422363693" duration="15377000" />
+      <workItem from="1525422363693" duration="16157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338412000" />
+    <option name="totallyTimeSpent" value="339192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="702" extended-state="0" />
@@ -380,7 +371,7 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1525440094727" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525440423176" expanded="true" signature="345:471" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -561,16 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="1325" column="3" selection-start-line="1325" selection-start-column="3" selection-end-line="1325" selection-end-column="3" />
-          <folding>
-            <marker date="1525440094727" expanded="true" signature="346:472" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/settings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -672,6 +653,16 @@
         <state relative-caret-position="150">
           <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding>
+            <marker date="1525440423176" expanded="true" signature="345:471" ph="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
