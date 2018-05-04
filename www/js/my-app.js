@@ -1,5 +1,12 @@
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    dialog: {
+    // set default title for all dialog shortcuts
+    title: 'My App',
+        // change default "OK" button text
+        buttonOk: 'Done',
+}
+});
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
@@ -47,6 +54,7 @@ myApp.onPageInit('*', function (page) {
 
     if(localStorage.getItem('displayName') != null) {
         $$('#displayName').text(localStorage.getItem('displayName'));
+        $$('#displaySname').text('');
     }
 
     if(localStorage.getItem('displaySname') != null) {
@@ -62,6 +70,29 @@ myApp.onPageInit('*', function (page) {
         clearTimeout(timer);
     });
 
+});
+
+
+$$('.avatar').on('click', function () {
+    myApp.dialog.create({
+        title: 'Мой профиль',
+        text: 'Выберите действие',
+        buttons: [
+            {
+                text: 'Изменить имя',
+            },
+            {
+                text: 'Изменить фамилию',
+            },
+            {
+                text: 'Изменить фото',
+            },
+            {
+                text: 'Отмена',
+            },
+        ],
+        verticalButtons: true,
+    }).open();
 });
 
 
@@ -825,8 +856,6 @@ myApp.onPageInit('auth', function (page) {
         var uid = user.uid;
         var phoneNumber = user.phoneNumber;
         var providerData = user.providerData;
-        
-        alert(displayName);
 
         displayName = displayName.split(' ');
         
