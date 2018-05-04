@@ -70,30 +70,41 @@ myApp.onPageInit('*', function (page) {
         clearTimeout(timer);
     });
 
+
+
+
+
+    $$('.avatar').on('click', function () {
+
+        myApp.dialog.alert('Hello World!');
+
+
+        myApp.dialog.create({
+            title: 'Мой профиль',
+            text: 'Выберите действие',
+            buttons: [
+                {
+                    text: 'Изменить имя',
+                },
+                {
+                    text: 'Изменить фамилию',
+                },
+                {
+                    text: 'Изменить фото',
+                },
+                {
+                    text: 'Отмена',
+                },
+            ],
+            verticalButtons: true,
+        }).open();
+    });
+
+
+
 });
 
 
-$$('.avatar').on('click', function () {
-    myApp.dialog.create({
-        title: 'Мой профиль',
-        text: 'Выберите действие',
-        buttons: [
-            {
-                text: 'Изменить имя',
-            },
-            {
-                text: 'Изменить фамилию',
-            },
-            {
-                text: 'Изменить фото',
-            },
-            {
-                text: 'Отмена',
-            },
-        ],
-        verticalButtons: true,
-    }).open();
-});
 
 
 
