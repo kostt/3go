@@ -825,6 +825,8 @@ myApp.onPageInit('auth', function (page) {
         var uid = user.uid;
         var phoneNumber = user.phoneNumber;
         var providerData = user.providerData;
+        
+        alert(displayName);
 
         displayName = displayName.split(',');
         
