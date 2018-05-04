@@ -26,9 +26,29 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 
-
-
 }
+
+
+$$('.avatar').on('click', function () {
+
+    setTimeout(function(){
+
+        navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL,
+            sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+        function onPhotoURISuccess(imageData) {
+            alert(imageData);
+        }
+
+        function onFail(message) {
+            alert('Failed because: ' + message);
+        }
+
+    },1000);
+
+});
+
 
 $$(document).on('DOMContentLoaded', function(){
 
@@ -49,29 +69,6 @@ $$(document).on('DOMContentLoaded', function(){
     if(localStorage.getItem('displaySname') != null) {
         $$('#displaySname').text(localStorage.getItem('displaySname'));
     }
-
-    $$('.avatar').on('click', function () {
-
-        setTimeout(function(){
-            
-            navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                destinationType: Camera.DestinationType.DATA_URL,
-                sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-            function onPhotoURISuccess(imageData) {
-                alert(imageData);
-            }
-
-            function onFail(message) {
-                alert('Failed because: ' + message);
-            }
-
-        },1000);
-
-
-
-    });
-
 
 });
 
@@ -103,7 +100,6 @@ myApp.onPageInit('index', function (page) {
     if(localStorage.getItem('displaySname') != null) {
         $$('#displaySname').text(localStorage.getItem('displaySname'));
     }
-
 
 
 
