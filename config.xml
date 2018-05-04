@@ -38,6 +38,10 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-camera" spec="^2.4.1">
+        <param name="CAMERA_USAGE_DESCRIPTION" value="The app would like to access the camera when you attach photos to content." />
+        <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="The app would like to access the photo library when you attach images to content." />
+    </plugin>
     <plugin name="cordova-plugin-buildinfo" spec="~2.0.1" />
     <plugin name="cordova-universal-links-plugin" spec="~1.2.1" />
     <plugin name="cordova-plugin-browsertab" spec="~0.2.0" />
