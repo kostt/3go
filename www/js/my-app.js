@@ -1,12 +1,5 @@
 // Initialize app
-var myApp = new Framework7({
-    dialog: {
-    // set default title for all dialog shortcuts
-    title: 'My App',
-        // change default "OK" button text
-        buttonOk: 'Done',
-}
-});
+var myApp = new Framework7();
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
@@ -85,54 +78,59 @@ myApp.onPageInit('index', function (page) {
     }
 
     $$('.avatar').on('click', function () {
-        var buttons = [
-            {
-                text: 'Изменить имя',
-                onClick: function () {
 
-                    myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
-                        localStorage.setItem('displayName', value);
-                        $$('#displayName').text(localStorage.getItem('displayName'));
-                    });
+        navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType.DATA_URL,
+            sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
 
-                }
-            },
-            {
-                text: 'Изменить фамилию',
-                onClick: function () {
-                    myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
-                        localStorage.setItem('displaySname', value);
-                        $$('#displaySname').text(localStorage.getItem('displaySname'));
-                    });
-                }
-            },
-            {
-                text: 'Изменить фото',
-                onClick: function () {
+        function onPhotoURISuccess(imageData) {
+            alert(imageData);
+        }
+
+        function onFail(message) {
+            alert('Failed because: ' + message);
+        }
 
 
-                    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                        destinationType: Camera.DestinationType.DATA_URL,
-                        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-                    function onPhotoURISuccess(imageData) {
-                        alert(imageData);
-                    }
-
-                    function onFail(message) {
-                        alert('Failed because: ' + message);
-                    }
 
 
-                }
-            },
-            {
-                text: 'Отмена',
-                color: 'red',
-            },
-        ];
-        myApp.actions(buttons);
-    });
+        //     var buttons = [
+    //         {
+    //             text: 'Изменить имя',
+    //             onClick: function () {
+    //
+    //                 myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
+    //                     localStorage.setItem('displayName', value);
+    //                     $$('#displayName').text(localStorage.getItem('displayName'));
+    //                 });
+    //
+    //             }
+    //         },
+    //         {
+    //             text: 'Изменить фамилию',
+    //             onClick: function () {
+    //                 myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
+    //                     localStorage.setItem('displaySname', value);
+    //                     $$('#displaySname').text(localStorage.getItem('displaySname'));
+    //                 });
+    //             }
+    //         },
+    //         {
+    //             text: 'Изменить фото',
+    //             onClick: function () {
+    //
+    //
+    //                
+    //
+    //             }
+    //         },
+    //         {
+    //             text: 'Отмена',
+    //             color: 'red',
+    //         },
+    //     ];
+    //     myApp.actions(buttons);
+    // });
 
 });
 
