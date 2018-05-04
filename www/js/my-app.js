@@ -22,10 +22,13 @@ if(window.localStorage.getItem('has_run') == null) {
 }
 
 // Handle Cordova Device Ready Event
-$$(document).on('deviceready', function() {
-    console.log("Device is ready!");
+document.addEventListener("deviceready", onDeviceReady, false);
 
-});
+function onDeviceReady() {
+
+
+
+}
 
 $$(document).on('DOMContentLoaded', function(){
 
@@ -47,25 +50,32 @@ $$(document).on('DOMContentLoaded', function(){
         $$('#displaySname').text(localStorage.getItem('displaySname'));
     }
 
+    $$('.avatar').on('click', function () {
+
+        setTimeout(function(){
+            
+            navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+            function onPhotoURISuccess(imageData) {
+                alert(imageData);
+            }
+
+            function onFail(message) {
+                alert('Failed because: ' + message);
+            }
+
+        },1000);
+
+
+
+    });
+
 
 });
 
 
-$$('.avatar').on('click', function () {
-
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-    function onPhotoURISuccess(imageData) {
-        alert(imageData);
-    }
-
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
-
-});
 
 
 
