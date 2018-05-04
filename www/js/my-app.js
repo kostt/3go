@@ -94,13 +94,15 @@ myApp.onPageInit('*', function (page) {
 
 
 myApp.onPageInit('settings', function (page) {
+    
+    var push_note = localStorage.getItem('push_note');
 
 
-    if(window.localStorage.getItem('push_note') == null) {
-        window.localStorage.setItem('push_note', 'false');
-        $('#push_note').removeAttr("checked");
+    if(push_note == null) {
+        localStorage.setItem('push_note', 'false');
+        $$('#push_note').removeAttr("checked");
     }else{
-        if(window.localStorage.getItem('push_note') == 'true'){
+        if(push_note == 'true'){
             $$('#push_note').attr('checked');
         }else{
             $$('#push_note').removeAttr("checked");
@@ -109,10 +111,10 @@ myApp.onPageInit('settings', function (page) {
 
 
     $$('#push_note').on('click', function (e) {
-        if(window.localStorage.getItem('push_note') == 'true') {
-            window.localStorage.setItem('push_note', 'false');
+        if(push_note == 'true') {
+            localStorage.setItem('push_note', 'false');
         }else{
-            window.localStorage.setItem('push_note', 'true');
+            localStorage.setItem('push_note', 'true');
         }
     });
 
