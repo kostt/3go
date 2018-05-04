@@ -51,6 +51,23 @@ $$(document).on('DOMContentLoaded', function(){
 });
 
 
+$$('.avatar').on('click', function () {
+
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+    function onPhotoURISuccess(imageData) {
+        alert(imageData);
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+
+});
+
+
 
 myApp.onPageInit('*', function (page) {
 
@@ -1309,21 +1326,7 @@ function validate(evt) {
 }
 
 
-$$('.avatar').on('click', function () {
 
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-    function onPhotoURISuccess(imageData) {
-        alert(imageData);
-    }
-
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
-
-});
 
 
 
