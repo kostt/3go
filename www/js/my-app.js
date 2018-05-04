@@ -828,7 +828,7 @@ myApp.onPageInit('auth', function (page) {
         
         alert(displayName);
 
-        displayName = displayName.split(',');
+        displayName = displayName.split(' ');
         
         if(displayName[0]){
             localStorage.setItem('displayName', displayName[0]); 
