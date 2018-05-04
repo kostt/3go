@@ -91,7 +91,7 @@ myApp.onPageInit('index', function (page) {
             alert('Failed because: ' + message);
         }
 
-
+    });
 
 
         //     var buttons = [
