@@ -84,6 +84,56 @@ myApp.onPageInit('index', function (page) {
         $$('#displaySname').text(localStorage.getItem('displaySname'));
     }
 
+    $$('.avatar').on('click', function () {
+        var buttons = [
+            {
+                text: 'Изменить имя',
+                onClick: function () {
+
+                    myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
+                        localStorage.setItem('displayName', value);
+                        $$('#displayName').text(localStorage.getItem('displayName'));
+                    });
+
+                }
+            },
+            {
+                text: 'Изменить фамилию',
+                onClick: function () {
+                    myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
+                        localStorage.setItem('displaySname', value);
+                        $$('#displaySname').text(localStorage.getItem('displaySname'));
+                    });
+                }
+            },
+            {
+                text: 'Изменить фото',
+                onClick: function () {
+
+
+                    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                        destinationType: Camera.DestinationType.DATA_URL,
+                        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+                    function onPhotoURISuccess(imageData) {
+                        alert(imageData);
+                    }
+
+                    function onFail(message) {
+                        alert('Failed because: ' + message);
+                    }
+
+
+                }
+            },
+            {
+                text: 'Отмена',
+                color: 'red',
+            },
+        ];
+        myApp.actions(buttons);
+    });
+
 });
 
 
@@ -1274,55 +1324,7 @@ function validate(evt) {
     }
 }
 
-$$('.avatar').on('click', function () {
-    var buttons = [
-        {
-            text: 'Изменить имя',
-            onClick: function () {
 
-                    myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
-                        localStorage.setItem('displayName', value);
-                        $$('#displayName').text(localStorage.getItem('displayName'));
-                    });
-
-            }
-        },
-        {
-            text: 'Изменить фамилию',
-            onClick: function () {
-                myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
-                    localStorage.setItem('displaySname', value);
-                    $$('#displaySname').text(localStorage.getItem('displaySname'));
-                });
-            }
-        },
-        {
-            text: 'Изменить фото',
-            onClick: function () {
-
-
-                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                    destinationType: Camera.DestinationType.DATA_URL,
-                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-                function onPhotoURISuccess(imageData) {
-                    alert(imageData);
-                }
-
-                function onFail(message) {
-                    alert('Failed because: ' + message);
-                }
-
-
-            }
-        },
-        {
-            text: 'Отмена',
-            color: 'red',
-        },
-    ];
-    myApp.actions(buttons);
-});
 
 
 
