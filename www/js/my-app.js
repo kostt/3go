@@ -45,13 +45,6 @@ $$(document).on('DOMContentLoaded', function(){
         clearTimeout(timer);
     });
 
-
-});
-
-
-
-myApp.onPageInit('*', function (page) {
-
     if(localStorage.getItem('displayName') != null) {
         $$('#displayName').text(localStorage.getItem('displayName'));
         $$('#displaySname').text('');
@@ -60,7 +53,14 @@ myApp.onPageInit('*', function (page) {
     if(localStorage.getItem('displaySname') != null) {
         $$('#displaySname').text(localStorage.getItem('displaySname'));
     }
-    
+
+
+});
+
+
+
+myApp.onPageInit('*', function (page) {
+
     var timer;
     $$('.img_logo_big').on("touchstart",function(){
         timer = setTimeout(function(){
@@ -71,36 +71,18 @@ myApp.onPageInit('*', function (page) {
     });
 
 
+});
 
+myApp.onPageInit('index', function (page) {
 
+    if(localStorage.getItem('displayName') != null) {
+        $$('#displayName').text(localStorage.getItem('displayName'));
+        $$('#displaySname').text('');
+    }
 
-    $$('.avatar').on('click', function () {
-
-        myApp.dialog.alert('Hello World!');
-
-
-        myApp.dialog.create({
-            title: 'Мой профиль',
-            text: 'Выберите действие',
-            buttons: [
-                {
-                    text: 'Изменить имя',
-                },
-                {
-                    text: 'Изменить фамилию',
-                },
-                {
-                    text: 'Изменить фото',
-                },
-                {
-                    text: 'Отмена',
-                },
-            ],
-            verticalButtons: true,
-        }).open();
-    });
-
-
+    if(localStorage.getItem('displaySname') != null) {
+        $$('#displaySname').text(localStorage.getItem('displaySname'));
+    }
 
 });
 
@@ -1291,6 +1273,56 @@ function validate(evt) {
         if(theEvent.preventDefault) theEvent.preventDefault();
     }
 }
+
+$$('.avatar').on('click', function () {
+    var buttons = [
+        {
+            text: 'Изменить имя',
+            onClick: function () {
+
+                    myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
+                        localStorage.setItem('displayName', value);
+                        $$('#displayName').text(localStorage.getItem('displayName'));
+                    });
+
+            }
+        },
+        {
+            text: 'Изменить фамилию',
+            onClick: function () {
+                myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
+                    localStorage.setItem('displaySname', value);
+                    $$('#displaySname').text(localStorage.getItem('displaySname'));
+                });
+            }
+        },
+        {
+            text: 'Изменить фото',
+            onClick: function () {
+
+
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                    destinationType: Camera.DestinationType.DATA_URL,
+                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+                function onPhotoURISuccess(imageData) {
+                    alert(imageData);
+                }
+
+                function onFail(message) {
+                    alert('Failed because: ' + message);
+                }
+
+
+            }
+        },
+        {
+            text: 'Отмена',
+            color: 'red',
+        },
+    ];
+    myApp.actions(buttons);
+});
 
 
 
