@@ -1365,7 +1365,7 @@ $$('.avatar, .profile-box').on('click', function (e) {
             onClick: function () {
 
                 navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 10,
-                    destinationType: Camera.DestinationType.FILE_URI,
+                    destinationType: Camera.DestinationType.DATA_URL,
                     sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
 
                 function onPhotoURISuccess(imageData) {
