@@ -8,21 +8,30 @@
     <!--<meta name="apple-mobile-web-app-status-bar-style" content="black">-->
     <!--<meta name="format-detection" content="telephone=no">-->
     <!--<meta name="msapplication-tap-highlight" content="no">-->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height, minimal-ui" />
+
+    <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height, minimal-ui" />-->
+    <!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+    <!--<meta name="format-detection" content="telephone=no" />-->
+    <!--<meta name="theme-color" content="#2196f3">-->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *;-->
+   <!--img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;-->
+   <!--style-src  'self' 'unsafe-inline' *"> &lt;!&ndash; Your app title &ndash;&gt;-->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="theme-color" content="#2196f3">
-    <meta http-equiv="Content-Security-Policy" content="default-src *;
-   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
-   style-src  'self' 'unsafe-inline' *"> <!-- Your app title -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
     <title>3go</title>
 
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
-    <link rel="stylesheet" href="css/framework7-icons.css">
+    <!--<link rel="stylesheet" href="css/framework7-icons.css">-->
     <!--<link rel="stylesheet" href="css/firebaseui.css">-->
     <!--<link rel="stylesheet" href="css/bootstrap-slider.min.css">-->
-    <link rel="stylesheet" href="css/styles.css">
+    <!--<link rel="stylesheet" href="css/styles.css">-->
     <!--<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />-->
 
 </head>
@@ -31,21 +40,21 @@
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <div class="row left-menu-href"><a href="training.html" class="panel-close">Training plan</a></div>
-            <div class="row left-menu-href"><a href="statistics.html" class="panel-close">Statistics/analytics</a></div>
-            <div class="row left-menu-href"><a href="settings.html" class="panel-close">Settings</a></div>
-            <div class="row left-menu-href"><a href="extras.html" class="panel-close">Extras</a></div>
-            <div class="row left-menu-href"><a href="camps.html" class="panel-close">Camps and races</a></div>
-            <div class="row left-menu-href"><a href="1on1.html" class="panel-close">1 on 1</a></div>
-            <div class="row left-menu-href"><a href="#" data-popup=".start-popup" class="panel-close open-popup">Start</a></div>
-            <div class="row left-menu-href"><a href="auth.html" class="panel-close">Auth</a></div>
-        </div>
-    </div>
+    <!--&lt;!&ndash; Panels overlay&ndash;&gt;-->
+    <!--<div class="panel-overlay"></div>-->
+    <!--&lt;!&ndash; Left panel with reveal effect&ndash;&gt;-->
+    <!--<div class="panel panel-left panel-reveal">-->
+        <!--<div class="content-block">-->
+            <!--<div class="row left-menu-href"><a href="training.html" class="panel-close">Training plan</a></div>-->
+            <!--<div class="row left-menu-href"><a href="statistics.html" class="panel-close">Statistics/analytics</a></div>-->
+            <!--<div class="row left-menu-href"><a href="settings.html" class="panel-close">Settings</a></div>-->
+            <!--<div class="row left-menu-href"><a href="extras.html" class="panel-close">Extras</a></div>-->
+            <!--<div class="row left-menu-href"><a href="camps.html" class="panel-close">Camps and races</a></div>-->
+            <!--<div class="row left-menu-href"><a href="1on1.html" class="panel-close">1 on 1</a></div>-->
+            <!--<div class="row left-menu-href"><a href="#" data-popup=".start-popup" class="panel-close open-popup">Start</a></div>-->
+            <!--<div class="row left-menu-href"><a href="auth.html" class="panel-close">Auth</a></div>-->
+        <!--</div>-->
+    <!--</div>-->
 
     <!-- Views -->
     <div class="views">
@@ -122,7 +131,15 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-
+    <script type="text/javascript" src="js/bootstrap-slider.min.js"></script>
+    <script type="text/javascript" src="js/Chart.min.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/firebaseui.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src=js/long-press.js></script>
     <script type="text/javascript" src="js/my-app.js"></script>
 
 
