@@ -16,7 +16,7 @@
                                 </div>
                                 <h2>Возраст</h2>
                                 <div class="row">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input number" name="old" id="old" placeholder="20" type="number"><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input class="wizard-input number" name="old" id="old" onkeypress='validate(event)' placeholder="20" type="number"><span class="wizard-in-input-text">лет</span></div>
                                 </div>
                                 <h2>Рост</h2>
                                 <div class="row">
@@ -119,7 +119,7 @@
                                     <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard sprint_n active" value="Нет"></div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="sprint_personal_best" class="wizard-input number" name="" placeholder="5" onkeypress='validate(event)' type="number" disabled><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="sprint_personal_best" class="wizard-input number" name="" placeholder="5" onkeypress='validate(event)' type="number" disabled><span class="wizard-in-input-text">минут</span></div>
                                 </div>
                                 <h2>Личный рекорд в олимпийском триатлоне</h2>
                                 <div class="row wiz-box">
@@ -127,7 +127,7 @@
                                     <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard ol_triat_n active" value="Нет"></div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="olimpic_personal_best" class="wizard-input number" name="" placeholder="5" onkeypress='validate(event)' type="number" disabled><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="olimpic_personal_best" class="wizard-input number" name="" placeholder="5" onkeypress='validate(event)' type="number" disabled><span class="wizard-in-input-text">минут</span></div>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                     <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard half_n active" value="Нет"></div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="half_personal_best" class="wizard-input number" name="" placeholder="5" onkeypress='validate(event)' type="number" disabled><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="half_personal_best" class="wizard-input number" name="" placeholder="5" onkeypress='validate(event)' type="number" disabled><span class="wizard-in-input-text">минут</span></div>
                                 </div>
                                 <h2>Личный рекорд full (long distance)</h2>
                                 <div class="row wiz-box">
@@ -147,7 +147,7 @@
                                     <div class="col-md-3"><input type="submit" class="button button-big button-raised btn-border btn-wizard long_n active" value="Нет"></div>
                                 </div>
                                 <div class="row wiz-box">
-                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="full_personal_best" class="wizard-input number" name="" placeholder="5" onkeypress='validate(event)' type="number" disabled><span class="wizard-in-input-text">лет</span></div>
+                                    <div class="button button-big button-raised btn-border btn-wizard2"><input id="full_personal_best" class="wizard-input number" name="" placeholder="5" onkeypress='validate(event)' type="number" disabled><span class="wizard-in-input-text">минут</span></div>
                                 </div>
                             </div>
                         </div>

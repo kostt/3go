@@ -11,7 +11,7 @@ var appData = {
 // Add view
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true, 
-    preloadPreviousPage: true
+    preloadPreviousPage: false
 });
 
 if(window.localStorage.getItem('has_run') == null) {
@@ -652,11 +652,11 @@ myApp.onPageInit('camps', function (page) {
     $$(".sport-block2").empty();
 
     $$.ajax({
-        url: 'http://3go-api.local/3go/camps',
-        method: 'post',
+        url: 'http://www.3go.training:8081/api/v1/camps/',
+        method: 'get',
         dataType: 'json',
         crossDomain: true,
-        timeout: 3000,
+        timeout: 10000,
         beforeSend: function() {myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
@@ -665,23 +665,10 @@ myApp.onPageInit('camps', function (page) {
                 error(data.error);
             } else {
 
-                    var count = data.length;
-                    if (count>=1) {
-
-                        data.forEach(function(element) {
-
                             $$(".camps_result").append(
                                 '<div class="row sport-block2">'+
-                                '<div class="camp-box">'+
-                                '<div class="row text-in3">'+element.created_at+'</div>'+
-                                '<div class="row text-in2">'+element.name+'</div>'+
-                                '</div></div>');
-                        });
-                    }else{
-
-                        $$(".camps_result").append('<div class="row text-in2 sport-block2">Записи отсутствуют</div>');
-
-                    }
+                                data.body+
+                               '</div>');
             }
         },
         error: function(data) {
@@ -712,12 +699,11 @@ function extras(category) {
     if(category == 3){$$(".cat3").attr('src', './img/img_swiming_a.svg');}
 
     $$.ajax({
-        url: 'http://3go-api.local/3go/extras',
-        method: 'post',
+        url: 'http://www.3go.training:8081/api/v1/extras/',
+        method: 'get',
         dataType: 'json',
-        data: {category: category},
         crossDomain: true,
-        timeout: 3000,
+        timeout: 10000,
         beforeSend: function() {myApp.showPreloader();},
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
@@ -726,31 +712,49 @@ function extras(category) {
                 error(data.error);
             } else {
 
-                var count = data.length;
+
+                var count = data.extras.length;
                 if (count>=1) {
 
-                    data.forEach(function(element, item) {
+                    data.extras.forEach(function(element, item) {
 
-                        if(item == 0){
-                            $$(".extras_result").append(
-                                '<div class="row extras_video">' +
-                                element.video +
-                                '<p class="text-in2">' + element.name + '</p></div>');
-                        }else{
-                            $$(".extras_result").append(
-                                '<div class="row extras_video">' +
-                                '<div class="block_video">' +
-                                '<span class="block_video_text">Разблокировать</span><span class="block_video_text2"><span class="arrow_box"></span>' + element.points + ' поинтов</span></div>' +
-                                element.video +
-                                '<p class="text-in2">' + element.name + '</p></div>');
-                        }
+                        $$(".extras_result").append(
+                            '<div class="row extras_video">' +
+                            element.url +
+                            '<p class="text-in2">' + element.title + '</p></div>');
+
                     });
 
                 }else{
-
                     $$(".extras_result").append('<div class="row text-in2 extras_video">Записи отсутствуют</div>');
-
                 }
+
+
+                // var count = data.length;
+                // if (count>=1) {
+                //
+                //     data.forEach(function(element, item) {
+                //
+                //         if(item == 0){
+                //             $$(".extras_result").append(
+                //                 '<div class="row extras_video">' +
+                //                 element.video +
+                //                 '<p class="text-in2">' + element.name + '</p></div>');
+                //         }else{
+                //             $$(".extras_result").append(
+                //                 '<div class="row extras_video">' +
+                //                 '<div class="block_video">' +
+                //                 '<span class="block_video_text">Разблокировать</span><span class="block_video_text2"><span class="arrow_box"></span>' + element.points + ' поинтов</span></div>' +
+                //                 element.video +
+                //                 '<p class="text-in2">' + element.name + '</p></div>');
+                //         }
+                //     });
+                //
+                // }else{
+                //
+                //     $$(".extras_result").append('<div class="row text-in2 extras_video">Записи отсутствуют</div>');
+                //
+                // }
 
             }
         },
@@ -786,56 +790,102 @@ function statistics(stat_time){
     $$(".statistics_result").empty();
     $$(".statistics_result").append('<canvas id="canvas3"></canvas>');
 
-    data1 = [40,10,30,60,30,40,40];
-    data2 = [20,20,10,40,60,70,45];
-    data3 = [50,10,30,60,50,40,30];
-    labels = ["Sun", "Mon","Tues","Wed","Thur","Fri","Sat"];
-    labels2 = ["1","30"];
-    labels3 = ["1","2","3","4","5","6"];
 
-    if(stat_time == 1){data = data1;data2 = data2;labels = labels;}
-    if(stat_time == 2){data = data3;data2 = data1;labels = labels2;}
-    if(stat_time == 3){data = data2;data2 = data3;labels = labels3;}
+    $$.ajax({
+        url: 'http://www.3go.training:8081/api/v1/stats/',
+        method: 'get',
+        crossDomain: true,
+        timeout: 10000,
+        beforeSend: function() {myApp.showPreloader();},
+        complete: function() {myApp.hidePreloader();},
+        success: function (data) {
+            var obj = JSON.parse(data);
 
-    var chartData = {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: "P1",
-                fill: false,
-                backgroundColor: 'transparent',
-                borderColor: '#fe2d88',
-                data: data
-            }, {
-                label: "P2",
-                fill: false,
-                backgroundColor: 'transparent',
-                borderColor: 'white',
-                data: data2
-            }]
-        },
-        options: {
-            elements: { point: { radius: 0 } },
-            responsive: false,
-            legend: {
-                display: false
-            },
-            scales: {
+            var week = obj.week;
+            var month = obj.month;
+            var halfyear = obj.halfyear;
 
-                yAxes: [{
-                    display: false,
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }],
+            labels = ["Sun", "Mon","Tues","Wed","Thur","Fri","Sat"];
+            labels2 = [];
+            labels3 = [];
+
+            for(i=1;i<=week.expected.length; i++){
+                if(week.real.length < i){
+                    week.real.push(0);
+                }
             }
 
-        }
-    }
+            for(i=1;i<=month.expected.length; i++){
+                labels2.push(i);
+                if(month.real.length < i){
+                    month.real.push(0);
+                }
+            }
 
-    var canvas = document.getElementById('canvas3');
-    var myChart = new Chart(canvas, chartData);
+            for(i=1;i<=halfyear.expected.length; i++){
+                labels3.push(i);
+                if(halfyear.real.length < i){
+                    halfyear.real.push(0);
+                }
+            }
+
+
+            if(stat_time == 1){data = week.expected;data2 = week.real;labels = labels;}
+            if(stat_time == 2){data = month.expected;data2 = month.real;labels = labels2;}
+            if(stat_time == 3){data = halfyear.expected;data2 = halfyear.real;labels = labels3;}
+
+            var chartData = {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "P1",
+                        fill: false,
+                        backgroundColor: 'transparent',
+                        borderColor: '#fe2d88',
+                        data: data
+                    }, {
+                        label: "P2",
+                        fill: false,
+                        backgroundColor: 'transparent',
+                        borderColor: 'white',
+                        data: data2
+                    }]
+                },
+                options: {
+                    elements: { point: { radius: 0 } },
+                    responsive: false,
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+
+                        yAxes: [{
+                            display: false,
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }],
+                        xAxes: [{
+                            display: false
+                        }]
+                    }
+
+                }
+            }
+
+            var canvas = document.getElementById('canvas3');
+            var myChart = new Chart(canvas, chartData);
+
+        },
+        error: function(data) {
+            error('Произошла ошибка. Проверьте соединение с интернетом');
+            myApp.hidePreloader();
+        }
+    });
+
+
+
 
 }
 
@@ -1324,7 +1374,7 @@ $$('.avatar').on('click', function (e) {
                 }
 
                 function onFail(message) {
-                    alert('Failed because: ' + message);
+
                 }
 
             }
@@ -1335,6 +1385,42 @@ $$('.avatar').on('click', function (e) {
         },
     ];
     myApp.actions(buttons);
+
+});
+
+
+
+myApp.onPageInit('1on1', function (page) {
+    
+    $$('#1on1_btn').on('click', function (e) {
+
+        arr = [];
+
+        $$.ajax({
+            url: 'http://www.3go.training:8081/api/v1/oneonone/',
+            method: 'post',
+            dataType: 'json',
+            crossDomain: true,
+            data: JSON.stringify(arr),
+            timeout: 10000,
+            beforeSend: function() {myApp.showPreloader();},
+            complete: function() {myApp.hidePreloader();},
+            success: function (data) {
+
+                if (data.error) {
+                    error(data.error);
+                } else {
+                    error(data.result);
+                }
+            },
+            error: function(data) {
+                error('Произошла ошибка. Проверьте соединение с интернетом');
+                myApp.hidePreloader();
+            }
+        });
+
+    });
+
 
 });
 

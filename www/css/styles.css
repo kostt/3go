@@ -1024,6 +1024,10 @@ h2{
     border-radius: 500px;
 }
 
+#canvas3{
+    width: 100%;
+}
+
 
 @media (max-width: 320px){
 .content-block {
