@@ -1378,10 +1378,8 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     // localStorage.setItem('avatar', path);
 
                     alert(imageData);
-                    
                     localStorage.setItem('avatar', imageData);
-                    var image = document.getElementById('avatar');
-                    image.src = imageData;
+                    $$("#avatar").attr('src', imageData);
                     
                 }
 
