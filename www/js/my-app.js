@@ -51,6 +51,11 @@ $$(document).on('DOMContentLoaded', function(){
         $$('#displaySname').text(localStorage.getItem('displaySname'));
     }
 
+    if(localStorage.getItem('avatar') != null) {
+        var image = document.getElementById('avatar');
+        image.src = localStorage.getItem('avatar');
+    }
+
 });
 
 
@@ -82,6 +87,11 @@ myApp.onPageInit('index', function (page) {
         $$('#displaySname').text(localStorage.getItem('displaySname'));
     }
 
+    if(localStorage.getItem('avatar') != null) {
+        var image = document.getElementById('avatar');
+        image.src = localStorage.getItem('avatar');
+    }
+
 });
 
 
@@ -92,9 +102,7 @@ myApp.onPageInit('index', function (page) {
 
 
 myApp.onPageInit('plan', function (page) {
-
-
-
+    
     $$(".plan_result").empty();
 
     $$(".plan_result").append(
@@ -1313,7 +1321,6 @@ $$('.avatar').on('click', function (e) {
                     var path = "data:image/jpeg;base64," + imageData;
                     image.src = path;
                     localStorage.setItem('avatar', path);
-                    alert("ОК");
                 }
 
                 function onFail(message) {
