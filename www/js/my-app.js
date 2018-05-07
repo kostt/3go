@@ -32,8 +32,6 @@ function onDeviceReady() {
 
 
 $$(document).on('DOMContentLoaded', function(){
-
-    alert(localStorage.getItem('avatar'));
     
     var timer;
     $$('#img_logo_big').on("touchstart",function(){
@@ -1380,6 +1378,8 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     alert(imageData);
                     localStorage.setItem('avatar', imageData);
                     $$("#avatar").attr('src', imageData);
+                    image.src = imageData;
+                    $$("#img_area").text(image.src);
                     
                 }
 
