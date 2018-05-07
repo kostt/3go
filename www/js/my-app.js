@@ -1367,20 +1367,19 @@ $$('.avatar, .profile-box').on('click', function (e) {
             onClick: function () {
 
                 navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                    destinationType: Camera.DestinationType.DATA_URL,
+                    destinationType: Camera.DestinationType.FILE_URI,
                     sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
 
                 function onPhotoURISuccess(imageData) {
 
-
-                    var image = document.getElementById('avatar');
-                    var path = "data:image/jpeg;base64," + imageData;
-                    image.src = path;
-                    localStorage.setItem('avatar', path);
-                    
-                    // localStorage.setItem('avatar', imageData);
                     // var image = document.getElementById('avatar');
-                    // image.src = imageData;
+                    // var path = "data:image/jpeg;base64," + imageData;
+                    // image.src = path;
+                    // localStorage.setItem('avatar', path);
+                    
+                    localStorage.setItem('avatar', imageData);
+                    var image = document.getElementById('avatar');
+                    image.src = imageData;
                     
                 }
 
