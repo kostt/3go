@@ -58,10 +58,10 @@
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+              <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="49" />
               <folding>
-                <marker date="1525677641571" expanded="true" signature="2362:3384" ph="..." />
-                <marker date="1525677641571" expanded="true" signature="2405:3366" ph="..." />
+                <marker date="1525677775078" expanded="true" signature="2355:3377" ph="..." />
+                <marker date="1525677775078" expanded="true" signature="2398:3359" ph="..." />
               </folding>
             </state>
           </provider>
@@ -322,12 +322,12 @@
       <workItem from="1525259086497" duration="11557000" />
       <workItem from="1525333547818" duration="1752000" />
       <workItem from="1525422363693" duration="20399000" />
-      <workItem from="1525676078599" duration="1563000" />
+      <workItem from="1525676078599" duration="1711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="344997000" />
+    <option name="totallyTimeSpent" value="345145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="702" extended-state="0" />
@@ -658,10 +658,10 @@
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+          <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="49" />
           <folding>
-            <marker date="1525677641571" expanded="true" signature="2362:3384" ph="..." />
-            <marker date="1525677641571" expanded="true" signature="2405:3366" ph="..." />
+            <marker date="1525677775078" expanded="true" signature="2355:3377" ph="..." />
+            <marker date="1525677775078" expanded="true" signature="2398:3359" ph="..." />
           </folding>
         </state>
       </provider>
