@@ -186,6 +186,10 @@ h2{
     margin-top: 50px;
 }
 
+.statistics_result{
+    height: 160px;
+}
+
 .btn-stat{
     border: 2px solid grey;
     color: grey;

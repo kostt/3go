@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/styles.css" afterPath="$PROJECT_DIR$/www/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
     </list>
     <ignored path="3go.com.iws" />
@@ -35,11 +36,23 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="722" column="205" selection-start-line="722" selection-start-column="205" selection-end-line="722" selection-end-column="205" />
+            <state relative-caret-position="187">
+              <caret line="1365" column="68" selection-start-line="1365" selection-start-column="68" selection-end-line="1365" selection-end-column="68" />
               <folding>
-                <marker date="1525689207973" expanded="true" signature="346:472" ph="//..." />
+                <marker date="1525692829640" expanded="true" signature="346:472" ph="//..." />
+                <marker date="1525692829640" expanded="true" signature="24358:26996" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+                <marker date="1525692829640" expanded="true" signature="45123:45955" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statistics.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/statistics.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="20" column="45" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,13 +83,13 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="1026" column="9" selection-start-line="1026" selection-start-column="9" selection-end-line="1026" selection-end-column="9" />
+            <state relative-caret-position="135">
+              <caret line="189" column="13" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
               <folding>
-                <element signature="e#13869#14124#2" expanded="true" />
-                <element signature="e#14242#14497#2" expanded="true" />
-                <element signature="e#14616#14871#2" expanded="true" />
-                <marker date="1525684020688" expanded="true" signature="11798:11836" ph="{...}" />
+                <element signature="e#13911#14166#2" expanded="true" />
+                <element signature="e#14284#14539#2" expanded="true" />
+                <element signature="e#14658#14913#2" expanded="true" />
+                <marker date="1525692521722" expanded="true" signature="11840:11878" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -136,9 +149,9 @@
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/wizard.html" />
-        <option value="$PROJECT_DIR$/www/css/styles.css" />
         <option value="$PROJECT_DIR$/www/camps.html" />
         <option value="$PROJECT_DIR$/www/1on1.html" />
+        <option value="$PROJECT_DIR$/www/css/styles.css" />
         <option value="$PROJECT_DIR$/www/js/my-app.js" />
       </list>
     </option>
@@ -322,12 +335,12 @@
       <workItem from="1525259086497" duration="11557000" />
       <workItem from="1525333547818" duration="1752000" />
       <workItem from="1525422363693" duration="20399000" />
-      <workItem from="1525676078599" duration="11471000" />
+      <workItem from="1525676078599" duration="12894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354905000" />
+    <option name="totallyTimeSpent" value="356328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -340,7 +353,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2638889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26297578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -382,7 +395,9 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1525689207973" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525692829640" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525692829640" expanded="true" signature="24358:26996" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+            <marker date="1525692829640" expanded="true" signature="45123:45955" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -603,14 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/statistics.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -618,19 +625,6 @@
           <folding>
             <marker date="1525678693567" expanded="true" signature="2354:3376" ph="..." />
             <marker date="1525678693567" expanded="true" signature="2397:3358" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="1026" column="9" selection-start-line="1026" selection-start-column="9" selection-end-line="1026" selection-end-column="9" />
-          <folding>
-            <element signature="e#13869#14124#2" expanded="true" />
-            <element signature="e#14242#14497#2" expanded="true" />
-            <element signature="e#14616#14871#2" expanded="true" />
-            <marker date="1525684020688" expanded="true" signature="11798:11836" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -659,12 +653,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/statistics.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="189" column="13" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
+          <folding>
+            <element signature="e#13911#14166#2" expanded="true" />
+            <element signature="e#14284#14539#2" expanded="true" />
+            <element signature="e#14658#14913#2" expanded="true" />
+            <marker date="1525692521722" expanded="true" signature="11840:11878" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="722" column="205" selection-start-line="722" selection-start-column="205" selection-end-line="722" selection-end-column="205" />
+        <state relative-caret-position="187">
+          <caret line="1365" column="68" selection-start-line="1365" selection-start-column="68" selection-end-line="1365" selection-end-column="68" />
           <folding>
-            <marker date="1525689207973" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525692829640" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525692829640" expanded="true" signature="24358:26996" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+            <marker date="1525692829640" expanded="true" signature="45123:45955" ph="{...}" />
           </folding>
         </state>
       </provider>

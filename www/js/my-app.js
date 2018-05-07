@@ -720,7 +720,7 @@ function extras(category) {
 
                         $$(".extras_result").append(
                             '<div class="row extras_video">' +
-                            '<iframe width="100%" height="auto" src="https://www.youtube.com/embed/Ie2xqheEJIk" wmode="opaque" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>' +
+                            '<iframe width="100%" height="auto" src="' + element.url + '" wmode="opaque" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>'+
                             '<p class="text-in2">' + element.title + '</p></div>');
 
                     });
@@ -1335,7 +1335,7 @@ function validate(evt) {
 }
 
 
-$$('.avatar').on('click', function (e) {
+$$('.avatar, .profile-box').on('click', function (e) {
 
     var buttons = [
         {
@@ -1363,14 +1363,20 @@ $$('.avatar').on('click', function (e) {
             onClick: function () {
 
                 navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-                    destinationType: Camera.DestinationType.DATA_URL,
+                    destinationType: Camera.DestinationType.FILE_URI,
                     sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
 
                 function onPhotoURISuccess(imageData) {
+                    // var image = document.getElementById('avatar');
+                    // var path = "data:image/jpeg;base64," + imageData;
+                    // image.src = path;
+
                     var image = document.getElementById('avatar');
-                    var path = "data:image/jpeg;base64," + imageData;
-                    image.src = path;
+                    image.src = imageURI;
+                    
                     localStorage.setItem('avatar', path);
+                    
+                    alert(imageURI);
                 }
 
                 function onFail(message) {
