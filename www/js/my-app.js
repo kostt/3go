@@ -1309,9 +1309,9 @@ $$('.avatar').on('click', function (e) {
                     sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
 
                 function onPhotoURISuccess(imageData) {
-                    alert(imageData);
                     var image = document.getElementById('avatar');
-                    image.src = imageURI;
+                    image.src = imageData;
+                    alert("ОК");
                 }
 
                 function onFail(message) {
