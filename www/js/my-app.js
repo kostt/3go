@@ -1364,9 +1364,16 @@ $$('.avatar, .profile-box').on('click', function (e) {
             text: 'Изменить фото',
             onClick: function () {
 
-                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 1,
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+                    allowEdit: true,
+                    correctOrientation: true,
+                    targetHeight: window.innerHeight,
+                    targetWidth: window.innerWidth,
+                    quality: 1,
                     destinationType: Camera.DestinationType.DATA_URL,
-                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
+
+                });
 
                 function onPhotoURISuccess(imageData) {
 
