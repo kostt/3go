@@ -1370,13 +1370,13 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     // var image = document.getElementById('avatar');
                     // var path = "data:image/jpeg;base64," + imageData;
                     // image.src = path;
-
+                    alert(imageData);
                     var image = document.getElementById('avatar');
                     image.src = imageData;
                     
                     localStorage.setItem('avatar', path);
                     
-                    alert(imageData);
+                    
                 }
 
                 function onFail(message) {
