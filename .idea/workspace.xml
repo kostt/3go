@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/styles.css" afterPath="$PROJECT_DIR$/www/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
     </list>
     <ignored path="3go.com.iws" />
@@ -36,12 +35,12 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="1378" column="34" selection-start-line="1378" selection-start-column="34" selection-end-line="1378" selection-end-column="34" />
+            <state relative-caret-position="292">
+              <caret line="1378" column="35" selection-start-line="1378" selection-start-column="35" selection-end-line="1378" selection-end-column="35" />
               <folding>
-                <marker date="1525692864676" expanded="true" signature="346:472" ph="//..." />
-                <marker date="1525692864676" expanded="true" signature="24358:26996" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
-                <marker date="1525692864676" expanded="true" signature="45321:46153" ph="{...}" />
+                <marker date="1525693068422" expanded="true" signature="346:472" ph="//..." />
+                <marker date="1525693068422" expanded="true" signature="24358:26996" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+                <marker date="1525693068422" expanded="true" signature="45323:46155" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -335,12 +334,12 @@
       <workItem from="1525259086497" duration="11557000" />
       <workItem from="1525333547818" duration="1752000" />
       <workItem from="1525422363693" duration="20399000" />
-      <workItem from="1525676078599" duration="12943000" />
+      <workItem from="1525676078599" duration="13147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356377000" />
+    <option name="totallyTimeSpent" value="356581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -395,9 +394,9 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1525692864676" expanded="true" signature="346:472" ph="//..." />
-            <marker date="1525692864676" expanded="true" signature="24358:26996" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
-            <marker date="1525692864676" expanded="true" signature="45321:46153" ph="{...}" />
+            <marker date="1525693068422" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525693068422" expanded="true" signature="24358:26996" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+            <marker date="1525693068422" expanded="true" signature="45323:46155" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -676,12 +675,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="1378" column="34" selection-start-line="1378" selection-start-column="34" selection-end-line="1378" selection-end-column="34" />
+        <state relative-caret-position="292">
+          <caret line="1378" column="35" selection-start-line="1378" selection-start-column="35" selection-end-line="1378" selection-end-column="35" />
           <folding>
-            <marker date="1525692864676" expanded="true" signature="346:472" ph="//..." />
-            <marker date="1525692864676" expanded="true" signature="24358:26996" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
-            <marker date="1525692864676" expanded="true" signature="45321:46153" ph="{...}" />
+            <marker date="1525693068422" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525693068422" expanded="true" signature="24358:26996" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+            <marker date="1525693068422" expanded="true" signature="45323:46155" ph="{...}" />
           </folding>
         </state>
       </provider>
