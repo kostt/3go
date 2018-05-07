@@ -35,15 +35,15 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="1386" column="20" selection-start-line="1386" selection-start-column="20" selection-end-line="1386" selection-end-column="20" />
+            <state relative-caret-position="20805">
+              <caret line="1387" column="20" selection-start-line="1387" selection-start-column="20" selection-end-line="1387" selection-end-column="20" />
               <folding>
-                <marker date="1525693949742" expanded="true" signature="346:472" ph="//..." />
-                <marker date="1525693949742" expanded="true" signature="24607:27245" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
-                <marker date="1525693949742" expanded="true" signature="43754:45607" ph="{...}" />
-                <marker date="1525693949742" expanded="true" signature="43775:45575" ph="[...]" />
-                <marker date="1525693949742" expanded="true" signature="44510:45493" ph="{&quot;text&quot;: 'Изменить фото'...}" />
-                <marker date="1525693949742" expanded="true" signature="45654:46486" ph="{...}" />
+                <marker date="1525694420670" expanded="true" signature="346:472" ph="//..." />
+                <marker date="1525694420670" expanded="true" signature="24607:27245" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+                <marker date="1525694420670" expanded="true" signature="43754:45491" ph="{...}" />
+                <marker date="1525694420670" expanded="true" signature="43775:45459" ph="[...]" />
+                <marker date="1525694420670" expanded="true" signature="44510:45377" ph="{&quot;text&quot;: 'Изменить фото'...}" />
+                <marker date="1525694420670" expanded="true" signature="45538:46370" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -337,16 +337,16 @@
       <workItem from="1525259086497" duration="11557000" />
       <workItem from="1525333547818" duration="1752000" />
       <workItem from="1525422363693" duration="20399000" />
-      <workItem from="1525676078599" duration="14027000" />
+      <workItem from="1525676078599" duration="14485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357461000" />
+    <option name="totallyTimeSpent" value="357919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27575758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -355,7 +355,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26297578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26297578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -397,12 +397,12 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1525693949742" expanded="true" signature="346:472" ph="//..." />
-            <marker date="1525693949742" expanded="true" signature="24607:27245" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
-            <marker date="1525693949742" expanded="true" signature="43754:45607" ph="{...}" />
-            <marker date="1525693949742" expanded="true" signature="43775:45575" ph="[...]" />
-            <marker date="1525693949742" expanded="true" signature="44510:45493" ph="{&quot;text&quot;: 'Изменить фото'...}" />
-            <marker date="1525693949742" expanded="true" signature="45654:46486" ph="{...}" />
+            <marker date="1525694420670" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525694420670" expanded="true" signature="24607:27245" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+            <marker date="1525694420670" expanded="true" signature="43754:45491" ph="{...}" />
+            <marker date="1525694420670" expanded="true" signature="43775:45459" ph="[...]" />
+            <marker date="1525694420670" expanded="true" signature="44510:45377" ph="{&quot;text&quot;: 'Изменить фото'...}" />
+            <marker date="1525694420670" expanded="true" signature="45538:46370" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -681,15 +681,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="1386" column="20" selection-start-line="1386" selection-start-column="20" selection-end-line="1386" selection-end-column="20" />
+        <state relative-caret-position="20805">
+          <caret line="1387" column="20" selection-start-line="1387" selection-start-column="20" selection-end-line="1387" selection-end-column="20" />
           <folding>
-            <marker date="1525693949742" expanded="true" signature="346:472" ph="//..." />
-            <marker date="1525693949742" expanded="true" signature="24607:27245" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
-            <marker date="1525693949742" expanded="true" signature="43754:45607" ph="{...}" />
-            <marker date="1525693949742" expanded="true" signature="43775:45575" ph="[...]" />
-            <marker date="1525693949742" expanded="true" signature="44510:45493" ph="{&quot;text&quot;: 'Изменить фото'...}" />
-            <marker date="1525693949742" expanded="true" signature="45654:46486" ph="{...}" />
+            <marker date="1525694420670" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525694420670" expanded="true" signature="24607:27245" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+            <marker date="1525694420670" expanded="true" signature="43754:45491" ph="{...}" />
+            <marker date="1525694420670" expanded="true" signature="43775:45459" ph="[...]" />
+            <marker date="1525694420670" expanded="true" signature="44510:45377" ph="{&quot;text&quot;: 'Изменить фото'...}" />
+            <marker date="1525694420670" expanded="true" signature="45538:46370" ph="{...}" />
           </folding>
         </state>
       </provider>

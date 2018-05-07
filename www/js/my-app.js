@@ -54,8 +54,6 @@ $$(document).on('DOMContentLoaded', function(){
     }
 
     if(localStorage.getItem('avatar') != null) {
-
-        alert(localStorage.getItem('avatar'));
         var image = document.getElementById('avatar');
         image.src = localStorage.getItem('avatar');
         
@@ -68,8 +66,6 @@ $$(document).on('DOMContentLoaded', function(){
 
 
 myApp.onPageInit('*', function (page) {
-
-    alert(localStorage.getItem('avatar'));
 
     var timer;
     $$('.img_logo_big').on("touchstart",function(){
@@ -85,8 +81,6 @@ myApp.onPageInit('*', function (page) {
 
 myApp.onPageInit('index', function (page) {
 
-    alert(localStorage.getItem('avatar'));
-
     if(localStorage.getItem('displayName') != null) {
         $$('#displayName').text(localStorage.getItem('displayName'));
         $$('#displaySname').text('');
@@ -97,7 +91,6 @@ myApp.onPageInit('index', function (page) {
     }
 
     if(localStorage.getItem('avatar') != null) {
-        alert(localStorage.getItem('avatar'));
         var image = document.getElementById('avatar');
         image.src = localStorage.getItem('avatar');
         
@@ -1383,13 +1376,8 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     // image.src = path;
                     
                     localStorage.setItem('avatar', imageData);
-                    alert(imageData);
-                    
                     var image = document.getElementById('avatar');
                     image.src = imageData;
-                    
-                   
-                    
                     
                 }
 
