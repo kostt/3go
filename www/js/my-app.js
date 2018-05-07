@@ -1372,11 +1372,11 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     // image.src = path;
 
                     var image = document.getElementById('avatar');
-                    image.src = imageURI;
+                    image.src = imageData;
                     
                     localStorage.setItem('avatar', path);
                     
-                    alert(imageURI);
+                    alert(imageData);
                 }
 
                 function onFail(message) {
