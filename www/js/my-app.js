@@ -1310,13 +1310,13 @@ $$('.avatar').on('click', function (e) {
 
                 function onPhotoURISuccess(imageData) {
                     alert(imageData);
+                    var image = document.getElementById('avatar');
+                    image.src = imageURI;
                 }
 
                 function onFail(message) {
                     alert('Failed because: ' + message);
                 }
-
-
 
             }
         },
