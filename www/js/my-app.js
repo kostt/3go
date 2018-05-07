@@ -1382,7 +1382,7 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     // var path = "data:image/jpeg;base64," + imageData;
                     // image.src = path;
                     
-                    localStorage.setItem('avatar', path);
+                    localStorage.setItem('avatar', imageData);
                     alert(imageData);
                     
                     var image = document.getElementById('avatar');
