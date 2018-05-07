@@ -44,6 +44,7 @@
     <allow-navigation href="*youtube*" />
     <allow-navigation href="*ytimg*" />
     <allow-navigation href="*"/>
+    <allow-navigation href="file://*/*" />
     <universal-links>
         <host name="trigo-9f40e.app.goo.gl" scheme="https" />
         <host name="trigo-9f40e.firebaseapp.com" scheme="https">
