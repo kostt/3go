@@ -1375,11 +1375,25 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     // image.src = path;
                     // localStorage.setItem('avatar', path);
 
-                    alert(imageData);
-                    localStorage.setItem('avatar', imageData);
-                    $$("#avatar").attr('src', imageData);
-                    image.src = imageData;
-                    $$("#img_area").text(image.src);
+                    // alert(imageData);
+                    // localStorage.setItem('avatar', imageData);
+                    // $$("#avatar").attr('src', imageData);
+                    // image.src = imageData;
+                    // $$("#img_area").text(image.src);
+
+
+                    window.resolveLocalFileSystemURI(imageData, gotFileEntry,
+                        function(error){
+                            alert("Error get fullPath");
+                        }
+                    );
+                    function gotFileEntry(imageURI) {
+                        // alert("imageURI: "+JSON.stringify(imageURI));
+                        alert("imageURI: "+imageURI.nativeURL);
+                        localStorage.setItem('avatar', imageURI.nativeURL);
+                    }
+
+
                     
                 }
 
