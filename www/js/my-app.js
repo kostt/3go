@@ -1364,7 +1364,7 @@ $$('.avatar, .profile-box').on('click', function (e) {
             text: 'Изменить фото',
             onClick: function () {
 
-                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 10,
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 1,
                     destinationType: Camera.DestinationType.DATA_URL,
                     sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
 
