@@ -1310,7 +1310,9 @@ $$('.avatar').on('click', function (e) {
 
                 function onPhotoURISuccess(imageData) {
                     var image = document.getElementById('avatar');
-                    image.src = imageData;
+                    var path = "data:image/jpeg;base64," + imageData;
+                    image.src = path;
+                    localStorage.setItem('avatar', path);
                     alert("ОК");
                 }
 
