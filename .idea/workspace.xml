@@ -4,7 +4,6 @@
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/styles.css" afterPath="$PROJECT_DIR$/www/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
     </list>
     <ignored path="3go.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +35,10 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-780">
-              <caret line="76" column="3" selection-start-line="76" selection-start-column="3" selection-end-line="76" selection-end-column="3" />
+            <state relative-caret-position="-18953">
+              <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
               <folding>
-                <marker date="1525679686856" expanded="true" signature="345:471" ph="//..." />
+                <marker date="1525679718080" expanded="true" signature="345:471" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -71,13 +70,13 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="1024" column="0" selection-start-line="1024" selection-start-column="0" selection-end-line="1024" selection-end-column="0" />
+            <state relative-caret-position="178">
+              <caret line="1021" column="17" selection-start-line="1021" selection-start-column="17" selection-end-line="1021" selection-end-column="17" />
               <folding>
                 <element signature="e#13869#14124#2" expanded="true" />
                 <element signature="e#14242#14497#2" expanded="true" />
                 <element signature="e#14616#14871#2" expanded="true" />
-                <marker date="1525679367946" expanded="true" signature="11798:11836" ph="{...}" />
+                <marker date="1525680258448" expanded="true" signature="11798:11836" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -139,8 +138,8 @@
         <option value="$PROJECT_DIR$/www/training.html" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/css/styles.css" />
         <option value="$PROJECT_DIR$/www/js/my-app.js" />
+        <option value="$PROJECT_DIR$/www/css/styles.css" />
       </list>
     </option>
   </component>
@@ -323,12 +322,12 @@
       <workItem from="1525259086497" duration="11557000" />
       <workItem from="1525333547818" duration="1752000" />
       <workItem from="1525422363693" duration="20399000" />
-      <workItem from="1525676078599" duration="3608000" />
+      <workItem from="1525676078599" duration="4226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347042000" />
+    <option name="totallyTimeSpent" value="347660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="702" extended-state="0" />
@@ -383,7 +382,7 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1525679686856" expanded="true" signature="345:471" ph="//..." />
+            <marker date="1525679718080" expanded="true" signature="345:471" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -646,23 +645,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="1024" column="0" selection-start-line="1024" selection-start-column="0" selection-end-line="1024" selection-end-column="0" />
+        <state relative-caret-position="178">
+          <caret line="1021" column="17" selection-start-line="1021" selection-start-column="17" selection-end-line="1021" selection-end-column="17" />
           <folding>
             <element signature="e#13869#14124#2" expanded="true" />
             <element signature="e#14242#14497#2" expanded="true" />
             <element signature="e#14616#14871#2" expanded="true" />
-            <marker date="1525679367946" expanded="true" signature="11798:11836" ph="{...}" />
+            <marker date="1525680258448" expanded="true" signature="11798:11836" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-780">
-          <caret line="76" column="3" selection-start-line="76" selection-start-column="3" selection-end-line="76" selection-end-column="3" />
+        <state relative-caret-position="-18953">
+          <caret line="53" column="48" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
           <folding>
-            <marker date="1525679686856" expanded="true" signature="345:471" ph="//..." />
+            <marker date="1525679718080" expanded="true" signature="345:471" ph="//..." />
           </folding>
         </state>
       </provider>
