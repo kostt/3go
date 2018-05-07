@@ -1364,36 +1364,22 @@ $$('.avatar, .profile-box').on('click', function (e) {
             text: 'Изменить фото',
             onClick: function () {
 
-                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 10,
                     destinationType: Camera.DestinationType.FILE_URI,
                     sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
 
                 function onPhotoURISuccess(imageData) {
 
-                    // var image = document.getElementById('avatar');
-                    // var path = "data:image/jpeg;base64," + imageData;
-                    // image.src = path;
-                    // localStorage.setItem('avatar', path);
+                    var image = document.getElementById('avatar');
+                    var path = "data:image/jpeg;base64," + imageData;
+                    image.src = path;
+                    localStorage.setItem('avatar', path);
 
                     // alert(imageData);
                     // localStorage.setItem('avatar', imageData);
                     // $$("#avatar").attr('src', imageData);
                     // image.src = imageData;
                     // $$("#img_area").text(image.src);
-
-
-                    window.resolveLocalFileSystemURI(imageData, gotFileEntry,
-                        function(error){
-                            alert("Error get fullPath");
-                        }
-                    );
-                    function gotFileEntry(imageURI) {
-                        // alert("imageURI: "+JSON.stringify(imageURI));
-                        alert("imageURI: "+imageURI.nativeURL);
-                        localStorage.setItem('avatar', imageURI.nativeURL);
-                    }
-
-
                     
                 }
 
