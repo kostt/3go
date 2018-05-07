@@ -14,25 +14,6 @@ var mainView = myApp.addView('.view-main', {
     preloadPreviousPage: true
 });
 
-
-
-$$('.avatar').on('click', function () {
-
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-    function onPhotoURISuccess(imageData) {
-        alert(imageData);
-    }
-
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
-
-});
-
-
 if(window.localStorage.getItem('has_run') == null) {
     myApp.popup('.start-popup');
     window.localStorage.setItem('has_run', 'true');
@@ -101,47 +82,9 @@ myApp.onPageInit('index', function (page) {
         $$('#displaySname').text(localStorage.getItem('displaySname'));
     }
 
-
-
-        //     var buttons = [
-    //         {
-    //             text: 'Изменить имя',
-    //             onClick: function () {
-    //
-    //                 myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
-    //                     localStorage.setItem('displayName', value);
-    //                     $$('#displayName').text(localStorage.getItem('displayName'));
-    //                 });
-    //
-    //             }
-    //         },
-    //         {
-    //             text: 'Изменить фамилию',
-    //             onClick: function () {
-    //                 myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
-    //                     localStorage.setItem('displaySname', value);
-    //                     $$('#displaySname').text(localStorage.getItem('displaySname'));
-    //                 });
-    //             }
-    //         },
-    //         {
-    //             text: 'Изменить фото',
-    //             onClick: function () {
-    //
-    //
-    //                
-    //
-    //             }
-    //         },
-    //         {
-    //             text: 'Отмена',
-    //             color: 'red',
-    //         },
-    //     ];
-    //     myApp.actions(buttons);
-    // });
-
 });
+
+
 
 
 
@@ -1334,7 +1277,57 @@ function validate(evt) {
 }
 
 
+$$('.avatar').on('click', function (e) {
 
+    var buttons = [
+        {
+            text: 'Изменить имя',
+            onClick: function () {
+
+                myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
+                    localStorage.setItem('displayName', value);
+                    $$('#displayName').text(localStorage.getItem('displayName'));
+                });
+
+            }
+        },
+        {
+            text: 'Изменить фамилию',
+            onClick: function () {
+                myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
+                    localStorage.setItem('displaySname', value);
+                    $$('#displaySname').text(localStorage.getItem('displaySname'));
+                });
+            }
+        },
+        {
+            text: 'Изменить фото',
+            onClick: function () {
+
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                    destinationType: Camera.DestinationType.DATA_URL,
+                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+                function onPhotoURISuccess(imageData) {
+                    alert(imageData);
+                }
+
+                function onFail(message) {
+                    alert('Failed because: ' + message);
+                }
+
+
+
+            }
+        },
+        {
+            text: 'Отмена',
+            color: 'red',
+        },
+    ];
+    myApp.actions(buttons);
+
+});
 
 
 
