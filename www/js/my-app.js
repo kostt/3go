@@ -720,7 +720,7 @@ function extras(category) {
 
                         $$(".extras_result").append(
                             '<div class="row extras_video">' +
-                            element.url +
+                            '<iframe width="100%" height="auto" src="https://www.youtube.com/embed/Ie2xqheEJIk" wmode="opaque" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>' +
                             '<p class="text-in2">' + element.title + '</p></div>');
 
                     });
@@ -1391,7 +1391,7 @@ $$('.avatar').on('click', function (e) {
 
 
 myApp.onPageInit('1on1', function (page) {
-    
+
     $$('#1on1_btn').on('click', function (e) {
 
         arr = [];
