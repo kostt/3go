@@ -35,15 +35,15 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+            <state relative-caret-position="246">
+              <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
               <folding>
-                <marker date="1525693643849" expanded="true" signature="346:472" ph="//..." />
-                <marker date="1525693643849" expanded="true" signature="24471:27109" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
-                <marker date="1525693643849" expanded="true" signature="43618:45409" ph="{...}" />
-                <marker date="1525693643849" expanded="true" signature="43639:45377" ph="[...]" />
-                <marker date="1525693643849" expanded="true" signature="44374:45295" ph="{&quot;text&quot;: 'Изменить фото'...}" />
-                <marker date="1525693643849" expanded="true" signature="45456:46288" ph="{...}" />
+                <marker date="1525693894307" expanded="true" signature="346:472" ph="//..." />
+                <marker date="1525693894307" expanded="true" signature="24607:27245" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+                <marker date="1525693894307" expanded="true" signature="43754:45545" ph="{...}" />
+                <marker date="1525693894307" expanded="true" signature="43775:45513" ph="[...]" />
+                <marker date="1525693894307" expanded="true" signature="44510:45431" ph="{&quot;text&quot;: 'Изменить фото'...}" />
+                <marker date="1525693894307" expanded="true" signature="45592:46424" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -337,12 +337,12 @@
       <workItem from="1525259086497" duration="11557000" />
       <workItem from="1525333547818" duration="1752000" />
       <workItem from="1525422363693" duration="20399000" />
-      <workItem from="1525676078599" duration="13708000" />
+      <workItem from="1525676078599" duration="13958000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357142000" />
+    <option name="totallyTimeSpent" value="357392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -397,12 +397,12 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1525693643849" expanded="true" signature="346:472" ph="//..." />
-            <marker date="1525693643849" expanded="true" signature="24471:27109" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
-            <marker date="1525693643849" expanded="true" signature="43618:45409" ph="{...}" />
-            <marker date="1525693643849" expanded="true" signature="43639:45377" ph="[...]" />
-            <marker date="1525693643849" expanded="true" signature="44374:45295" ph="{&quot;text&quot;: 'Изменить фото'...}" />
-            <marker date="1525693643849" expanded="true" signature="45456:46288" ph="{...}" />
+            <marker date="1525693894307" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525693894307" expanded="true" signature="24607:27245" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+            <marker date="1525693894307" expanded="true" signature="43754:45545" ph="{...}" />
+            <marker date="1525693894307" expanded="true" signature="43775:45513" ph="[...]" />
+            <marker date="1525693894307" expanded="true" signature="44510:45431" ph="{&quot;text&quot;: 'Изменить фото'...}" />
+            <marker date="1525693894307" expanded="true" signature="45592:46424" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -681,15 +681,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        <state relative-caret-position="246">
+          <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
           <folding>
-            <marker date="1525693643849" expanded="true" signature="346:472" ph="//..." />
-            <marker date="1525693643849" expanded="true" signature="24471:27109" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
-            <marker date="1525693643849" expanded="true" signature="43618:45409" ph="{...}" />
-            <marker date="1525693643849" expanded="true" signature="43639:45377" ph="[...]" />
-            <marker date="1525693643849" expanded="true" signature="44374:45295" ph="{&quot;text&quot;: 'Изменить фото'...}" />
-            <marker date="1525693643849" expanded="true" signature="45456:46288" ph="{...}" />
+            <marker date="1525693894307" expanded="true" signature="346:472" ph="//..." />
+            <marker date="1525693894307" expanded="true" signature="24607:27245" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/extras/'...}" />
+            <marker date="1525693894307" expanded="true" signature="43754:45545" ph="{...}" />
+            <marker date="1525693894307" expanded="true" signature="43775:45513" ph="[...]" />
+            <marker date="1525693894307" expanded="true" signature="44510:45431" ph="{&quot;text&quot;: 'Изменить фото'...}" />
+            <marker date="1525693894307" expanded="true" signature="45592:46424" ph="{...}" />
           </folding>
         </state>
       </provider>

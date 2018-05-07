@@ -32,6 +32,8 @@ function onDeviceReady() {
 
 
 $$(document).on('DOMContentLoaded', function(){
+
+    alert(localStorage.getItem('avatar'));
     
     var timer;
     $$('#img_logo_big').on("touchstart",function(){
@@ -67,6 +69,8 @@ $$(document).on('DOMContentLoaded', function(){
 
 myApp.onPageInit('*', function (page) {
 
+    alert(localStorage.getItem('avatar'));
+
     var timer;
     $$('.img_logo_big').on("touchstart",function(){
         timer = setTimeout(function(){
@@ -80,6 +84,8 @@ myApp.onPageInit('*', function (page) {
 });
 
 myApp.onPageInit('index', function (page) {
+
+    alert(localStorage.getItem('avatar'));
 
     if(localStorage.getItem('displayName') != null) {
         $$('#displayName').text(localStorage.getItem('displayName'));
@@ -1375,11 +1381,14 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     // var image = document.getElementById('avatar');
                     // var path = "data:image/jpeg;base64," + imageData;
                     // image.src = path;
+                    
+                    localStorage.setItem('avatar', path);
                     alert(imageData);
+                    
                     var image = document.getElementById('avatar');
                     image.src = imageData;
                     
-                    localStorage.setItem('avatar', path);
+                   
                     
                     
                 }
