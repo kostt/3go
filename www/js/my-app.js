@@ -32,7 +32,7 @@ function onDeviceReady() {
 
 
 $$(document).on('DOMContentLoaded', function(){
-
+    
     var timer;
     $$('#img_logo_big').on("touchstart",function(){
         timer = setTimeout(function(){
@@ -52,8 +52,11 @@ $$(document).on('DOMContentLoaded', function(){
     }
 
     if(localStorage.getItem('avatar') != null) {
+
+        alert(localStorage.getItem('avatar'));
         var image = document.getElementById('avatar');
         image.src = localStorage.getItem('avatar');
+        
     }
 
 });
@@ -88,8 +91,10 @@ myApp.onPageInit('index', function (page) {
     }
 
     if(localStorage.getItem('avatar') != null) {
+        alert(localStorage.getItem('avatar'));
         var image = document.getElementById('avatar');
         image.src = localStorage.getItem('avatar');
+        
     }
 
 });
