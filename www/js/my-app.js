@@ -10,8 +10,26 @@ var appData = {
 
 // Add view
 var mainView = myApp.addView('.view-main', {
-    dynamicNavbar: true,
-    preloadPreviousPage: true
+    dynamicNavbar: true, 
+    // preloadPreviousPage: true
+});
+
+
+
+$$('.avatar').on('click', function () {
+
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+
+    function onPhotoURISuccess(imageData) {
+        alert(imageData);
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+
 });
 
 
@@ -29,10 +47,7 @@ function onDeviceReady() {
 }
 
 
-$$('.avatar').on('click', function () {
 
-
-});
 
 
 $$(document).on('DOMContentLoaded', function(){
@@ -1167,18 +1182,6 @@ function training(tran_time, obj){
 
 
 myApp.onPageInit('settings', function (page) {
-
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
-
-    function onPhotoURISuccess(imageData) {
-        alert(imageData);
-    }
-
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
 
     if(localStorage.getItem('push_note') == null) {
         localStorage.setItem('push_note', 'false');
