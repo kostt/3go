@@ -1376,6 +1376,8 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     // var path = "data:image/jpeg;base64," + imageData;
                     // image.src = path;
                     // localStorage.setItem('avatar', path);
+
+                    alert(imageData);
                     
                     localStorage.setItem('avatar', imageData);
                     var image = document.getElementById('avatar');
