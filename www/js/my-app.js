@@ -1339,69 +1339,142 @@ function validate(evt) {
 
 $$('.avatar, .profile-box').on('click', function (e) {
 
-    var buttons = [
-        {
-            text: 'Изменить имя',
-            onClick: function () {
 
-                myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
+
+    myApp.modal({
+        title:  'Мой профиль',
+        text: 'Настройки',
+        verticalButtons: true,
+        buttons: [
+            {
+                text: 'Изменить имя',
+                onClick: function() {
+                    myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
                     localStorage.setItem('displayName', value);
                     $$('#displayName').text(localStorage.getItem('displayName'));
-                });
-
-            }
-        },
-        {
-            text: 'Изменить фамилию',
-            onClick: function () {
-                myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
+                    });
+                }
+            },
+            {
+                text: 'Изменить фамилию',
+                onClick: function() {
+                    myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
                     localStorage.setItem('displaySname', value);
                     $$('#displaySname').text(localStorage.getItem('displaySname'));
-                });
-            }
-        },
-        {
-            text: 'Изменить фото',
-            onClick: function () {
-
-                navigator.camera.getPicture(onPhotoURISuccess, onFail, {
-                    allowEdit: true,
-                    correctOrientation: true,
-                    targetHeight: window.innerHeight,
-                    targetWidth: window.innerWidth,
-                    quality: 1,
-                    destinationType: Camera.DestinationType.DATA_URL,
-                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
-
-                });
-
-                function onPhotoURISuccess(imageData) {
-
-                    var image = document.getElementById('avatar');
-                    var path = "data:image/jpeg;base64," + imageData;
-                    image.src = path;
-                    localStorage.setItem('avatar', path);
-
-                    // alert(imageData);
-                    // localStorage.setItem('avatar', imageData);
-                    // $$("#avatar").attr('src', imageData);
-                    // image.src = imageData;
-                    // $$("#img_area").text(image.src);
-                    
+                    });
                 }
+            },
+            {
+                text: 'Изменить фото',
+                onClick: function() {
 
-                function onFail(message) {
+                                navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+                                    allowEdit: true,
+                                    correctOrientation: true,
+                                    targetHeight: window.innerHeight,
+                                    targetWidth: window.innerWidth,
+                                    quality: 1,
+                                    destinationType: Camera.DestinationType.DATA_URL,
+                                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
+
+                                });
+
+                                function onPhotoURISuccess(imageData) {
+
+                                    var image = document.getElementById('avatar');
+                                    var path = "data:image/jpeg;base64," + imageData;
+                                    image.src = path;
+                                    localStorage.setItem('avatar', path);
+
+                                    // alert(imageData);
+                                    // localStorage.setItem('avatar', imageData);
+                                    // $$("#avatar").attr('src', imageData);
+                                    // image.src = imageData;
+                                    // $$("#img_area").text(image.src);
+
+                                }
+
+                                function onFail(message) {
+
+                                }
+
 
                 }
+            },
+                {
+                    text: 'Отмена',
+                    color: 'red',
+                }
+        ]
+    })
 
-            }
-        },
-        {
-            text: 'Отмена',
-            color: 'red',
-        },
-    ];
-    myApp.actions(buttons);
+
+
+
+
+    // var buttons = [
+    //     {
+    //         text: 'Изменить имя',
+    //         onClick: function () {
+    //
+    //             myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
+    //                 localStorage.setItem('displayName', value);
+    //                 $$('#displayName').text(localStorage.getItem('displayName'));
+    //             });
+    //
+    //         }
+    //     },
+    //     {
+    //         text: 'Изменить фамилию',
+    //         onClick: function () {
+    //             myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
+    //                 localStorage.setItem('displaySname', value);
+    //                 $$('#displaySname').text(localStorage.getItem('displaySname'));
+    //             });
+    //         }
+    //     },
+    //     {
+    //         text: 'Изменить фото',
+    //         onClick: function () {
+    //
+    //             navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+    //                 allowEdit: true,
+    //                 correctOrientation: true,
+    //                 targetHeight: window.innerHeight,
+    //                 targetWidth: window.innerWidth,
+    //                 quality: 1,
+    //                 destinationType: Camera.DestinationType.DATA_URL,
+    //                 sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
+    //
+    //             });
+    //
+    //             function onPhotoURISuccess(imageData) {
+    //
+    //                 var image = document.getElementById('avatar');
+    //                 var path = "data:image/jpeg;base64," + imageData;
+    //                 image.src = path;
+    //                 localStorage.setItem('avatar', path);
+    //
+    //                 // alert(imageData);
+    //                 // localStorage.setItem('avatar', imageData);
+    //                 // $$("#avatar").attr('src', imageData);
+    //                 // image.src = imageData;
+    //                 // $$("#img_area").text(image.src);
+    //
+    //             }
+    //
+    //             function onFail(message) {
+    //
+    //             }
+    //
+    //         }
+    //     },
+    //     {
+    //         text: 'Отмена',
+    //         color: 'red',
+    //     },
+    // ];
+    // myApp.actions(buttons);
 
 });
 
