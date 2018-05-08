@@ -55,8 +55,12 @@ $$(document).on('DOMContentLoaded', function(){
     if(localStorage.getItem('avatar') != null) {
         var image = document.getElementById('avatar');
         image.src = localStorage.getItem('avatar');
-        
     }
+
+    $$('.avatar, .profile-box').on('click', function (e) {
+        avatar();
+    });
+
 
 });
 
@@ -92,8 +96,12 @@ myApp.onPageInit('index', function (page) {
     if(localStorage.getItem('avatar') != null) {
         var image = document.getElementById('avatar');
         image.src = localStorage.getItem('avatar');
-        
     }
+
+    $$('.avatar, .profile-box').on('click', function (e) {
+        avatar();
+    });
+
 
 });
 
@@ -259,7 +267,7 @@ myApp.onPageInit('plan', function (page) {
         }
 
         $$('.hide-animate').animate({'opacity': 1,}, {duration: 100,});
-        
+
 
     }
 
@@ -1431,8 +1439,11 @@ function validate(evt) {
 
 
 $$('.avatar, .profile-box').on('click', function (e) {
+    avatar();
+});
 
 
+function avatar(){
 
     myApp.modal({
         title:  'Мой профиль',
@@ -1443,8 +1454,8 @@ $$('.avatar, .profile-box').on('click', function (e) {
                 text: 'Изменить имя',
                 onClick: function() {
                     myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
-                    localStorage.setItem('displayName', value);
-                    $$('#displayName').text(localStorage.getItem('displayName'));
+                        localStorage.setItem('displayName', value);
+                        $$('#displayName').text(localStorage.getItem('displayName'));
                     });
                 }
             },
@@ -1452,8 +1463,8 @@ $$('.avatar, .profile-box').on('click', function (e) {
                 text: 'Изменить фамилию',
                 onClick: function() {
                     myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
-                    localStorage.setItem('displaySname', value);
-                    $$('#displaySname').text(localStorage.getItem('displaySname'));
+                        localStorage.setItem('displaySname', value);
+                        $$('#displaySname').text(localStorage.getItem('displaySname'));
                     });
                 }
             },
@@ -1461,47 +1472,40 @@ $$('.avatar, .profile-box').on('click', function (e) {
                 text: 'Изменить фото',
                 onClick: function() {
 
-                                navigator.camera.getPicture(onPhotoURISuccess, onFail, {
-                                    allowEdit: true,
-                                    correctOrientation: true,
-                                    targetHeight: window.innerHeight,
-                                    targetWidth: window.innerWidth,
-                                    quality: 1,
-                                    destinationType: Camera.DestinationType.DATA_URL,
-                                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
+                    navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+                        allowEdit: true,
+                        correctOrientation: true,
+                        targetHeight: window.innerHeight,
+                        targetWidth: window.innerWidth,
+                        quality: 1,
+                        destinationType: Camera.DestinationType.DATA_URL,
+                        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
 
-                                });
+                    });
 
-                                function onPhotoURISuccess(imageData) {
+                    function onPhotoURISuccess(imageData) {
 
-                                    var image = document.getElementById('avatar');
-                                    var path = "data:image/jpeg;base64," + imageData;
-                                    image.src = path;
-                                    localStorage.setItem('avatar', path);
+                        var image = document.getElementById('avatar');
+                        var path = "data:image/jpeg;base64," + imageData;
+                        image.src = path;
+                        localStorage.setItem('avatar', path);
 
-                                    // alert(imageData);
-                                    // localStorage.setItem('avatar', imageData);
-                                    // $$("#avatar").attr('src', imageData);
-                                    // image.src = imageData;
-                                    // $$("#img_area").text(image.src);
+                    }
 
-                                }
+                    function onFail(message) {
 
-                                function onFail(message) {
-
-                                }
+                    }
 
 
                 }
             },
-                {
-                    text: 'Отмена',
-                    color: 'red',
-                }
+            {
+                text: 'Отмена',
+                color: 'red',
+            }
         ]
     });
-
-});
+}
 
 
 
