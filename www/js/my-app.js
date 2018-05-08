@@ -453,8 +453,8 @@ myApp.onPageInit('wizard', function (page) {
 
         if(this.activeIndex == 1){
             var old = $$('#old').val();
+            old = old.replace('-','');
             var old = old.split('.');
-            old[0] = old[0].replace('-','');
             $$('#old').val(old[0]);
             $$("#btn-wizard-start").css("display", "none");
             $$(".btn-wizard-arrow").show();
@@ -462,54 +462,54 @@ myApp.onPageInit('wizard', function (page) {
 
         if(this.activeIndex == 3){
             var has_experience = $$('#has_experience').val();
+            has_experience = has_experience.replace('-','');
             var has_experience = has_experience.split('.');
-            has_experience[0] = has_experience[0].replace('-','');
             $$('#has_experience').val(has_experience[0]);
 
             var best_swim = $$('#best_swim').val();
+            best_swim = best_swim.replace('-','');
             var best_swim = best_swim.split('.');
-            best_swim[0] = best_swim[0].replace('-','');
             $$('#best_swim').val(best_swim[0]);
 
             var best_bike = $$('#best_bike').val();
+            best_bike = best_bike.replace('-','');
             var best_bike = best_bike.split('.');
-            best_bike[0] = best_bike[0].replace('-','');
             $$('#best_bike').val(best_bike[0]);
 
             var best_run = $$('#best_run').val();
+            best_run = best_run.replace('-','');
             var best_run = best_run.split('.');
-            best_run[0] = best_run[0].replace('-','');
             $$('#best_run').val(best_run[0]);
         }
 
         if(this.activeIndex == 4){
             var sprint_personal_best = $$('#sprint_personal_best').val();
+            sprint_personal_best = sprint_personal_best.replace('-','');
             var sprint_personal_best = sprint_personal_best.split('.');
-            sprint_personal_best[0] = sprint_personal_best[0].replace('-','');
             $$('#sprint_personal_best').val(sprint_personal_best[0]);
 
             var olimpic_personal_best = $$('#olimpic_personal_best').val();
+            olimpic_personal_best = olimpic_personal_best.replace('-','');
             var olimpic_personal_best = olimpic_personal_best.split('.');
-            olimpic_personal_best[0] = olimpic_personal_best[0].replace('-','');
             $$('#olimpic_personal_best').val(olimpic_personal_best[0]);
         }
 
         if(this.activeIndex == 5){
             var half_personal_best = $$('#half_personal_best').val();
+            half_personal_best = half_personal_best.replace('-','');
             var half_personal_best = half_personal_best.split('.');
-            half_personal_best[0] = half_personal_best[0].replace('-','');
             $$('#half_personal_best').val(half_personal_best[0]);
 
             var full_personal_best = $$('#full_personal_best').val();
+            full_personal_best = full_personal_best.replace('-','');
             var full_personal_best = full_personal_best.split('.');
-            full_personal_best[0] = full_personal_best[0].replace('-','');
             $$('#full_personal_best').val(full_personal_best[0]);
         }
 
         if(this.activeIndex == 7){
             var free_time = $$('#free_time').val();
+            free_time = free_time.replace('-','');
             var free_time = free_time.split('.');
-            free_time[0] = free_time[0].replace('-','');
             $$('#free_time').val(free_time[0]);
         }
 

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
     </list>
     <ignored path="3go.com.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,15 +34,15 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1269">
-              <caret line="347" column="24" selection-start-line="347" selection-start-column="18" selection-end-line="347" selection-end-column="24" />
+            <state relative-caret-position="21">
+              <caret line="511" column="12" selection-start-line="511" selection-start-column="12" selection-end-line="511" selection-end-column="56" />
               <folding>
-                <marker date="1525766992226" expanded="true" signature="890:1016" ph="//..." />
-                <marker date="1525766992226" expanded="true" signature="34183:35200" ph="{...}" />
-                <marker date="1525766992226" expanded="true" signature="34306:35192" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/plan/'...}" />
-                <marker date="1525766992226" expanded="true" signature="44214:44582" ph="{&quot;text&quot;: 'Изменить имя'...}" />
-                <marker date="1525766992226" expanded="true" signature="44290:44581" ph="{...}" />
-                <marker date="1525766992226" expanded="true" signature="44400:44549" ph="//..." />
+                <marker date="1525767362488" expanded="true" signature="890:1016" ph="//..." />
+                <marker date="1525767362488" expanded="true" signature="34831:35848" ph="{...}" />
+                <marker date="1525767362488" expanded="true" signature="34954:35840" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/plan/'...}" />
+                <marker date="1525767362488" expanded="true" signature="44862:45230" ph="{&quot;text&quot;: 'Изменить имя'...}" />
+                <marker date="1525767362488" expanded="true" signature="44938:45229" ph="{...}" />
+                <marker date="1525767362488" expanded="true" signature="45048:45197" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -338,12 +337,12 @@
       <workItem from="1525333547818" duration="1752000" />
       <workItem from="1525422363693" duration="20399000" />
       <workItem from="1525676078599" duration="22061000" />
-      <workItem from="1525761655230" duration="3547000" />
+      <workItem from="1525761655230" duration="3987000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="369042000" />
+    <option name="totallyTimeSpent" value="369482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="702" extended-state="0" />
@@ -398,12 +397,12 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1525766992226" expanded="true" signature="890:1016" ph="//..." />
-            <marker date="1525766992226" expanded="true" signature="34183:35200" ph="{...}" />
-            <marker date="1525766992226" expanded="true" signature="34306:35192" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/plan/'...}" />
-            <marker date="1525766992226" expanded="true" signature="44214:44582" ph="{&quot;text&quot;: 'Изменить имя'...}" />
-            <marker date="1525766992226" expanded="true" signature="44290:44581" ph="{...}" />
-            <marker date="1525766992226" expanded="true" signature="44400:44549" ph="//..." />
+            <marker date="1525767362488" expanded="true" signature="890:1016" ph="//..." />
+            <marker date="1525767362488" expanded="true" signature="34831:35848" ph="{...}" />
+            <marker date="1525767362488" expanded="true" signature="34954:35840" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/plan/'...}" />
+            <marker date="1525767362488" expanded="true" signature="44862:45230" ph="{&quot;text&quot;: 'Изменить имя'...}" />
+            <marker date="1525767362488" expanded="true" signature="44938:45229" ph="{...}" />
+            <marker date="1525767362488" expanded="true" signature="45048:45197" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -680,15 +679,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1269">
-          <caret line="347" column="24" selection-start-line="347" selection-start-column="18" selection-end-line="347" selection-end-column="24" />
+        <state relative-caret-position="21">
+          <caret line="511" column="12" selection-start-line="511" selection-start-column="12" selection-end-line="511" selection-end-column="56" />
           <folding>
-            <marker date="1525766992226" expanded="true" signature="890:1016" ph="//..." />
-            <marker date="1525766992226" expanded="true" signature="34183:35200" ph="{...}" />
-            <marker date="1525766992226" expanded="true" signature="34306:35192" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/plan/'...}" />
-            <marker date="1525766992226" expanded="true" signature="44214:44582" ph="{&quot;text&quot;: 'Изменить имя'...}" />
-            <marker date="1525766992226" expanded="true" signature="44290:44581" ph="{...}" />
-            <marker date="1525766992226" expanded="true" signature="44400:44549" ph="//..." />
+            <marker date="1525767362488" expanded="true" signature="890:1016" ph="//..." />
+            <marker date="1525767362488" expanded="true" signature="34831:35848" ph="{...}" />
+            <marker date="1525767362488" expanded="true" signature="34954:35840" ph="{&quot;url&quot;: 'http://www.3go.training:8081/api/v1/plan/'...}" />
+            <marker date="1525767362488" expanded="true" signature="44862:45230" ph="{&quot;text&quot;: 'Изменить имя'...}" />
+            <marker date="1525767362488" expanded="true" signature="44938:45229" ph="{...}" />
+            <marker date="1525767362488" expanded="true" signature="45048:45197" ph="//..." />
           </folding>
         </state>
       </provider>
