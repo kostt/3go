@@ -57,11 +57,6 @@ $$(document).on('DOMContentLoaded', function(){
         image.src = localStorage.getItem('avatar');
     }
 
-    $$('.avatar, .profile-box').on('click', function (e) {
-        avatar();
-    });
-
-
 });
 
 
