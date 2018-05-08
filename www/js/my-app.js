@@ -9,26 +9,6 @@ var appData = {
 };
 
 
-var localCache = {
-    data: {},
-    remove: function (url) {
-        delete localCache.data[url];
-    },
-    exist: function (url) {
-        return localCache.data.hasOwnProperty(url) && localCache.data[url] !== null;
-    },
-    get: function (url) {
-        console.log('Getting in cache for url' + url);
-        return localCache.data[url];
-    },
-    set: function (url, cachedData, callback) {
-        localCache.remove(url);
-        localCache.data[url] = cachedData;
-        if ($.isFunction(callback)) callback(cachedData);
-    }
-};
-
-
 // Add view
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true, 
@@ -38,7 +18,7 @@ var mainView = myApp.addView('.view-main', {
 if(window.localStorage.getItem('has_run') == null) {
     myApp.popup('.start-popup');
     window.localStorage.setItem('has_run', 'true');
-    // mainView.router.loadPage('auth.html');
+    // mainView.router.loadPage('wizard.html');
 }
 
 // Handle Cordova Device Ready Event
@@ -182,54 +162,107 @@ myApp.onPageInit('plan', function (page) {
     var canvas_line = document.getElementById('canvas4');
     var myChart_line = new Chart(canvas_line, chartData_line);
 
-    $$.ajax({
-        url: 'http://www.3go.training:8081/api/v1/workout/',
-        method: 'get',
-        crossDomain: true,
-        timeout: 10000,
-        cache: true,
-        beforeSend: function() {myApp.showPreloader();},
-        complete: function() {myApp.hidePreloader();},
-        success: function (data) {
+    var time = new Date();
+    var now_time = time.setHours(time.getHours());
+    var cache_time = time.setHours(time.getHours() + 3);
 
-            $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
-            var obj = JSON.parse(data);
+    if(now_time > localStorage.getItem('workout_cache_time')) {
 
-            if(obj.bike > 0){
-                $$(".chart_scale_hour").text(obj.bike);
-                $$(".cat1").attr('src', './img/img_rider.svg');
-                $$(".cat2").attr('src', './img/img_running.svg');
-                $$(".cat3").attr('src', './img/img_swiming.svg');
-                $$(".cat1").attr('src', './img/img_rider_a.svg');
-                plan(1, obj);
-            }
-            
-            if(obj.run > 0){
-                $$(".chart_scale_hour").text(obj.run);
-                $$(".cat1").attr('src', './img/img_rider.svg');
-                $$(".cat2").attr('src', './img/img_running.svg');
-                $$(".cat3").attr('src', './img/img_swiming.svg');
-                $$(".cat2").attr('src', './img/img_running_a.svg');
-                plan(2, obj);
-            }
-            
-            if(obj.swim > 0){
-                $$(".chart_scale_hour").text(obj.swim);
-                $$(".cat1").attr('src', './img/img_rider.svg');
-                $$(".cat2").attr('src', './img/img_running.svg');
-                $$(".cat3").attr('src', './img/img_swiming.svg');
-                $$(".cat3").attr('src', './img/img_swiming_a.svg');
-                plan(3, obj);
-            }
+        $$.ajax({
+            url: 'http://www.3go.training:8081/api/v1/workout/',
+            method: 'get',
+            crossDomain: true,
+            timeout: 10000,
+            cache: true,
+            beforeSend: function () {
+                myApp.showPreloader();
+            },
+            complete: function () {
+                myApp.hidePreloader();
+            },
+            success: function (data) {
 
-            $$('.hide-animate').animate({'opacity': 1,}, {duration: 100,});
-            
-        },
-        error: function(data) {
-            error('Произошла ошибка. Проверьте соединение с интернетом');
-            myApp.hidePreloader();
+                localStorage.setItem('workout_cache', data);
+                localStorage.setItem('workout_cache_time', cache_time);
+
+                $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
+                var obj = JSON.parse(data);
+
+                if (obj.bike > 0) {
+                    $$(".chart_scale_hour").text(obj.bike);
+                    $$(".cat1").attr('src', './img/img_rider.svg');
+                    $$(".cat2").attr('src', './img/img_running.svg');
+                    $$(".cat3").attr('src', './img/img_swiming.svg');
+                    $$(".cat1").attr('src', './img/img_rider_a.svg');
+                    plan(1, obj);
+                }
+
+                if (obj.run > 0) {
+                    $$(".chart_scale_hour").text(obj.run);
+                    $$(".cat1").attr('src', './img/img_rider.svg');
+                    $$(".cat2").attr('src', './img/img_running.svg');
+                    $$(".cat3").attr('src', './img/img_swiming.svg');
+                    $$(".cat2").attr('src', './img/img_running_a.svg');
+                    plan(2, obj);
+                }
+
+                if (obj.swim > 0) {
+                    $$(".chart_scale_hour").text(obj.swim);
+                    $$(".cat1").attr('src', './img/img_rider.svg');
+                    $$(".cat2").attr('src', './img/img_running.svg');
+                    $$(".cat3").attr('src', './img/img_swiming.svg');
+                    $$(".cat3").attr('src', './img/img_swiming_a.svg');
+                    plan(3, obj);
+                }
+
+                $$('.hide-animate').animate({'opacity': 1,}, {duration: 100,});
+
+            },
+            error: function (data) {
+                error('Произошла ошибка. Проверьте соединение с интернетом');
+                myApp.hidePreloader();
+            }
+        });
+
+    }else{
+
+        data = localStorage.getItem('workout_cache');
+
+        $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
+        var obj = JSON.parse(data);
+
+        if (obj.bike > 0) {
+            $$(".chart_scale_hour").text(obj.bike);
+            $$(".cat1").attr('src', './img/img_rider.svg');
+            $$(".cat2").attr('src', './img/img_running.svg');
+            $$(".cat3").attr('src', './img/img_swiming.svg');
+            $$(".cat1").attr('src', './img/img_rider_a.svg');
+            plan(1, obj);
         }
-    });
+
+        if (obj.run > 0) {
+            $$(".chart_scale_hour").text(obj.run);
+            $$(".cat1").attr('src', './img/img_rider.svg');
+            $$(".cat2").attr('src', './img/img_running.svg');
+            $$(".cat3").attr('src', './img/img_swiming.svg');
+            $$(".cat2").attr('src', './img/img_running_a.svg');
+            plan(2, obj);
+        }
+
+        if (obj.swim > 0) {
+            $$(".chart_scale_hour").text(obj.swim);
+            $$(".cat1").attr('src', './img/img_rider.svg');
+            $$(".cat2").attr('src', './img/img_running.svg');
+            $$(".cat3").attr('src', './img/img_swiming.svg');
+            $$(".cat3").attr('src', './img/img_swiming_a.svg');
+            plan(3, obj);
+        }
+
+        $$('.hide-animate').animate({'opacity': 1,}, {duration: 100,});
+        
+
+    }
+
 
 $$("#create_report").click(function(){
     mainView.router.loadPage('report.html');
@@ -347,6 +380,12 @@ function plan(category, obj){
 
 myApp.onPageInit('wizard', function (page) {
 
+    // $$('#old').on("change keyup input click",function(){
+    //     if(this.value.match(/[^0-9]/g)){
+    //         this.value=this.value.replace(/[^0-9]/g,'');
+    //     }
+    // });
+
     var x = new Date();
     var currentTimeZoneOffsetInHours = x.getTimezoneOffset() / 60;
     if(currentTimeZoneOffsetInHours !=null){
@@ -431,6 +470,56 @@ myApp.onPageInit('wizard', function (page) {
     });
 
     $$('#next_swip, #next_swip2').on('click', function (e) {
+        
+        if ($$('#old').val().length != 0 && !$$('#old').val().match(/^\d+$/)) {
+            error('Значение возраст должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
+
+        if ($$('#has_experience').val().length != 0 && !$$('#has_experience').val().match(/^\d+$/)) {
+            error('Значение опыт в триатлоне должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
+
+        if ($$('#best_swim').val().length != 0 && !$$('#best_swim').val().match(/^\d+$/)) {
+            error('Значение плавание 100 м должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
+
+        if ($$('#best_bike').val().length != 0 && !$$('#best_bike').val().match(/^\d+$/)) {
+            error('Значение велосипед 40 км должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
+
+        if ($$('#best_run').val().length != 0 && !$$('#best_run').val().match(/^\d+$/)) {
+            error('Значение бег 10 км должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
+
+        if ($$('#sprint_personal_best').val().length != 0 && !$$('#sprint_personal_best').val().match(/^\d+$/)) {
+            error('Значение личный рекорд в спринте должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
+
+        if ($$('#olimpic_personal_best').val().length != 0 && !$$('#olimpic_personal_best').val().match(/^\d+$/)) {
+            error('Значение личный рекорд в олимпийском триатлоне должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
+
+        if ($$('#half_personal_best').val().length != 0 && !$$('#half_personal_best').val().match(/^\d+$/)) {
+            error('Значение Личный рекорд half (70.3) должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
+
+        if ($$('#full_personal_best').val().length != 0 && !$$('#full_personal_best').val().match(/^\d+$/)) {
+            error('Значение Личный рекорд full (long distance) должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
+
+        if ($$('#free_time').val().length != 0 && !$$('#free_time').val().match(/^\d+$/)) {
+            error('Значение должно быть положительным целым числом без точки или запятой');
+            return false;
+        }
 
         $$(".page-content").scrollTop(0, 400);
         mySwiper.allowSlideNext = true;
@@ -452,65 +541,8 @@ myApp.onPageInit('wizard', function (page) {
         }
 
         if(this.activeIndex == 1){
-            var old = $$('#old').val();
-            old = old.replace('-','');
-            var old = old.split('.');
-            $$('#old').val(old[0]);
             $$("#btn-wizard-start").css("display", "none");
             $$(".btn-wizard-arrow").show();
-        }
-
-        if(this.activeIndex == 3){
-            var has_experience = $$('#has_experience').val();
-            has_experience = has_experience.replace('-','');
-            var has_experience = has_experience.split('.');
-            $$('#has_experience').val(has_experience[0]);
-
-            var best_swim = $$('#best_swim').val();
-            best_swim = best_swim.replace('-','');
-            var best_swim = best_swim.split('.');
-            $$('#best_swim').val(best_swim[0]);
-
-            var best_bike = $$('#best_bike').val();
-            best_bike = best_bike.replace('-','');
-            var best_bike = best_bike.split('.');
-            $$('#best_bike').val(best_bike[0]);
-
-            var best_run = $$('#best_run').val();
-            best_run = best_run.replace('-','');
-            var best_run = best_run.split('.');
-            $$('#best_run').val(best_run[0]);
-        }
-
-        if(this.activeIndex == 4){
-            var sprint_personal_best = $$('#sprint_personal_best').val();
-            sprint_personal_best = sprint_personal_best.replace('-','');
-            var sprint_personal_best = sprint_personal_best.split('.');
-            $$('#sprint_personal_best').val(sprint_personal_best[0]);
-
-            var olimpic_personal_best = $$('#olimpic_personal_best').val();
-            olimpic_personal_best = olimpic_personal_best.replace('-','');
-            var olimpic_personal_best = olimpic_personal_best.split('.');
-            $$('#olimpic_personal_best').val(olimpic_personal_best[0]);
-        }
-
-        if(this.activeIndex == 5){
-            var half_personal_best = $$('#half_personal_best').val();
-            half_personal_best = half_personal_best.replace('-','');
-            var half_personal_best = half_personal_best.split('.');
-            $$('#half_personal_best').val(half_personal_best[0]);
-
-            var full_personal_best = $$('#full_personal_best').val();
-            full_personal_best = full_personal_best.replace('-','');
-            var full_personal_best = full_personal_best.split('.');
-            $$('#full_personal_best').val(full_personal_best[0]);
-        }
-
-        if(this.activeIndex == 7){
-            var free_time = $$('#free_time').val();
-            free_time = free_time.replace('-','');
-            var free_time = free_time.split('.');
-            $$('#free_time').val(free_time[0]);
         }
 
         if(this.activeIndex == 8){
@@ -1031,34 +1063,64 @@ myApp.onPageInit('training', function (page) {
    $$('.tran').on('click', function () {$$('.tran').removeClass('active');$$(this).addClass('active');});
 
 
-    $$.ajax({
-        url: 'http://www.3go.training:8081/api/v1/plan/',
-        method: 'get',
-        crossDomain: true,
-        timeout: 10000,
-        cache: true,
-        beforeSend: function() { myApp.showPreloader();},
-        complete: function() {myApp.hidePreloader();},
-        success: function (data) {
+    var time = new Date();
+    var now_time = time.setHours(time.getHours());
+    var cache_time = time.setHours(time.getHours() + 3);
 
-            $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
-            var obj = JSON.parse(data);
+    if(now_time > localStorage.getItem('plan_cache_time')) {
 
-            $$('.btn-wizard3').on('click', function () {
-                $$('.btn-wizard3').removeClass('active');
-                $$(this).addClass('active');
-                tran_time = $$(this).val();
-                training(tran_time, obj);
-            });
+        $$.ajax({
+            url: 'http://www.3go.training:8081/api/v1/plan/',
+            method: 'get',
+            crossDomain: true,
+            timeout: 10000,
+            cache: true,
+            beforeSend: function () {
+                myApp.showPreloader();
+            },
+            complete: function () {
+                myApp.hidePreloader();
+            },
+            success: function (data) {
 
-            training(1, obj);
+                localStorage.setItem('plan_cache', data);
+                localStorage.setItem('plan_cache_time', cache_time);
 
-        },
-        error: function(data) {
-            error('Произошла ошибка. Проверьте соединение с интернетом');
-            myApp.hidePreloader();
-        }
-    });
+                $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
+                var obj = JSON.parse(data);
+
+                $$('.btn-wizard3').on('click', function () {
+                    $$('.btn-wizard3').removeClass('active');
+                    $$(this).addClass('active');
+                    tran_time = $$(this).val();
+                    training(tran_time, obj);
+                });
+
+                training(1, obj);
+
+            },
+            error: function (data) {
+                error('Произошла ошибка. Проверьте соединение с интернетом');
+                myApp.hidePreloader();
+            }
+        });
+
+    }else{
+
+        data = localStorage.getItem('plan_cache');
+
+        $$('.img_chart_scale').animate({'opacity': 1,}, {duration: 1000,});
+        var obj = JSON.parse(data);
+
+        $$('.btn-wizard3').on('click', function () {
+            $$('.btn-wizard3').removeClass('active');
+            $$(this).addClass('active');
+            tran_time = $$(this).val();
+            training(tran_time, obj);
+        });
+
+        training(1, obj);
+    }
 
 
 
@@ -1437,75 +1499,7 @@ $$('.avatar, .profile-box').on('click', function (e) {
                     color: 'red',
                 }
         ]
-    })
-
-
-
-
-
-    // var buttons = [
-    //     {
-    //         text: 'Изменить имя',
-    //         onClick: function () {
-    //
-    //             myApp.prompt('Введите ваше имя', 'Изменить имя', function (value) {
-    //                 localStorage.setItem('displayName', value);
-    //                 $$('#displayName').text(localStorage.getItem('displayName'));
-    //             });
-    //
-    //         }
-    //     },
-    //     {
-    //         text: 'Изменить фамилию',
-    //         onClick: function () {
-    //             myApp.prompt('Введите вашу фамилию', 'Изменить фамилию', function (value) {
-    //                 localStorage.setItem('displaySname', value);
-    //                 $$('#displaySname').text(localStorage.getItem('displaySname'));
-    //             });
-    //         }
-    //     },
-    //     {
-    //         text: 'Изменить фото',
-    //         onClick: function () {
-    //
-    //             navigator.camera.getPicture(onPhotoURISuccess, onFail, {
-    //                 allowEdit: true,
-    //                 correctOrientation: true,
-    //                 targetHeight: window.innerHeight,
-    //                 targetWidth: window.innerWidth,
-    //                 quality: 1,
-    //                 destinationType: Camera.DestinationType.DATA_URL,
-    //                 sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
-    //
-    //             });
-    //
-    //             function onPhotoURISuccess(imageData) {
-    //
-    //                 var image = document.getElementById('avatar');
-    //                 var path = "data:image/jpeg;base64," + imageData;
-    //                 image.src = path;
-    //                 localStorage.setItem('avatar', path);
-    //
-    //                 // alert(imageData);
-    //                 // localStorage.setItem('avatar', imageData);
-    //                 // $$("#avatar").attr('src', imageData);
-    //                 // image.src = imageData;
-    //                 // $$("#img_area").text(image.src);
-    //
-    //             }
-    //
-    //             function onFail(message) {
-    //
-    //             }
-    //
-    //         }
-    //     },
-    //     {
-    //         text: 'Отмена',
-    //         color: 'red',
-    //     },
-    // ];
-    // myApp.actions(buttons);
+    });
 
 });
 
