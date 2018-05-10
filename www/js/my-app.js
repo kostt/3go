@@ -1049,9 +1049,9 @@ function autorization(token){
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
 
-            myApp.showPreloader();
             $$('#firebaseui-auth-container').text('Проверка авторизации');
-
+            myApp.showPreloader();
+            
             setTimeout(function () {
                 myApp.hidePreloader();
                 mainView.router.loadPage('index.html');
