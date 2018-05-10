@@ -15,13 +15,13 @@ var mainView = myApp.addView('.view-main', {
     preloadPreviousPage: false
 });
 
-// if(window.localStorage.getItem('has_run') == null) {
-//     myApp.popup('.start-popup');
-//     window.localStorage.setItem('has_run', 'true');
-//
-// }
+if(window.localStorage.getItem('has_run') == null) {
+    myApp.popup('.start-popup');
+    window.localStorage.setItem('has_run', 'true');
 
-mainView.router.loadPage('auth.html');
+}
+
+// mainView.router.loadPage('auth.html');
 
 // Handle Cordova Device Ready Event
 document.addEventListener("deviceready", onDeviceReady, false);
