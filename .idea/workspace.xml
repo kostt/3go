@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="716ce196-74e7-4706-9185-f60ac79a3c53" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/my-app.js" afterPath="$PROJECT_DIR$/www/js/my-app.js" />
     </list>
     <ignored path="3go.com.iws" />
@@ -34,10 +35,11 @@
       <file leaf-file-name="my-app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="41" />
+            <state relative-caret-position="232">
+              <caret line="1051" column="34" selection-start-line="1051" selection-start-column="34" selection-end-line="1051" selection-end-column="34" />
               <folding>
-                <marker date="1525956011214" expanded="true" signature="290:430" ph="//..." />
+                <marker date="1525956578127" expanded="true" signature="290:430" ph="//..." />
+                <marker date="1525956578127" expanded="true" signature="33970:34053" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -344,12 +346,12 @@
       <workItem from="1525676078599" duration="22061000" />
       <workItem from="1525761655230" duration="10330000" />
       <workItem from="1525776496555" duration="5569000" />
-      <workItem from="1525951764852" duration="3215000" />
+      <workItem from="1525951764852" duration="3830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384609000" />
+    <option name="totallyTimeSpent" value="385224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="704" extended-state="6" />
@@ -404,7 +406,8 @@
         <state relative-caret-position="390">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1525956011214" expanded="true" signature="290:430" ph="//..." />
+            <marker date="1525956578127" expanded="true" signature="290:430" ph="//..." />
+            <marker date="1525956578127" expanded="true" signature="33970:34053" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -682,10 +685,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/my-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="232">
+          <caret line="1051" column="34" selection-start-line="1051" selection-start-column="34" selection-end-line="1051" selection-end-column="34" />
           <folding>
-            <marker date="1525956011214" expanded="true" signature="290:430" ph="//..." />
+            <marker date="1525956578127" expanded="true" signature="290:430" ph="//..." />
+            <marker date="1525956578127" expanded="true" signature="33970:34053" ph="{...}" />
           </folding>
         </state>
       </provider>

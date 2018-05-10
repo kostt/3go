@@ -986,9 +986,9 @@ myApp.onPageInit('auth', function (page) {
             localStorage.setItem('displayName', displayName[0]); 
         }
         
-        if(displayName[1]){
-            localStorage.setItem('displaySname', displayName[1]);
-        }
+        // if(displayName[1]){
+        //     localStorage.setItem('displaySname', displayName[1]);
+        // }
 
         user.getIdToken().then(function(accessToken) {
 
@@ -1049,7 +1049,8 @@ function autorization(token){
         complete: function() {myApp.hidePreloader();},
         success: function (data) {
 
-            $$('#firebaseui-auth-container').text('Готово');
+            myApp.showPreloader();
+            $$('#firebaseui-auth-container').text('Проверка авторизации');
 
             setTimeout(function () {
                 mainView.router.loadPage('index.html');
