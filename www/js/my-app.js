@@ -1053,6 +1053,7 @@ function autorization(token){
             $$('#firebaseui-auth-container').text('Проверка авторизации');
 
             setTimeout(function () {
+                myApp.hidePreloader();
                 mainView.router.loadPage('index.html');
             }, 1500);
 
