@@ -15,11 +15,13 @@ var mainView = myApp.addView('.view-main', {
     preloadPreviousPage: false
 });
 
-if(window.localStorage.getItem('has_run') == null) {
-    myApp.popup('.start-popup');
-    window.localStorage.setItem('has_run', 'true');
-    // mainView.router.loadPage('wizard.html');
-}
+// if(window.localStorage.getItem('has_run') == null) {
+//     myApp.popup('.start-popup');
+//     window.localStorage.setItem('has_run', 'true');
+//
+// }
+
+mainView.router.loadPage('auth.html');
 
 // Handle Cordova Device Ready Event
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -987,41 +989,16 @@ myApp.onPageInit('auth', function (page) {
         if(displayName[1]){
             localStorage.setItem('displaySname', displayName[1]);
         }
-        
 
         user.getIdToken().then(function(accessToken) {
 
             appData.token = accessToken;
             window.localStorage.setItem('token', accessToken);
-
-            $$.ajax({
-                url: 'http://www.3go.training:8081/api/v1/',
-                method: 'get',
-                crossDomain: true,
-                timeout: 10000,
-                beforeSend: function(xhr) {xhr.setRequestHeader('Authorization', appData.token); myApp.showPreloader();},
-                complete: function() {myApp.hidePreloader();},
-                success: function (data) {
-
-                    setTimeout(function () {
-                        mainView.router.loadPage('index.html');
-                    }, 1000);
-
-
-                },
-                error: function(data) {
-                    error('Произошла ошибка. Проверьте соединение с интернетом');
-                    myApp.hidePreloader();
-                }
-            });
+            autorization(appData.token);
 
         });
 
-        $$('#firebaseui-auth-container').text('Вход выполнен');
-
-
     } else {
-
 
         console.log('USER SERVICE : user is signed out');
         // FirebaseUI config.
@@ -1052,13 +1029,48 @@ myApp.onPageInit('auth', function (page) {
             ui = new firebaseui.auth.AuthUI(window.firebase.auth());
         }
         ui.start('#firebaseui-auth-container', uiConfig);
-
-
     }
 
 });
 
 });
+
+
+function autorization(token){
+
+    $$('#firebaseui-auth-container').text('Проверка авторизации');
+
+    $$.ajax({
+        url: 'http://www.3go.training:8081/api/v1/',
+        method: 'get',
+        crossDomain: true,
+        timeout: 10000,
+        beforeSend: function(xhr) {xhr.setRequestHeader('Authorization', token); myApp.showPreloader();},
+        complete: function() {myApp.hidePreloader();},
+        success: function (data) {
+
+            $$('#firebaseui-auth-container').text('Готово');
+
+            setTimeout(function () {
+                mainView.router.loadPage('index.html');
+            }, 1500);
+
+
+        },
+        error: function(data) {
+            error('Произошла ошибка. Проверьте соединение с интернетом');
+            myApp.hidePreloader();
+
+            $$('#firebaseui-auth-container').text('Повторное подключение через 5 секунд');
+
+            setTimeout(function () {
+                autorization(token);
+            }, 5000);
+            
+        }
+    });
+
+}
 
 
 myApp.onPageInit('training', function (page) {
@@ -1472,10 +1484,9 @@ function avatar(){
                         correctOrientation: true,
                         targetHeight: window.innerHeight,
                         targetWidth: window.innerWidth,
-                        quality: 1,
+                        quality: 50,
                         destinationType: Camera.DestinationType.DATA_URL,
                         sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
-
                     });
 
                     function onPhotoURISuccess(imageData) {
