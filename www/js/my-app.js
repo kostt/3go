@@ -1050,10 +1050,8 @@ function autorization(token){
         success: function (data) {
 
             $$('#firebaseui-auth-container').text('Проверка авторизации');
-            myApp.showPreloader();
             
             setTimeout(function () {
-                myApp.hidePreloader();
                 mainView.router.loadPage('index.html');
             }, 1500);
 
