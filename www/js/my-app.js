@@ -964,6 +964,12 @@ function statistics(stat_time){
 
 
 myApp.onPageInit('auth', function (page) {
+
+    firebase.auth().signOut().then(function() {
+        console.log('Sign-out successful');
+    }, function(error) {
+        console.log('Sign-out error');
+    });
     
     firebase.auth().onAuthStateChanged((user)=> {
         console.log(user);
