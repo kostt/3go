@@ -20,7 +20,7 @@ if(window.localStorage.getItem('has_run') == null) {
 }
 
 // mainView.router.loadPage('auth.html');
-// myApp.popup('.start-popup');
+myApp.popup('.start-popup');
 
 
 
@@ -450,10 +450,11 @@ myApp.onPageInit('wizard', function (page) {
             el: '.swiper-pagination',
             type: 'bullets',
             renderBullet: function (index, className) {
+
                 if(index ==9){
                     return '<div style="display:none" class="' + className + '"></div>';
                 }else{
-                    return '<div id="2" class="' + className + '">'+
+                    return '<div id="wiz-swip-pag-'+index+'" class="' + className + '">'+
                         '</div>';
                 }
             },
@@ -537,21 +538,64 @@ myApp.onPageInit('wizard', function (page) {
         if(mySwiper.activeIndex == 0){
             $$("#btn-wizard-start").show();
             $$(".btn-wizard-arrow").css("display", "none");
-        }
-
-        if(this.activeIndex == 9){
-            $$(".btn-wizard-arrow").css("display", "none");
-            $$(".swiper-pagination").css("display", "none");
+            $$("#wiz-swip-pag-0").removeClass('white-pagination-bullet');
         }
 
         if(this.activeIndex == 1){
             $$("#btn-wizard-start").css("display", "none");
             $$(".btn-wizard-arrow").show();
+            $$("#wiz-swip-pag-1").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-2").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-0").addClass('white-pagination-bullet');
+        }
+
+        if(this.activeIndex == 2){
+            $$("#wiz-swip-pag-2").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-3").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-1").addClass('white-pagination-bullet');
+        }
+
+        if(this.activeIndex == 3){
+            $$("#wiz-swip-pag-3").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-4").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-2").addClass('white-pagination-bullet');
+        }
+
+        if(this.activeIndex == 4){
+            $$("#wiz-swip-pag-4").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-5").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-3").addClass('white-pagination-bullet');
+        }
+
+        if(this.activeIndex == 5){
+            $$("#wiz-swip-pag-5").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-6").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-4").addClass('white-pagination-bullet');
+        }
+
+        if(this.activeIndex == 6){
+            $$("#wiz-swip-pag-6").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-7").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-5").addClass('white-pagination-bullet');
+        }
+
+        if(this.activeIndex == 7){
+            $$("#wiz-swip-pag-7").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-8").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-6").addClass('white-pagination-bullet');
         }
 
         if(this.activeIndex == 8){
+            $$("#wiz-swip-pag-8").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-9").removeClass('white-pagination-bullet');
+            $$("#wiz-swip-pag-7").addClass('white-pagination-bullet');
             $$(".btn-wizard-arrow").show();
             $$(".swiper-pagination").show();
+        }
+
+        if(this.activeIndex == 9){
+            $$(".btn-wizard-arrow").css("display", "none");
+            $$(".swiper-pagination").css("display", "none");
         }
 
     });
@@ -610,7 +654,6 @@ myApp.onPageInit('wizard', function (page) {
                 beforeSend: function() {myApp.showPreloader();},
                 complete: function() {myApp.hidePreloader();},
                 success: function (data) {
-                    window.localStorage.setItem('has_run', 'true');
                     mainView.router.loadPage('auth.html');
                 },
                 error: function(data) {
@@ -1021,6 +1064,8 @@ myApp.onPageInit('auth', function (page) {
             ],
             callbacks: {
                 'signInSuccess': function (currentUser, credential, redirectUrl) {
+
+                    window.localStorage.setItem('has_run', 'true');
                     mainView.router.loadPage('index.html');
                     return false;
                 }
@@ -1058,6 +1103,7 @@ function autorization(token){
             $$('#firebaseui-auth-container').text('Проверка авторизации');
             
             setTimeout(function () {
+                window.localStorage.setItem('has_run', 'true');
                 mainView.router.loadPage('index.html');
             }, 1500);
 
