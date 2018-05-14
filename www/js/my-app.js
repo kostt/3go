@@ -20,7 +20,7 @@ if(window.localStorage.getItem('has_run') == null) {
 }
 
 // mainView.router.loadPage('auth.html');
-// myApp.popup('.start-popup');
+myApp.popup('.start-popup');
 
 
 
@@ -449,10 +449,15 @@ myApp.onPageInit('wizard', function (page) {
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
+            renderBullet: function (index, className) {
+                if(index ==9){
+                    return '<div style="display:none" class="' + className + '"></div>';
+                }else{
+                    return '<div id="2" class="' + className + '">'+
+                        '</div>';
+                }
+            },
         },
-        paginationBulletRender: function (index, className) {
-            return '<span id="2" class="' + className + '">' + (index + 1) + '</span>';
-        }
     });
 
     var mySwiper = $$('.swiper-container')[0].swiper;

@@ -732,6 +732,7 @@ h2{
 .container input {
     position: absolute;
     opacity: 0;
+    right: 45px;
     cursor: pointer;
 }
 
@@ -848,6 +849,8 @@ h2{
     color: grey;
     border-radius: 10px;
 }
+
+
 
 .list-block .item-inner:after{
     height: 0px;
@@ -1100,6 +1103,22 @@ h2{
 
     .cont-4{
         padding: 0 32px;
+    }
+
+    .wiz-h2{
+        font-size: 17px;
+    }
+
+    .chek-wiz{
+        right: 18px;
+    }
+
+    #prew_swip{
+        left:10px;
+    }
+
+    #next_swip2{
+        right:10px;
     }
 
 }
