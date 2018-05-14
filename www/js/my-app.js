@@ -20,6 +20,7 @@ if(window.localStorage.getItem('has_run') == null) {
 }
 
 // mainView.router.loadPage('auth.html');
+// myApp.popup('.start-popup');
 
 
 
@@ -449,6 +450,9 @@ myApp.onPageInit('wizard', function (page) {
             el: '.swiper-pagination',
             type: 'bullets',
         },
+        paginationBulletRender: function (index, className) {
+            return '<span id="2" class="' + className + '">' + (index + 1) + '</span>';
+        }
     });
 
     var mySwiper = $$('.swiper-container')[0].swiper;

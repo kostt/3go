@@ -154,17 +154,18 @@ h1{
 h2{
     font-family: MuseoSansCyrl500;
     color: white;
-    font-size:25px;
+    font-size:21px;
 }
 
 .h2{
     font-family: MuseoSansCyrl500;
     color: white;
-    font-size:24px;
+    font-size:21px;
 }
 
+
 .start-img{
-    margin-bottom: 10vh;
+    margin-bottom: 100px;
 }
 
 
@@ -386,7 +387,7 @@ h2{
 
 .text-in{
     font-family: MuseoSansCyrl500;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -629,6 +630,14 @@ h2{
     padding: 0 35px;
 }
 
+.cont-4{
+    padding: 0 32px;
+}
+
+.cont-wiz{
+    margin: 0px;
+}
+
 .camps-text{
     margin-bottom: 25px;
 }
@@ -646,6 +655,10 @@ h2{
 .sport-block3{
     margin-top: 55px;
     margin-bottom: 25px;
+}
+
+.swiper-wrapper{
+    padding-top:35px;
 }
 
 .img_oval{
@@ -1064,7 +1077,7 @@ h2{
     .h2 {
         font-family: MuseoSansCyrl500;
         color: white;
-        font-size: 23px;
+        font-size: 20px;
     }
 
     .checkmark {
@@ -1083,6 +1096,10 @@ h2{
         position: relative;
         bottom: 50px;
         font-weight: bold;
+    }
+
+    .cont-4{
+        padding: 0 32px;
     }
 
 }
