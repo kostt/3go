@@ -19,8 +19,8 @@ if(window.localStorage.getItem('has_run') == null) {
     myApp.popup('.start-popup');
 }
 
-// mainView.router.loadPage('auth.html');
-myApp.popup('.start-popup');
+// mainView.router.loadPage('report.html');
+// myApp.popup('.start-popup');
 
 
 
@@ -110,7 +110,7 @@ myApp.onPageInit('plan', function (page) {
         '<canvas id="skills" style="z-index: -4;" width="239" height="239"></canvas>' +
         '<div class="first_oval"></div>' +
         '<div class="chart_scale_time"><div class="chart_scale_hour">0</div><p class="chart_scale_hour_text">часов</p></div>' +
-        '<img src="./img/img_chart_scale.svg"></div>' +
+        '<img class="img_first_oval" src="./img/img_chart_scale.svg"></div>' +
         '</div><canvas id="canvas4"></canvas>'
     );
 
@@ -123,7 +123,7 @@ myApp.onPageInit('plan', function (page) {
                 fill: false,
                 backgroundColor: 'transparent',
                 borderColor: '#fe2d88',
-                borderWidth: 4,
+                borderWidth: 6,
                 data: [10,60,20,40,80,10],
             }]
         },
