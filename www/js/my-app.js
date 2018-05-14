@@ -17,19 +17,9 @@ var mainView = myApp.addView('.view-main', {
 
 if(window.localStorage.getItem('has_run') == null) {
     myApp.popup('.start-popup');
-    window.localStorage.setItem('has_run', 'true');
-
 }
 
 // mainView.router.loadPage('auth.html');
-
-// Handle Cordova Device Ready Event
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-
-}
-
 
 
 
@@ -611,6 +601,7 @@ myApp.onPageInit('wizard', function (page) {
                 beforeSend: function() {myApp.showPreloader();},
                 complete: function() {myApp.hidePreloader();},
                 success: function (data) {
+                    window.localStorage.setItem('has_run', 'true');
                     mainView.router.loadPage('auth.html');
                 },
                 error: function(data) {
