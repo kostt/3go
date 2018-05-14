@@ -20,7 +20,7 @@ if(window.localStorage.getItem('has_run') == null) {
 }
 
 // mainView.router.loadPage('auth.html');
-myApp.popup('.start-popup');
+// myApp.popup('.start-popup');
 
 
 
